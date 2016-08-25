@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#FC9E19</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FCD108</color>
+    <color name="cardview_initial_background">#71C3DE</color>
+
+    <!--Navigation Drawer -->
+    <color name="colorrPrimary">#4ec07e</color>
+    <color name="colorrPrimaryDark">#3b925f</color>
+    <color name="colorrAccent">#4a90e2</color>
+
+    <color name="textColorPrimary">#FFFFFF</color>
+    <color name="windowBackground">#FFFFFF</color>
+    <color name="navigationBarColor">#000000</color>
+
+    <color name="white">#ffffff</color>
+    <color name="light_grey">#e1e1e1</color>
+
+    <color name="bg_screen1">#f64c73</color>
+    <color name="bg_screen2">#20d2bb</color>
+    <color name="bg_screen3">#3395ff</color>
+    <color name="bg_screen4">#c873f4</color>
+
+    <color name="background">#ecf0f1</color>
+    <color name="color_amarelo">#FFC132</color>
+    <color name="laranja">#F2B51D</color>
+    <color name="verde_claro">#7EB848</color>
+    <color name="color_green">#4CAF50</color>
+    <color name="color_grey">#4C5A5E</color>
+    <color name="black">#000000</color>
+    <color name="dark_grey">#495E68</color>
+    <color name="clear_grey">#BBBBBB</color>
+    <color name="colorBackground">#E6E6E6</color>
+
+    <color name="dot_dark_screen1">#FFC13A</color>
+    <color name="dot_dark_screen2">#FFC13A</color>
+    <color name="dot_dark_screen3">#FFC13A</color>
+    <color name="dot_dark_screen4">#FFC13A</color>
+
+    <!-- dots active colors -->
+    <color name="dot_light_screen1">#EBEBEB</color>
+    <color name="dot_light_screen2">#EBEBEB</color>
+    <color name="dot_light_screen3">#EBEBEB</color>
+    <color name="dot_light_screen4">#EBEBEB</color>
+
+    <array name="array_dot_active">
+        <item>@color/dot_light_screen1</item>
+        <item>@color/dot_light_screen2</item>
+        <item>@color/dot_light_screen3</item>
+        <item>@color/dot_light_screen4</item>
+    </array>
+
+    <array name="array_dot_inactive">
+        <item>@color/dot_dark_screen1</item>
+        <item>@color/dot_dark_screen2</item>
+        <item>@color/dot_dark_screen3</item>
+        <item>@color/dot_dark_screen4</item>
+    </array>
+
+
+    <color name="viewBg">#f1f5f8</color>
+    <color name="album_title">#4c4c4c</color>
+
+</resources>
