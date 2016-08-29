@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey_transparent"
+
+    tools:context="com.example.jaqueju.appplatz.RegisterActivity">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="5dp"
+        android:layout_height="85dp"
+        android:src="@mipmap/logo"
+        />
+    <EditText
+
+        android:hint="Nome"
+        android:layout_width="280dp"
+        android:layout_marginTop="98dp"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:layout_marginLeft="50dp"
+        android:ems="10"
+        android:padding="11dp"
+        android:background="@drawable/style_edittext"
+        android:id="@+id/editText"
+        android:layout_gravity="center_vertical"
+        android:layout_weight="1"
+        android:drawableLeft="@mipmap/user"
+        android:drawablePadding="15dp"
+        />
+
+    <EditText
+        android:hint="Email"
+        android:layout_width="280dp"
+        android:layout_marginTop="150dp"
+        android:layout_height="wrap_content"
+        android:inputType="textEmailAddress"
+        android:layout_marginLeft="50dp"
+        android:ems="10"
+        android:padding="11dp"
+        android:background="@drawable/style_edittext"
+        android:id="@+id/editTextEmail"
+        android:layout_gravity="center_vertical"
+        android:layout_weight="1"
+        android:drawableLeft="@mipmap/user"
+        android:drawablePadding="15dp"
+        />
+
+
+
+    <EditText
+        android:hint="Senha"
+        android:layout_width="280dp"
+        android:layout_marginTop="202dp"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:layout_marginLeft="50dp"
+        android:ems="10"
+        android:padding="11dp"
+        android:background="@drawable/style_edittext"
+        android:id="@+id/TextSenhaaa"
+        android:layout_gravity="center_vertical"
+        android:layout_weight="1"
+        android:drawableLeft="@mipmap/pass"
+        android:drawablePadding="15dp"/>
+    <EditText
+        android:hint="Confirmar Senha"
+        android:layout_width="280dp"
+        android:layout_marginTop="255dp"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:layout_marginLeft="50dp"
+        android:ems="10"
+        android:padding="11dp"
+        android:background="@drawable/style_edittext"
+        android:id="@+id/TextConfirmSenha"
+        android:layout_gravity="center_vertical"
+        android:layout_weight="1"
+        android:drawableLeft="@mipmap/confirmpass"
+        android:drawablePadding="15dp"
+        />
+
+    <EditText
+        android:hint="12/05/1999"
+        android:layout_width="280dp"
+        android:layout_marginTop="310dp"
+        android:layout_height="wrap_content"
+        android:inputType="date"
+        android:layout_marginLeft="50dp"
+        android:ems="10"
+        android:padding="11dp"
+        android:background="@drawable/style_edittext"
+        android:id="@+id/TextDtNascimento"
+        android:layout_gravity="center_vertical"
+        android:layout_weight="1"
+        android:drawableLeft="@mipmap/ic_date"
+        android:drawablePadding="15dp"
+        />
+
+    <Button
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/style_button_register"
+        android:layout_marginTop="395dp"
+        android:text="PRÓXIMO"
+        android:textSize="20dp"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        android:layout_marginLeft="50dp"
+
+        />
+
+
+
+
+
+</RelativeLayout>

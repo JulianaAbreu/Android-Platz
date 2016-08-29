@@ -16,6 +16,7 @@
 
     <color name="white">#ffffff</color>
     <color name="light_grey">#e1e1e1</color>
+    <color name="grey_transparent">#EFEFEF</color>
 
     <color name="bg_screen1">#f64c73</color>
     <color name="bg_screen2">#20d2bb</color>
@@ -26,6 +27,7 @@
     <color name="color_amarelo">#FFC132</color>
     <color name="laranja">#F2B51D</color>
     <color name="verde_claro">#7EB848</color>
+    <color name="green">#8BC34A</color>
     <color name="color_green">#4CAF50</color>
     <color name="color_grey">#4C5A5E</color>
     <color name="black">#000000</color>

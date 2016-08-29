@@ -48,12 +48,18 @@ public class ImagesAdapter extends BaseAdapter {
     }
 
     private Integer[] mThumbIds = {
-            R.drawable.teste_music,
-            R.drawable.music_ic,
-            R.drawable.music_ic
-
-
-
+            R.drawable.ic_menu_camera,
+            R.drawable.ic_menu_camera,
+            R.drawable.ic_menu_camera,
+            R.drawable.ic_menu_camera,
+            R.drawable.ic_menu_camera,
+            R.drawable.ic_menu_camera,
+            R.drawable.ic_menu_camera,
+            R.drawable.ic_menu_camera,
+            R.drawable.ic_menu_camera,
+            R.drawable.ic_menu_camera,
+            R.drawable.ic_menu_camera,
+            R.drawable.ic_menu_camera
 
     };
 }

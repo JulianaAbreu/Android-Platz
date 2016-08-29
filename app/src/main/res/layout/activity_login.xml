@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.jaqueju.appplatz.LoginActivity"
+    android:background="@color/grey_transparent"
+    >
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_marginLeft="-5dp"
+        android:layout_marginTop="35dp"
+        android:layout_height="100dp"
+        android:src="@mipmap/logo"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="145dp"
+        android:textSize="25dp"
+        android:layout_marginLeft="75dp"
+        android:text="Acesse a sua conta!"
+        />
+    <EditText
+        android:hint="Email"
+        android:layout_width="280dp"
+        android:layout_marginTop="198dp"
+        android:layout_height="wrap_content"
+        android:inputType="textEmailAddress"
+        android:layout_marginLeft="50dp"
+        android:ems="10"
+        android:padding="11dp"
+        android:background="@drawable/style_edittext"
+        android:id="@+id/editText"
+        android:layout_gravity="center_vertical"
+        android:layout_weight="1"
+        android:drawableLeft="@mipmap/user"
+        android:drawablePadding="15dp"
+        />
+
+    <EditText
+        android:hint="Senha"
+        android:layout_width="280dp"
+        android:layout_marginTop="250dp"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:layout_marginLeft="50dp"
+        android:ems="10"
+        android:background="@drawable/style_edittext"
+        android:padding="10dp"
+        android:id="@+id/editSenha"
+        android:layout_gravity="center_vertical"
+        android:layout_weight="1"
+        android:drawableLeft="@mipmap/pass"
+        android:drawablePadding="15dp"
+        />
+    <Button
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/style_button"
+        android:layout_marginTop="328dp"
+        android:text="ENTRAR"
+        android:textSize="20dp"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        android:layout_marginLeft="50dp"
+        />
+
+</RelativeLayout>
