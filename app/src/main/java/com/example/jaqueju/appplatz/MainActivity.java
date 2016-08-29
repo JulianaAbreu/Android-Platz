@@ -74,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
     private void setIconForTabs() {
-        //Chèn Icon vào thư mục res/mipmap
+
         int[] tabIcons = {
                 R.mipmap.ic_list,
                 R.mipmap.ic_heart,
