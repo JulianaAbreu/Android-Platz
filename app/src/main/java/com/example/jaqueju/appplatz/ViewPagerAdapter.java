@@ -9,17 +9,19 @@ import java.util.List;
 
 /**
  * Created by 15153818 on 24/08/2016.
-*/
-public class ViewPagerAdapter extends FragmentPagerAdapter{
+ */
+public class ViewPagerAdapter extends FragmentPagerAdapter {
     private final List<Fragment> mFragmentList = new ArrayList<>();
 
-    public ViewPagerAdapter(FragmentManager manager){
+    public ViewPagerAdapter(FragmentManager manager) {
         super(manager);
     }
+
     @Override
-    public Fragment getItem(int position){
+    public Fragment getItem(int position) {
         return mFragmentList.get(position);
     }
+
     public void addFrag(Fragment fragment) {
         mFragmentList.add(fragment);
     }
@@ -30,7 +32,7 @@ public class ViewPagerAdapter extends FragmentPagerAdapter{
     }
 
     @Override
-    public CharSequence getPageTitle(int position){
+    public CharSequence getPageTitle(int position) {
         return null;
     }
 }

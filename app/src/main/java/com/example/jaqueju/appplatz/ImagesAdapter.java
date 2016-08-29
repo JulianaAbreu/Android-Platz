@@ -18,17 +18,19 @@ public class ImagesAdapter extends BaseAdapter {
 
     private Context mContext;
 
-    public ImagesAdapter(Context c){
+    public ImagesAdapter(Context c) {
         mContext = c;
     }
-    public int getCount(){
+
+    public int getCount() {
         return mThumbIds.length;
     }
-    public Object getItem(int position){
+
+    public Object getItem(int position) {
         return null;
     }
-    public long getItemId(int position)
-    {
+
+    public long getItemId(int position) {
         return 0;
     }
 

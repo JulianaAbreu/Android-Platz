@@ -9,14 +9,14 @@ import android.widget.TabHost;
  * Created by 15153818 on 26/08/2016.
  */
 public class TabLoginRegister extends TabActivity {
-TabHost tabHost;
+    TabHost tabHost;
 
     @Override
-    public void onCreate(Bundle savedInstanceState){
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.tab_login_register);
 
-        TabHost tabHost = (TabHost)findViewById(android.R.id.tabhost);
+        TabHost tabHost = (TabHost) findViewById(android.R.id.tabhost);
 
         TabHost.TabSpec tab1 = tabHost.newTabSpec("First Tab");
         TabHost.TabSpec tab2 = tabHost.newTabSpec("Second Tab");
