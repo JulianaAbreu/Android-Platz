@@ -37,8 +37,9 @@ public class MainActivity extends AppCompatActivity {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
         adapter.addFrag(new HomeFragment());
         adapter.addFrag(new AboutFragment());
-        adapter.addFrag(new PerfilFragment());
         adapter.addFrag(new ListFragment());
+        adapter.addFrag(new PerfilFragment());
+
 
         viewPager.setAdapter(adapter);
 
@@ -77,16 +78,16 @@ public class MainActivity extends AppCompatActivity {
         int[] tabIcons = {
                 R.mipmap.ic_list,
                 R.mipmap.ic_heart,
-                R.mipmap.ic_user,
-                R.mipmap.ic_trofeu
+                R.mipmap.ic_trofeu,
+                R.mipmap.ic_user
 
 
         };
 
         tabLayout.getTabAt(0).setIcon(tabIcons[0]);
         tabLayout.getTabAt(1).setIcon(tabIcons[1]);
-        tabLayout.getTabAt(2).setIcon(tabIcons[2]);
         tabLayout.getTabAt(3).setIcon(tabIcons[3]);
+        tabLayout.getTabAt(2).setIcon(tabIcons[2]);
 
 
     }
