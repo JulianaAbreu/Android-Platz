@@ -60,8 +60,6 @@ public class HomeFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.fragment_home, container, false);
-        GridView gridView = (GridView) view.findViewById(R.id.gridview);
-        gridView.setAdapter(new ImagesAdapter(view.getContext()));
         return view;
         // Inflate the layout for this fragment
         //return inflater.inflate(R.layout.fragment_home, container, false);

@@ -39,7 +39,7 @@
         android:id="@+id/editTextEmail"
         android:layout_gravity="center_vertical"
         android:layout_weight="1"
-        android:drawableLeft="@mipmap/user"
+        android:drawableLeft="@mipmap/icone_emaail"
         android:drawablePadding="15dp"
         />
 

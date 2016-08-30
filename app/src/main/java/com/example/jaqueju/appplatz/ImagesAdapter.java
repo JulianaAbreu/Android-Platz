@@ -14,8 +14,9 @@ import android.widget.ImageView;
 /**
  * Created by 15153818 on 23/08/2016.
  */
-public class ImagesAdapter extends BaseAdapter {
-
+public class ImagesAdapter {
+/*
+Usar 'extends BaseAdapter'
     private Context mContext;
 
     public ImagesAdapter(Context c) {
@@ -38,7 +39,7 @@ public class ImagesAdapter extends BaseAdapter {
         ImageView imageView;
         if (convertView == null) {
             imageView = new ImageView(mContext);
-            imageView.setLayoutParams(new GridView.LayoutParams(400, 400));
+            imageView.setLayoutParams(new GridView.LayoutParams(200, 200));
             imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
         } else {
             imageView = (ImageView) convertView;
@@ -50,19 +51,20 @@ public class ImagesAdapter extends BaseAdapter {
     }
 
     private Integer[] mThumbIds = {
-            R.drawable.ic_menu_camera,
-            R.drawable.ic_menu_camera,
-            R.drawable.ic_menu_camera,
-            R.drawable.ic_menu_camera,
-            R.drawable.ic_menu_camera,
-            R.drawable.ic_menu_camera,
-            R.drawable.ic_menu_camera,
-            R.drawable.ic_menu_camera,
-            R.drawable.ic_menu_camera,
-            R.drawable.ic_menu_camera,
-            R.drawable.ic_menu_camera,
-            R.drawable.ic_menu_camera
+            R.drawable.teste_ic,
+            R.drawable.ctg_jogos,
+            R.drawable.ctgschool,
+            R.drawable.ctgschool,
+            R.drawable.ctgschool,
+            R.drawable.ctgschool,
+            R.drawable.ctgschool,
+            R.drawable.ctgschool,
+            R.drawable.ctgschool,
+            R.drawable.ctgschool,
+            R.drawable.ctgschool,
+            R.drawable.ctgschool
 
     };
+*/
 }
 
