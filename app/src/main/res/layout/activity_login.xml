@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.jaqueju.appplatz.LoginActivity"
-    android:background="@color/grey_transparent"
+    android:background="@drawable/fundo_login"
     >
 
     <ImageView
@@ -19,6 +19,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="145dp"
         android:textSize="25dp"
+        android:textStyle="bold"
+        android:textColor="#FBFFF8"
         android:layout_marginLeft="75dp"
         android:text="Acesse a sua conta!"
         />
@@ -57,7 +59,7 @@
         />
     <Button
         android:layout_width="280dp"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:background="@drawable/style_button"
         android:layout_marginTop="328dp"
         android:text="ENTRAR"
