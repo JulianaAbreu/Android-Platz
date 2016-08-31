@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
         viewPager = (ViewPager) findViewById(R.id.viewpager);
         tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(viewPager);
-        setSupportActionBar(toolbar);
+      setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("Home");
         tabLayout.setupWithViewPager(viewPager);
         setupViewPager(viewPager);
@@ -79,10 +79,10 @@ public class MainActivity extends AppCompatActivity {
     private void setIconForTabs() {
 
         int[] tabIcons = {
-                R.mipmap.ic_list,
-                R.mipmap.ic_heart,
+                R.mipmap.ic_list_white_,
+                R.mipmap.ic_favorite_border,
                 R.mipmap.ic_trofeu,
-                R.mipmap.ic_user
+                R.mipmap.ic_profile
 
 
         };

@@ -21,7 +21,8 @@
         <activity android:name=".LoginActivity" />
         <activity android:name=".RegisterActivity"></activity>
         <activity android:name=".TabLoginRegister"></activity>
-
+        <activity android:name=".ListaCategorias"></activity>
+    
     </application>
 
 </manifest>

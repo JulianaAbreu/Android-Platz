@@ -1,6 +1,7 @@
 package com.example.jaqueju.appplatz.Fragment;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.CardView;
@@ -11,13 +12,17 @@ import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.GridView;
 import android.widget.ListView;
 import android.widget.SeekBar;
+import android.widget.Toast;
 
 import com.example.jaqueju.appplatz.ImagesAdapter;
+import com.example.jaqueju.appplatz.LoginActivity;
 import com.example.jaqueju.appplatz.R;
+import com.example.jaqueju.appplatz.RegisterActivity;
 
 import java.util.ArrayList;
 
@@ -28,6 +33,7 @@ public class HomeFragment extends Fragment {
     String [] items;
     ArrayList<String> listItems;
     ArrayAdapter<String> adapter;
+    Button btncategorias;
 
 
 
@@ -60,6 +66,19 @@ public class HomeFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.fragment_home, container, false);
+        Button btnCategorias = (Button)view.findViewById(R.id.btnCategorias);
+
+        btnCategorias.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getActivity(), RegisterActivity.class);
+                startActivity(i);
+
+               // Log.d("Test","Testando");
+                //Toast.makeText(getActivity().getApplicationContext(), "Test",        Toast.LENGTH_LONG).show();
+
+            }
+        });
         return view;
         // Inflate the layout for this fragment
         //return inflater.inflate(R.layout.fragment_home, container, false);
@@ -79,6 +98,7 @@ public class HomeFragment extends Fragment {
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
     }
+
 
     //}
 

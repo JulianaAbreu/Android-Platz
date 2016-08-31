@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#FC9E19</color>
+    <color name="colorPrimary">#FF9801</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FCD108</color>
     <color name="cardview_initial_background">#71C3DE</color>
