@@ -20,6 +20,7 @@ import android.widget.SeekBar;
 import android.widget.Toast;
 
 import com.example.jaqueju.appplatz.ImagesAdapter;
+import com.example.jaqueju.appplatz.ListaCategorias;
 import com.example.jaqueju.appplatz.LoginActivity;
 import com.example.jaqueju.appplatz.R;
 import com.example.jaqueju.appplatz.RegisterActivity;
@@ -71,7 +72,7 @@ public class HomeFragment extends Fragment {
         btnCategorias.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(getActivity(), RegisterActivity.class);
+                Intent i = new Intent(getActivity(), ListaCategorias.class);
                 startActivity(i);
 
                // Log.d("Test","Testando");

@@ -19,20 +19,27 @@ public class ListaCategorias extends Activity {
 
     String [] categorias ={
             "Esporte",
-            "Cultura",
+            "Música",
             "Lazer",
             "Religião",
             "Workshop",
-            "Palestras"
+            "Teatro",
+            "Festival",
+            "Gastronomia",
+            "Conferencia"
     };
     Integer [] imagesid ={
-            R.drawable.icon_search,
-            R.drawable.icon_search,
-            R.drawable.icon_search,
-            R.drawable.icon_search,
-            R.drawable.icon_search,
-            R.drawable.icon_search,
-            R.drawable.icon_search
+            R.drawable.teste_sporte,
+            R.drawable.music_ctg,
+            R.drawable.lazer_ctg,
+            R.drawable.religiao_ctg,
+            R.drawable.workshop_ctg,
+            R.drawable.teatro_ctg,
+            R.drawable.festival_ctg,
+            R.drawable.gastronomia_ctg,
+            R.drawable.conference_ctg
+
+
     };
 
 
