@@ -1,13 +1,16 @@
 package com.example.jaqueju.appplatz;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.View;
 
 import com.example.jaqueju.appplatz.Fragment.AboutFragment;
+import com.example.jaqueju.appplatz.Fragment.Curtidos;
 import com.example.jaqueju.appplatz.Fragment.HomeFragment;
 import com.example.jaqueju.appplatz.Fragment.ListFragment;
 import com.example.jaqueju.appplatz.Fragment.PerfilFragment;
@@ -27,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
         viewPager = (ViewPager) findViewById(R.id.viewpager);
         tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(viewPager);
-      setSupportActionBar(toolbar);
+        setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("Home");
         tabLayout.setupWithViewPager(viewPager);
         setupViewPager(viewPager);
@@ -37,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
         adapter.addFrag(new HomeFragment());
-        adapter.addFrag(new AboutFragment());
+        adapter.addFrag(new Curtidos());
         adapter.addFrag(new ListFragment());
         adapter.addFrag(new PerfilFragment());
 

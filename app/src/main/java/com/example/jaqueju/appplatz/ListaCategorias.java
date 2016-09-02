@@ -3,9 +3,12 @@ package com.example.jaqueju.appplatz;
 import android.app.Activity;
 import android.app.ListActivity;
 import android.os.Bundle;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.MenuItem;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
@@ -47,8 +50,8 @@ public class ListaCategorias extends Activity {
 
 @Override
     public void onCreate(Bundle savedInstanceState){
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_lista_categorias);
+    super.onCreate(savedInstanceState);
+    setContentView(R.layout.activity_lista_categorias);
 
     CustomCategoriasAdapter adapter = new CustomCategoriasAdapter(ListaCategorias.this, categorias, imagesid);
     listView = (ListView) findViewById(R.id.list);
@@ -56,5 +59,10 @@ public class ListaCategorias extends Activity {
 
 
 
-    }
+
+
+}
+
+
+
 }
