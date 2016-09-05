@@ -67,11 +67,12 @@ public class HomeFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.fragment_home, container, false);
-        Button btnCategorias = (Button)view.findViewById(R.id.btnCategorias);
+        final Button btnCategorias = (Button)view.findViewById(R.id.btnCategorias);
 
         btnCategorias.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                btnCategorias.setBackgroundResource(R.drawable.style_clicked_all_categories);
                 Intent i = new Intent(getActivity(), ListaCategorias.class);
                 startActivity(i);
 
