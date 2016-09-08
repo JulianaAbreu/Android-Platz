@@ -1,5 +1,6 @@
 package com.example.jaqueju.appplatz;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
@@ -8,6 +9,7 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.ImageButton;
 
 import com.example.jaqueju.appplatz.Fragment.AboutFragment;
 import com.example.jaqueju.appplatz.Fragment.Curtidos;
@@ -26,6 +28,19 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        ImageButton imageButton = (ImageButton) findViewById(R.id.imageButton);
+        imageButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //declare our intent object which takes two parameters, the context and the new activity name
+
+                // the name of the receiving activity is declared in the Intent Constructor
+                Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
+
+                startActivity(intent);
+
+            }
+        });
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         viewPager = (ViewPager) findViewById(R.id.viewpager);
         tabLayout = (TabLayout) findViewById(R.id.tabs);
@@ -97,4 +112,6 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+
+
 }

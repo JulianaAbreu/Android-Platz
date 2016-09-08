@@ -8,6 +8,8 @@ import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
@@ -18,7 +20,7 @@ import android.widget.ListView;
  */
 
 
-public class ListaCategorias extends Activity {
+public class ListaCategorias extends AppCompatActivity {
     ListView listView;
 
     String[] categorias = {
@@ -45,10 +47,12 @@ public class ListaCategorias extends Activity {
     };
 
 
+    private Toolbar toolbar;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lista_categorias);
+
 
         CustomCategoriasAdapter adapter = new CustomCategoriasAdapter(ListaCategorias.this, categorias, imagesid);
         listView = (ListView) findViewById(R.id.list);
@@ -58,11 +62,10 @@ public class ListaCategorias extends Activity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int indice, long l) {
                 System.out.println("clicou no botao ");
+
             }
         });
 
-
     }
-
 
 }
