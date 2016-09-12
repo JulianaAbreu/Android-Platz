@@ -17,23 +17,20 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".ListaCategorias"
             android:label="HALAMAN DUA"
-            android:parentActivityName=".MainActivity" >
+            android:parentActivityName=".MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity" />
         </activity>
-
         <activity android:name=".MainActivity" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".EventosCategoria" />
-
-        <activity android:name=".RegisterActivity"></activity>
-        <activity android:name=".TabLoginRegister"></activity>
-
+        <activity android:name=".RegisterActivity" />
+        <activity android:name=".TabLoginRegister" />
+        <activity android:name=".EventosEspecificos"></activity>
     </application>
 
 </manifest>

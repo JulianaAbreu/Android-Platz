@@ -10,6 +10,8 @@
     <string name="splash_screen_tl01">Saia. Faça checkin. Divirta-se!</string>
     <string name="proximo">Próximo</string>
 
+    <string name="descricao_evento">Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos,
+        e vem sendo utilizado desde o século XVI</string>
     <!-- Navigation -->
     <string name="action_sort">Sort</string>
     <string name="action_search">Search</string>

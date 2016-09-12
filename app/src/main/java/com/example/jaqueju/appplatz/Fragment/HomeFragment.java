@@ -1,6 +1,7 @@
 package com.example.jaqueju.appplatz.Fragment;
 
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.res.TypedArray;
 import android.graphics.Bitmap;
@@ -45,6 +46,8 @@ import java.util.ArrayList;
  * A simple {@link Fragment} subclass.
  */
 public class HomeFragment extends Fragment {
+
+    GridView gridView;
     String [] items;
     ArrayList<String> listItems;
     ArrayAdapter<String> adapter;
@@ -66,13 +69,17 @@ public class HomeFragment extends Fragment {
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_cardrecycler, container, false);
 
+
+
         RecyclerView recList = (RecyclerView) rootView.findViewById(R.id.cardList);
         recList.setHasFixedSize(true);
+
         LinearLayoutManager llm = new LinearLayoutManager(getActivity());
         llm.setOrientation(LinearLayoutManager.VERTICAL);
         if (listitems.size() > 0 & recList != null) {
             recList.setAdapter(new MyAdapter(listitems));
         }
+
         recList.setLayoutManager(llm);
         final Button btnCategorias = (Button)rootView.findViewById(R.id.btnCategorias);
 
@@ -105,6 +112,8 @@ public class HomeFragment extends Fragment {
         public MyAdapter(ArrayList<CardViewModelEventos> myDataset) {
             list = myDataset;
         }
+
+
 
         // Create new views (invoked by the layout manager)
         @Override
