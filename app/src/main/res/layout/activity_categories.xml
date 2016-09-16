@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <!-- Header One -->
+        <TextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:focusable="true"
+    android:text="Header 1"></TextView>
+
+    <!-- Custom grid view holding the 'Group 1' items -->
+    <com.jayway.components.MyGridView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:numColumns="3"
+    android:stretchMode="columnWidth"
+    android:id="@+id/grid_view_1" />
+
+    <!-- Header 2 -->
+    <TextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="Header 2" />
+
+    <!-- Custom grid view holding the 'Group 2' items -->
+    <com.jayway.components.MyGridView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:numColumns="3"
+    android:stretchMode="columnWidth"
+    android:id="@+id/grid_view_2" />
+</LinearLayout>
+</ScrollView>
+</LinearLayout>

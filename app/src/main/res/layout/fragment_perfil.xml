@@ -7,15 +7,13 @@
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-
         android:layout_height="match_parent"
         tools:context="com.example.jaqueju.appplatz.Fragment.PerfilFragment">
 
         <android.support.v4.app.FragmentTabHost
             xmlns:android="http://schemas.android.com/apk/res/android"
             android:id="@android:id/tabhost"
-            android:layout_marginTop="225dp"
+            android:layout_marginTop="200dp"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
@@ -36,23 +34,36 @@
         <LinearLayout
             android:id="@+id/header_cover_image"
             android:layout_width="match_parent"
-            android:layout_height="110dp"
+            android:layout_height="200dp"
             android:scaleType="centerCrop"
-            android:background="#FEC41E"
+            android:background="#FFFFFF"
 
             android:orientation="horizontal">
 
+            <Button
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="60dp"
+                android:background="@drawable/style_button_trofeis"/>
+
+            <Button
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="200dp"
+                android:layout_marginTop="60dp"
+                android:background="@drawable/style_button_trofeis"/>
         </LinearLayout>
 
 
 
         <ImageView
             android:id="@+id/user_profile_photo"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
+            android:layout_width="110dp"
+            android:layout_height="110dp"
             android:layout_below="@+id/header_cover_image"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="-60dp"
+            android:layout_marginTop="-170dp"
             android:background="@drawable/profile_circular_border_imageview"
             android:elevation="100dp"
             android:padding="20dp"
@@ -63,20 +74,19 @@
 
 
         <TextView
-            android:layout_marginTop="170dp"
+            android:layout_marginTop="145dp"
             android:layout_width="200dp"
-            android:layout_marginLeft="140dp"
+            android:layout_marginLeft="105dp"
             android:layout_height="wrap_content"
-            android:text="Maria da Silva"
+            android:text="Juliana Cerqueira de Abreu"
             android:textSize="13dp"
-            android:textStyle="bold"
             android:textColor="#000000"
             />
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_map_red"
-            android:layout_marginTop="191dp"
+            android:layout_marginTop="166dp"
             android:layout_marginLeft="120dp"
 
             />
@@ -84,8 +94,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="São Paulo, Brasil."
-            android:layout_marginTop="190dp"
-            android:layout_marginLeft="145dp"
+            android:layout_marginTop="165dp"
+            android:layout_marginLeft="138dp"
             />
 
 

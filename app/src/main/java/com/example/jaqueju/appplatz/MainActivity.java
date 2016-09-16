@@ -8,10 +8,11 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.ContextMenu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.widget.ImageButton;
 
-import com.example.jaqueju.appplatz.Fragment.AboutFragment;
 import com.example.jaqueju.appplatz.Fragment.Curtidos;
 import com.example.jaqueju.appplatz.Fragment.HomeFragment;
 import com.example.jaqueju.appplatz.Fragment.ListFragment;
@@ -36,7 +37,6 @@ public class MainActivity extends AppCompatActivity {
 
                 // the name of the receiving activity is declared in the Intent Constructor
                 Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
-
                 startActivity(intent);
 
             }
@@ -92,6 +92,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
 
 
     private void setIconForTabs() {

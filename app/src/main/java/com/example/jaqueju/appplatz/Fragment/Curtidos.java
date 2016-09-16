@@ -2,13 +2,17 @@ package com.example.jaqueju.appplatz.Fragment;
 
 
 import android.app.ListActivity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.*;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.SimpleAdapter;
 
+import com.example.jaqueju.appplatz.EventosEspecificos;
 import com.example.jaqueju.appplatz.R;
 
 import java.util.ArrayList;
@@ -31,6 +35,7 @@ public class Curtidos extends android.support.v4.app.ListFragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
+        View teste = inflater.inflate(R.layout.fragment_curtidos, container, false);
 
         List<HashMap<String, String>> aList = new ArrayList<HashMap<String, String>>();
 
@@ -53,6 +58,8 @@ public class Curtidos extends android.support.v4.app.ListFragment {
                 .getBaseContext(), aList, R.layout.list_single_item, from, to);
 
         setListAdapter(adapter);
+
+
 
         return super.onCreateView(inflater, container, savedInstanceState);
     }

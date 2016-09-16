@@ -2,6 +2,8 @@ package com.example.jaqueju.appplatz.Fragment;
 
 
 import android.content.Context;
+import android.content.Intent;
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
@@ -12,6 +14,7 @@ import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TabHost;
 
@@ -22,6 +25,9 @@ import com.example.jaqueju.appplatz.R;
  */
 
 public class PerfilFragment extends Fragment {
+    Button image;
+    private static final int CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE = 1888;
+    private ImageView imageView;
     private FragmentTabHost mTabHost;
 
 
@@ -40,11 +46,21 @@ public class PerfilFragment extends Fragment {
         mTabHost = (FragmentTabHost)rootView.findViewById(android.R.id.tabhost);
         mTabHost.setup(getActivity(), getChildFragmentManager(),R.id.realtabcontent);
 
+
         mTabHost.addTab(mTabHost.newTabSpec("Curtidos").setIndicator("Curtidos"), Curtidos.class, null);
         mTabHost.addTab(mTabHost.newTabSpec("EventosMarcados").setIndicator("EU vou!"), EventosMarcados.class, null);
 
         return rootView;
     }
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data){
+        if(requestCode == CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE && resultCode == resultCode){
+            Bitmap photo = (Bitmap) data.getExtras().get("data");
+            imageView.setImageBitmap(photo);
+
+        }
+    }
+
 
 
 

@@ -21,9 +21,6 @@
         android:layout_gravity="bottom|end" android:layout_margin="@dimen/fab_margin"
         android:src="@android:drawable/ic_dialog_email" />
 
-</android.support.design.widget.CoordinatorLayout>
-
-    <!--
     <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -61,18 +58,18 @@
                         android:background="@color/colorPrimary"
                         android:paddingTop="15dp"
                         >
-                    <EditText
+                        <EditText
 
-                        android:layout_width="330dp"
-                        android:layout_height="40dp"
-                        android:layout_marginLeft="13dp"
-                        android:layout_marginBottom="30dp"
+                            android:layout_width="330dp"
+                            android:layout_height="40dp"
+                            android:layout_marginLeft="13dp"
+                            android:layout_marginBottom="30dp"
 
-                        android:background="@drawable/style_search"
-                        android:drawableLeft="@drawable/ic_search_black"
-                        android:drawablePadding="6dp"
+                            android:background="@drawable/style_search"
+                            android:drawableLeft="@drawable/ic_search_black"
+                            android:drawablePadding="6dp"
 
-                        />
+                            />
                     </LinearLayout>
 
                     <LinearLayout
@@ -100,7 +97,7 @@
                             android:layout_marginLeft="20dp"
                             android:text="Educação"
                             android:textAllCaps="false"
-                           android:layout_marginTop="15dp"
+                            android:layout_marginTop="15dp"
                             android:textColor="#FFFFFF"
                             android:background="@drawable/style_button_ctg"
                             android:textSize="15dp"
@@ -261,7 +258,7 @@
                                         android:layout_height="wrap_content"
                                         android:layout_alignParentRight="true"
                                         android:layout_alignParentTop="false"
-                                       />
+                                        />
                                 </RelativeLayout>
 
 
@@ -295,4 +292,6 @@
             </ScrollView>
         </FrameLayout>
     </ScrollView>
-    -->
+
+</android.support.design.widget.CoordinatorLayout>
+

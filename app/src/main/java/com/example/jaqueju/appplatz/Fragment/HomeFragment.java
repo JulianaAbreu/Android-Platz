@@ -1,6 +1,5 @@
 package com.example.jaqueju.appplatz.Fragment;
 
-
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.TypedArray;
@@ -34,6 +33,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.jaqueju.appplatz.CardViewModelEventos;
+import com.example.jaqueju.appplatz.EventosEspecificos;
 import com.example.jaqueju.appplatz.ImagesAdapter;
 import com.example.jaqueju.appplatz.ListaCategorias;
 import com.example.jaqueju.appplatz.LoginActivity;
@@ -45,7 +45,7 @@ import java.util.ArrayList;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class HomeFragment extends Fragment {
+public class HomeFragment extends Fragment implements View.OnClickListener {
 
     GridView gridView;
     String [] items;
@@ -55,7 +55,6 @@ public class HomeFragment extends Fragment {
 
 
     ArrayList<CardViewModelEventos> listitems = new ArrayList<CardViewModelEventos>();
-    //String items[] = {"Dhaval Sodha Parmar", "b", "v"};
     RecyclerView recList;
 
     @Override
@@ -69,8 +68,6 @@ public class HomeFragment extends Fragment {
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_cardrecycler, container, false);
 
-
-
         RecyclerView recList = (RecyclerView) rootView.findViewById(R.id.cardList);
         recList.setHasFixedSize(true);
 
@@ -81,7 +78,14 @@ public class HomeFragment extends Fragment {
         }
 
         recList.setLayoutManager(llm);
+
+
+
         final Button btnCategorias = (Button)rootView.findViewById(R.id.btnCategorias);
+        btnCategorias.setOnClickListener(this);
+
+
+
 
         btnCategorias.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -93,8 +97,7 @@ public class HomeFragment extends Fragment {
                 // Log.d("Test","Testando");
                 //Toast.makeText(getActivity().getApplicationContext(), "Test",        Toast.LENGTH_LONG).show();
 
-            }
-        });
+            }});
 
         return rootView;
     }
@@ -103,6 +106,20 @@ public class HomeFragment extends Fragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
+    }
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()){
+            case R.id.btnCategorias:
+                Intent i = new Intent(getActivity(), ListaCategorias.class);
+                startActivity(i);
+                break;
+            case R.id.image_card_cover:
+                Intent i2 = new Intent(getActivity(), EventosEspecificos.class);
+                startActivity(i2);
+                break;
+        }
     }
 
     public class MyAdapter extends RecyclerView.Adapter<ViewHolder> {
