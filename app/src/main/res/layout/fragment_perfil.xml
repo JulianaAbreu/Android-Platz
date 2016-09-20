@@ -30,7 +30,6 @@
 
             </LinearLayout>
         </android.support.v4.app.FragmentTabHost>
-        <!-- TODO: Update blank fragment layout -->
         <LinearLayout
             android:id="@+id/header_cover_image"
             android:layout_width="match_parent"
@@ -41,17 +40,23 @@
             android:orientation="horizontal">
 
             <Button
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_marginLeft="30dp"
-                android:layout_marginTop="60dp"
+                android:layout_width="85dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="80dp"
+                android:textAllCaps="false"
+                android:text="10 Pontos"
+                android:textColor="#FFFFFF"
                 android:background="@drawable/style_button_trofeis"/>
 
             <Button
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_marginLeft="200dp"
-                android:layout_marginTop="60dp"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:layout_width="110dp"
+                android:layout_height="30dp"
+                android:text="5 Confirmados"
+                android:layout_marginLeft="140dp"
+                android:layout_marginTop="80dp"
                 android:background="@drawable/style_button_trofeis"/>
         </LinearLayout>
 

@@ -44,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         viewPager = (ViewPager) findViewById(R.id.viewpager);
         tabLayout = (TabLayout) findViewById(R.id.tabs);
+
         tabLayout.setupWithViewPager(viewPager);
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("Home");
