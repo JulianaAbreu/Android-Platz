@@ -35,19 +35,12 @@ import java.util.ArrayList;
  */
 public class HomeFragment extends Fragment implements View.OnClickListener {
 
-
-    String [] items;
-    ArrayList<String> listItems;
-    ArrayAdapter<String> adapter;
-    Button btncategorias;
-GridView gridView;
-
-    String [] web = {"Esporte",
-                    "Esporte",
-                    "Esporte",
-                    "Esporte",
-                    "Esporte",
-                    "Esporte"
+    String[] descricaoEvento = {"Esporte",
+            "Esporte",
+            "Esporte",
+            "Esporte",
+            "Esporte",
+            "Esporte"
 
     };
 
@@ -65,7 +58,6 @@ GridView gridView;
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_cardrecycler, container, false);
-
 
 
         RecyclerView recList = (RecyclerView) rootView.findViewById(R.id.cardList);
@@ -111,7 +103,7 @@ GridView gridView;
 
     @Override
     public void onClick(View view) {
-        switch (view.getId()){
+        switch (view.getId()) {
             case R.id.btnCategorias:
                 Intent i = new Intent(getActivity(), ListaCategoriasActivity.class);
                 startActivity(i);
@@ -130,7 +122,6 @@ GridView gridView;
         public MyAdapter(ArrayList<CardViewModelEventos> myDataset) {
             list = myDataset;
         }
-
 
 
         // Create new views (invoked by the layout manager)
@@ -153,23 +144,6 @@ GridView gridView;
             // - replace the contents of the view with that element
             Drawable dr = getResources().getDrawable(list.get(position).getImageResourceId());
 
-            /*Palette.from(drawableToBitmap(dr)).generate(new Palette.PaletteAsyncListener() {
-                public void onGenerated(Palette p) {
-                    // Use generated instance
-                    //int titleBackColor = p.getVibrantColor(0);
-                    int titleBackColor = p.getDarkVibrantColor(0);
-                    //int titleBackColor = p.getVibrantSwatch();
-                    ProgressDrawable titleBackDrawable;
-                    if (titleBackColor != 0) {
-                        titleBackDrawable = new ProgressDrawable(titleBackColor);
-                    } else {
-                        titleBackDrawable = new ProgressDrawable(getThemePrimaryColor());
-                    }
-                    //titleBackDrawable.setMax(holder.text_card_name.getHeight());
-                    //titleBackDrawable.setProgress(holder.text_card_name.getHeight());
-                    holder.text_card_name.setBackground(titleBackDrawable);
-                }
-            });*/
 
 
         }
@@ -181,17 +155,8 @@ GridView gridView;
         }
     }
 
-    // Provide a reference to the views for each data item
-    // Complex data items may need more than one view per item, and
-    // you provide access to all the views for a data item in a view holder
+
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        // each data item is just a string in this case
-        public TextView text_card_name;
-        public ImageView image_card_cover;
-        public ImageView image_action_like;
-        public ImageView image_action_flag;
-        public ImageView image_action_share;
-        public Toolbar maintoolbar;
 
         public ViewHolder(View v) {
             super(v);

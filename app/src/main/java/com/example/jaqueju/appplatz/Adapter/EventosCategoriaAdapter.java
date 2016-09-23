@@ -19,21 +19,22 @@ import com.example.jaqueju.appplatz.R;
 public class EventosCategoriaAdapter  extends ArrayAdapter<String>{
     private Context con;
     private int lastPosition = -1;
-    ImageView iv_gameimages;
-    TextView tv_gamenames;
-    TextView tv_releasdate;
+    ImageView imagemEvento;
+    TextView nomeEvento;
+    TextView dataEvento;
     TextView tv_gameplateform;
 
     String games_arr[] = {
 
-            "Call of Duty Black Ops III",
-            "Assassin's Creed Syndicate",
-            "Fallout 4",
-            "Need For Speed",
-            "Rise of the Tomb Raider",
-            "Mafia III",
-            "Tom Clancy's The Division",
-            "Just Cause 3"
+            "Evento",
+            "Evento",
+            "Evento",
+            "Evento",
+            "Evento",
+            "Evento",
+            "Evento",
+            "Evento"
+
     };
 
     int images_arr[] = {
@@ -85,14 +86,14 @@ public class EventosCategoriaAdapter  extends ArrayAdapter<String>{
         LayoutInflater inflater = (LayoutInflater) con.getSystemService(Activity.LAYOUT_INFLATER_SERVICE);
         View row = inflater.inflate(R.layout.list_item_template,parent,false);
 
-        iv_gameimages = (ImageView) row.findViewById(R.id.game_image);
-        iv_gameimages.setImageResource(images_arr[position]);
+        imagemEvento = (ImageView) row.findViewById(R.id.game_image);
+        imagemEvento.setImageResource(images_arr[position]);
 
-        tv_gamenames = (TextView) row.findViewById(R.id.txt_game_name);
-        tv_gamenames.setText(games_arr[position]);
+        nomeEvento = (TextView) row.findViewById(R.id.txt_game_name);
+        nomeEvento.setText(games_arr[position]);
 
-        tv_releasdate = (TextView) row.findViewById(R.id.txt_relase_date);
-        tv_releasdate.setText(releaseDate_arr[position]);
+        dataEvento = (TextView) row.findViewById(R.id.txt_relase_date);
+        dataEvento.setText(releaseDate_arr[position]);
 
 
         tv_gameplateform = (TextView) row.findViewById(R.id.txt_plateform);

@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.widget.TabHost;
 
 import com.example.jaqueju.appplatz.Activity.LoginActivity;
-import com.example.jaqueju.appplatz.Activity.RegisterActivity;
+import com.example.jaqueju.appplatz.Activity.RegistroContaActivity;
 
 /**
  * Created by 15153818 on 26/08/2016.
@@ -28,7 +28,7 @@ public class TabLoginRegister extends TabActivity {
         tab1.setContent(new Intent(this, LoginActivity.class));
 
         tab2.setIndicator("Cadastre-se");
-        tab2.setContent(new Intent(this, RegisterActivity.class));
+        tab2.setContent(new Intent(this, RegistroContaActivity.class));
 
         tabHost.addTab(tab1);
         tabHost.addTab(tab2);

@@ -93,7 +93,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-
     private void setIconForTabs() {
 
         int[] tabIcons = {
@@ -112,6 +111,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {

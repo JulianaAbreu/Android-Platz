@@ -22,7 +22,7 @@ import com.example.jaqueju.appplatz.R;
 
 public class ListaCategoriasActivity extends AppCompatActivity {
     ListView listView;
-    private TextView tvDescription;
+    private TextView descricaoEvento;
 
     String[] categorias = {
             "Esporte",
@@ -35,7 +35,7 @@ public class ListaCategoriasActivity extends AppCompatActivity {
             "Gastronomia",
             "Conferencia"
     };
-    Integer[] imagesid = {
+    Integer[] imagesId = {
             R.drawable.teste_sporte,
             R.drawable.music_ctg,
             R.drawable.ctg_lazer,
@@ -60,7 +60,7 @@ public class ListaCategoriasActivity extends AppCompatActivity {
         getSupportActionBar().setHomeButtonEnabled(false);
 
 
-        CustomCategoriasAdapter adapter = new CustomCategoriasAdapter(ListaCategoriasActivity.this, categorias, imagesid);
+        CustomCategoriasAdapter adapter = new CustomCategoriasAdapter(ListaCategoriasActivity.this, categorias, imagesId);
         listView = (ListView) findViewById(R.id.list);
         listView.setAdapter(adapter);
 
@@ -95,7 +95,7 @@ public class ListaCategoriasActivity extends AppCompatActivity {
     public void onBackPressed() {
         if( Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP ){
             TransitionManager.beginDelayedTransition(toolbar, new Slide());
-            tvDescription.setVisibility( View.INVISIBLE );
+            descricaoEvento.setVisibility( View.INVISIBLE );
         }
 
         super.onBackPressed();

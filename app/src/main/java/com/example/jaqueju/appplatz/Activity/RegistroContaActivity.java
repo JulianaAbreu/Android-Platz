@@ -5,7 +5,7 @@ import android.os.Bundle;
 
 import com.example.jaqueju.appplatz.R;
 
-public class RegisterActivity extends AppCompatActivity {
+public class RegistroContaActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

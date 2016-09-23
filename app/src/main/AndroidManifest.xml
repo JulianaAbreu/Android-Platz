@@ -28,7 +28,7 @@
             android:parentActivityName=".MainActivity"></activity>
         <activity android:name=".MainActivity" />
         <activity android:name=".Activity.LoginActivity" />
-        <activity android:name=".Activity.RegisterActivity" />
+        <activity android:name=".Activity.RegistroContaActivity" />
         <activity android:name=".TabLoginRegister" />
         <activity android:name=".Activity.EventosEspecificosActivity" />
         <activity

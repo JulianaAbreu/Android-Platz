@@ -12,16 +12,16 @@ import android.widget.TextView;
  * Created by 15153818 on 12/09/2016.
  */
 public class CustomGridCategoriasHome extends BaseAdapter {
-    private Context mContext;
-    private final String[] Categorias;
+    private Context context;
+    private final String[] categorias;
 
     public  CustomGridCategoriasHome(Context c,String[] Categorias){
-        mContext =c;
-        this.Categorias = Categorias;
+        context =c;
+        this.categorias = Categorias;
     }
     @Override
     public int getCount(){
-        return Categorias.length;
+        return categorias.length;
     }
     public Object getItem(int position){
     return null;
@@ -31,15 +31,15 @@ public class CustomGridCategoriasHome extends BaseAdapter {
     }
     public View getView(int position, View convertView, ViewGroup parent){
         View gridView;
-        LayoutInflater inflater = (LayoutInflater) mContext
+        LayoutInflater inflater = (LayoutInflater) context
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
         if (convertView == null) {
 
-            gridView = new View(mContext);
+            gridView = new View(context);
             gridView = inflater.inflate(R.layout.fragment_home, null);
             TextView textView = (TextView) gridView.findViewById(R.id.grid_text);
-            textView.setText(Categorias[position]);
+            textView.setText(categorias[position]);
         } else {
             gridView = (View) convertView;
         }

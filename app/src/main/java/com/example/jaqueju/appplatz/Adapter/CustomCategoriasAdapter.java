@@ -15,14 +15,14 @@ import com.example.jaqueju.appplatz.R;
  */
 public class CustomCategoriasAdapter extends ArrayAdapter<String> {
     private final Activity context;
-    private final String[] web;
+    private final String[] descricaoEvento;
     private final Integer[] imageId;
 
     public CustomCategoriasAdapter(Activity context,
-                      String[] web, Integer[] imageId) {
+                                   String[] web, Integer[] imageId) {
         super(context, R.layout.list_single_ctg, web);
         this.context = context;
-        this.web = web;
+        this.descricaoEvento = web;
         this.imageId = imageId;
 
     }
@@ -33,11 +33,12 @@ public class CustomCategoriasAdapter extends ArrayAdapter<String> {
         TextView txtTitle = (TextView) rowView.findViewById(R.id.txt);
 
         ImageView imageView = (ImageView) rowView.findViewById(R.id.img);
-        txtTitle.setText(web[position]);
+        txtTitle.setText(descricaoEvento[position]);
 
         imageView.setImageResource(imageId[position]);
         return rowView;
     }
 }
+
 
 
