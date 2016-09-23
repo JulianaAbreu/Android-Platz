@@ -20,14 +20,14 @@ public class EventosCategorias extends AppCompatActivity {
 
             ListView gameList;
             String games_arr[] = {
-                    "Call of Duty Black Ops III",
-                    "Assassin's Creed Syndicate",
-                    "Fallout 4",
-                    "Need For Speed",
-                    "Rise of the Tomb Raider",
-                    "Mafia III",
-                    "Tom Clancy's The Division",
-                    "Just Cause 3"
+                    "Festival das Luzes",
+                    "Festival das Luzes",
+                    "Festival das Luzes",
+                    "Festival das Luzes",
+                    "Festival das Luzes",
+                    "Festival das Luzes",
+                    "Festival das Luzes",
+                    "Festival das Luzes"
             };
 
             gameList = (ListView) findViewById(R.id.listView);

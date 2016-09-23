@@ -58,18 +58,18 @@ public class EventosCategoriaAdapter  extends ArrayAdapter<String>{
             "Coming Dec 1, 2015"
     };
 
+
     String plateform_arr[] = {
 
-            "PS4, XONE, PC, X360, PS3",
-            "PS4, XONE, PC",
-            "PS4, XONE, PC",
-            "PC, PS4, XONE",
-            "XONE, X360, PC, PS4",
-            "PS4, XONE, PC",
-            "PS4, XONE, PC",
-            "PS4, XONE, PC"
+            "Dia 02 de Dezembro de 2016",
+            "Dia 02 de Dezembro de 2016",
+            "Dia 02 de Dezembro de 2016",
+            "Dia 02 de Dezembro de 2016",
+            "Dia 02 de Dezembro de 2016",
+            "Dia 02 de Dezembro de 2016",
+            "Dia 02 de Dezembro de 2016",
+            "Dia 02 de Dezembro de 2016"
     };
-
     public EventosCategoriaAdapter(Context context, int resource, String[] objects) {
         super(context, resource, objects);
         this.con = context;
@@ -91,6 +91,7 @@ public class EventosCategoriaAdapter  extends ArrayAdapter<String>{
 
         tv_releasdate = (TextView) row.findViewById(R.id.txt_relase_date);
         tv_releasdate.setText(releaseDate_arr[position]);
+
 
         tv_gameplateform = (TextView) row.findViewById(R.id.txt_plateform);
         tv_gameplateform.setText(plateform_arr[position]);

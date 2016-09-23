@@ -1,6 +1,5 @@
 package com.example.jaqueju.appplatz;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
@@ -8,12 +7,11 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.ContextMenu;
-import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
 
-import com.example.jaqueju.appplatz.Fragment.Curtidos;
+import com.example.jaqueju.appplatz.Fragment.CurtidosFragment;
 import com.example.jaqueju.appplatz.Fragment.HomeFragment;
 import com.example.jaqueju.appplatz.Fragment.ListFragment;
 import com.example.jaqueju.appplatz.Fragment.PerfilFragment;
@@ -33,9 +31,7 @@ public class MainActivity extends AppCompatActivity {
         imageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //declare our intent object which takes two parameters, the context and the new activity name
 
-                // the name of the receiving activity is declared in the Intent Constructor
                 Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
                 startActivity(intent);
 
@@ -56,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
         adapter.addFrag(new HomeFragment());
-        adapter.addFrag(new Curtidos());
+        adapter.addFrag(new CurtidosFragment());
         adapter.addFrag(new ListFragment());
         adapter.addFrag(new PerfilFragment());
 
@@ -82,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
                         getSupportActionBar().setTitle("List");
                         break;
                     case 3:
-                        getSupportActionBar().setTitle("Trofeis");
+                        getSupportActionBar().setTitle("Troféis");
                         break;
                 }
             }
@@ -113,6 +109,18 @@ public class MainActivity extends AppCompatActivity {
         tabLayout.getTabAt(2).setIcon(tabIcons[2]);
 
 
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.action_settings:
+                return true;
+
+            default:
+
+                return super.onOptionsItemSelected(item);
+
+        }
     }
 
 

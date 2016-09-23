@@ -3,9 +3,7 @@ package com.example.jaqueju.appplatz;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by 15153818 on 02/09/2016.
- */
+
 public class Eventos {
     String name;
     String lugar;

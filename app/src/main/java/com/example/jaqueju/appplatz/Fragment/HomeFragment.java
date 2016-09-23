@@ -1,6 +1,5 @@
 package com.example.jaqueju.appplatz.Fragment;
 
-import android.content.Context;
 import android.content.Intent;
 import android.content.res.TypedArray;
 import android.graphics.Bitmap;
@@ -11,34 +10,23 @@ import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v7.widget.CardView;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.GridView;
 import android.widget.ImageView;
-import android.widget.ListView;
-import android.widget.SeekBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.jaqueju.appplatz.CardViewModelEventos;
 import com.example.jaqueju.appplatz.EventosEspecificos;
-import com.example.jaqueju.appplatz.ImagesAdapter;
 import com.example.jaqueju.appplatz.ListaCategorias;
-import com.example.jaqueju.appplatz.LoginActivity;
 import com.example.jaqueju.appplatz.R;
-import com.example.jaqueju.appplatz.RegisterActivity;
 
 import java.util.ArrayList;
 
@@ -47,12 +35,21 @@ import java.util.ArrayList;
  */
 public class HomeFragment extends Fragment implements View.OnClickListener {
 
-    GridView gridView;
+
     String [] items;
     ArrayList<String> listItems;
     ArrayAdapter<String> adapter;
     Button btncategorias;
+GridView gridView;
 
+    String [] web = {"Esporte",
+                    "Esporte",
+                    "Esporte",
+                    "Esporte",
+                    "Esporte",
+                    "Esporte"
+
+    };
 
     ArrayList<CardViewModelEventos> listitems = new ArrayList<CardViewModelEventos>();
     RecyclerView recList;
@@ -61,12 +58,15 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setupListItems();
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_cardrecycler, container, false);
+
+
 
         RecyclerView recList = (RecyclerView) rootView.findViewById(R.id.cardList);
         recList.setHasFixedSize(true);
@@ -81,6 +81,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 
 
 
+        /*
         final Button btnCategorias = (Button)rootView.findViewById(R.id.btnCategorias);
         btnCategorias.setOnClickListener(this);
 
@@ -98,7 +99,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                 //Toast.makeText(getActivity().getApplicationContext(), "Test",        Toast.LENGTH_LONG).show();
 
             }});
-
+*/
         return rootView;
     }
 
@@ -247,4 +248,6 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         final TypedArray array = getActivity().obtainStyledAttributes(typedValue.resourceId, attribute);
         return array.getColor(0, Color.MAGENTA);
     }
+
+
 }

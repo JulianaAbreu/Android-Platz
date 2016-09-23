@@ -10,56 +10,38 @@
         android:layout_height="match_parent"
         tools:context="com.example.jaqueju.appplatz.Fragment.PerfilFragment">
 
-        <android.support.v4.app.FragmentTabHost
-            xmlns:android="http://schemas.android.com/apk/res/android"
-            android:id="@android:id/tabhost"
-            android:layout_marginTop="200dp"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
 
-            <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <FrameLayout
-                    android:id="@+id/realtabcontent"
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"/>
-
-            </LinearLayout>
-        </android.support.v4.app.FragmentTabHost>
         <LinearLayout
             android:id="@+id/header_cover_image"
             android:layout_width="match_parent"
-            android:layout_height="200dp"
+            android:layout_height="100dp"
             android:scaleType="centerCrop"
-            android:background="#FFFFFF"
+            android:background="#F8CF8F"
 
             android:orientation="horizontal">
 
-            <Button
-                android:layout_width="85dp"
-                android:layout_height="30dp"
-                android:layout_marginLeft="25dp"
-                android:layout_marginTop="80dp"
-                android:textAllCaps="false"
-                android:text="10 Pontos"
-                android:textColor="#FFFFFF"
-                android:background="@drawable/style_button_trofeis"/>
 
-            <Button
-                android:textAllCaps="false"
-                android:textColor="#FFFFFF"
-                android:layout_width="110dp"
-                android:layout_height="30dp"
-                android:text="5 Confirmados"
-                android:layout_marginLeft="140dp"
-                android:layout_marginTop="80dp"
-                android:background="@drawable/style_button_trofeis"/>
         </LinearLayout>
 
+        <Button
+            android:layout_width="85dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="80dp"
+            android:textAllCaps="false"
+            android:text="10 Pontos"
+            android:textColor="#FFFFFF"
+            android:background="@drawable/style_button_trofeis"/>
+
+        <Button
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:layout_width="110dp"
+            android:layout_height="30dp"
+            android:text="5 Confirmados"
+            android:layout_marginLeft="245dp"
+            android:layout_marginTop="80dp"
+            android:background="@drawable/style_button_trofeis"/>
 
 
         <ImageView
@@ -68,7 +50,7 @@
             android:layout_height="110dp"
             android:layout_below="@+id/header_cover_image"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="-170dp"
+            android:layout_marginTop="-70dp"
             android:background="@drawable/profile_circular_border_imageview"
             android:elevation="100dp"
             android:padding="20dp"
@@ -77,35 +59,79 @@
             android:cropToPadding="false"
             android:clickable="true" />
 
+        <Button
+            android:layout_width="170dp"
+            android:layout_height="30dp"
+            android:textAllCaps="false"
+            android:layout_marginLeft="100dp"
+            android:text="Trocar foto do Perfil"
+            android:layout_marginTop="150dp"
+            android:background="@drawable/style_button_take_photo"
+            />
 
         <TextView
-            android:layout_marginTop="145dp"
+            android:layout_marginTop="190dp"
             android:layout_width="200dp"
-            android:layout_marginLeft="105dp"
+            android:layout_marginLeft="100dp"
             android:layout_height="wrap_content"
             android:text="Juliana Cerqueira de Abreu"
-            android:textSize="13dp"
+            android:textSize="15dp"
             android:textColor="#000000"
             />
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_map_red"
-            android:layout_marginTop="166dp"
-            android:layout_marginLeft="120dp"
-
-            />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="São Paulo, Brasil."
-            android:layout_marginTop="165dp"
-            android:layout_marginLeft="138dp"
-            />
 
 
+<!--
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#FFFFFF"
+    android:layout_marginTop="230dp"
+    android:paddingTop="20dp"
+
+    >
+<ImageButton
+    android:layout_width="45dp"
+    android:layout_height="44dp"
+    android:background="@drawable/style_button_perfil_likes"
+    android:layout_marginLeft="30dp"
+android:src="@drawable/ic_favorite_white_testee"
 
 
+    />
+
+    <ImageButton
+        android:layout_width="45dp"
+        android:layout_height="44dp"
+        android:background="@drawable/style_button_perfil_euvou"
+        android:layout_marginTop="64dp"
+        android:layout_marginLeft="-44dp"
+        android:src="@drawable/ic_check_white_perfil"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Eventos Curtidos"
+        android:layout_marginTop="12dp"
+        android:layout_marginLeft="7dp"
+        android:textSize="15dp"
+        android:textColor="#000000"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Marcados Presença"
+        android:layout_marginTop="76dp"
+        android:layout_marginLeft="-276dp"
+        android:textSize="15dp"
+        android:textColor="#000000"
+        />
+
+
+
+</LinearLayout>
+-->
     </RelativeLayout>
+
 
 </ScrollView>
