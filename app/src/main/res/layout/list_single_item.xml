@@ -33,7 +33,7 @@
         android:layout_width="35dp"
         android:layout_height="wrap_content"
 
-        android:button="@drawable/favorite_button"
+        android:button="@drawable/style_favorite_button"
         android:checked="false" />
 
     <!--

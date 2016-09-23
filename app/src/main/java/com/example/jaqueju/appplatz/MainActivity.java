@@ -11,6 +11,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
 
+import com.example.jaqueju.appplatz.Activity.LoginActivity;
+import com.example.jaqueju.appplatz.Adapter.ViewPagerAdapter;
 import com.example.jaqueju.appplatz.Fragment.CurtidosFragment;
 import com.example.jaqueju.appplatz.Fragment.HomeFragment;
 import com.example.jaqueju.appplatz.Fragment.ListFragment;

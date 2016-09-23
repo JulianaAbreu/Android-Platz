@@ -1,4 +1,4 @@
-package com.example.jaqueju.appplatz;
+package com.example.jaqueju.appplatz.Adapter;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;

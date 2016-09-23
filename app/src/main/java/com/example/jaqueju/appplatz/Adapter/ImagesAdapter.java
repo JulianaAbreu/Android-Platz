@@ -1,4 +1,4 @@
-package com.example.jaqueju.appplatz;
+package com.example.jaqueju.appplatz.Adapter;
 
 /**
  * Created by 15153818 on 23/08/2016.

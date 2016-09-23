@@ -1,4 +1,6 @@
-package com.example.jaqueju.appplatz;
+package com.example.jaqueju.appplatz.Model;
+
+import com.example.jaqueju.appplatz.R;
 
 import java.util.ArrayList;
 import java.util.List;

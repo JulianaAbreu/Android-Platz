@@ -1,4 +1,4 @@
-package com.example.jaqueju.appplatz;
+package com.example.jaqueju.appplatz.Model;
 
 /**
  * Created by JaqueJu on 07/09/2016.

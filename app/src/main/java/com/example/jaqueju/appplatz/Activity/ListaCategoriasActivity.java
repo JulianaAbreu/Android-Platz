@@ -1,34 +1,26 @@
-package com.example.jaqueju.appplatz;
+package com.example.jaqueju.appplatz.Activity;
 
-import android.app.Activity;
-import android.app.ListActivity;
-import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.v4.app.NavUtils;
-import android.support.v7.app.ActionBar;
-import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.transition.Slide;
 import android.transition.TransitionManager;
-import android.util.Log;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import android.support.v7.app.ActionBar;
 import android.widget.TextView;
+
+import com.example.jaqueju.appplatz.Adapter.CustomCategoriasAdapter;
+import com.example.jaqueju.appplatz.R;
 
 /**
  * Created by 15153818 on 31/08/2016.
  */
 
 
-public class ListaCategorias extends AppCompatActivity {
+public class ListaCategoriasActivity extends AppCompatActivity {
     ListView listView;
     private TextView tvDescription;
 
@@ -46,13 +38,13 @@ public class ListaCategorias extends AppCompatActivity {
     Integer[] imagesid = {
             R.drawable.teste_sporte,
             R.drawable.music_ctg,
-            R.drawable.lazer_ctg,
-            R.drawable.religiao_ctg,
-            R.drawable.workshop_ctg,
-            R.drawable.teatro_ctg,
-            R.drawable.festival_ctg,
-            R.drawable.gastronomia_ctg,
-            R.drawable.conference_ctg
+            R.drawable.ctg_lazer,
+            R.drawable.ctg_religiao,
+            R.drawable.ctg_workshop,
+            R.drawable.ctg_teatro,
+            R.drawable.ctg_festival,
+            R.drawable.ctg_gastronomia,
+            R.drawable.ctg_conference
     };
 
 
@@ -68,7 +60,7 @@ public class ListaCategorias extends AppCompatActivity {
         getSupportActionBar().setHomeButtonEnabled(false);
 
 
-        CustomCategoriasAdapter adapter = new CustomCategoriasAdapter(ListaCategorias.this, categorias, imagesid);
+        CustomCategoriasAdapter adapter = new CustomCategoriasAdapter(ListaCategoriasActivity.this, categorias, imagesid);
         listView = (ListView) findViewById(R.id.list);
         listView.setAdapter(adapter);
 

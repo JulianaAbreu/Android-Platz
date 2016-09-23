@@ -1,4 +1,4 @@
-package com.example.jaqueju.appplatz;
+package com.example.jaqueju.appplatz.Adapter;
 
 import android.app.Activity;
 import android.view.LayoutInflater;
@@ -7,6 +7,8 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.example.jaqueju.appplatz.R;
 
 /**
  * Created by 15153818 on 31/08/2016.

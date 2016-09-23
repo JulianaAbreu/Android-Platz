@@ -1,4 +1,4 @@
-package com.example.jaqueju.appplatz;
+package com.example.jaqueju.appplatz.Adapter;
 
 import android.app.Activity;
 import android.content.Context;
@@ -10,6 +10,8 @@ import android.view.animation.AnimationUtils;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.example.jaqueju.appplatz.R;
 
 /**
  * Created by 15153818 on 20/09/2016.

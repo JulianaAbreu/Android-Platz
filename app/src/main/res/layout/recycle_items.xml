@@ -68,7 +68,7 @@
 <CheckBox
     android:layout_width="30dp"
     android:layout_height="wrap_content"
-    android:button="@drawable/favorite_button" />
+    android:button="@drawable/style_favorite_button" />
 
             <ImageView
                 android:id="@+id/image_action_share"

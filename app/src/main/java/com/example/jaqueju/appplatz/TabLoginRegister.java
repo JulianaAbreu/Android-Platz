@@ -5,6 +5,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TabHost;
 
+import com.example.jaqueju.appplatz.Activity.LoginActivity;
+import com.example.jaqueju.appplatz.Activity.RegisterActivity;
+
 /**
  * Created by 15153818 on 26/08/2016.
  */

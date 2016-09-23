@@ -23,9 +23,9 @@ import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.jaqueju.appplatz.CardViewModelEventos;
-import com.example.jaqueju.appplatz.EventosEspecificos;
-import com.example.jaqueju.appplatz.ListaCategorias;
+import com.example.jaqueju.appplatz.Activity.ListaCategoriasActivity;
+import com.example.jaqueju.appplatz.Model.CardViewModelEventos;
+import com.example.jaqueju.appplatz.Activity.EventosEspecificosActivity;
 import com.example.jaqueju.appplatz.R;
 
 import java.util.ArrayList;
@@ -92,7 +92,7 @@ GridView gridView;
             @Override
             public void onClick(View view) {
                 btnCategorias.setBackgroundResource(R.drawable.style_clicked_all_categories);
-                Intent i = new Intent(getActivity(), ListaCategorias.class);
+                Intent i = new Intent(getActivity(), ListaCategoriasActivity.class);
                 startActivity(i);
 
                 // Log.d("Test","Testando");
@@ -113,11 +113,11 @@ GridView gridView;
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.btnCategorias:
-                Intent i = new Intent(getActivity(), ListaCategorias.class);
+                Intent i = new Intent(getActivity(), ListaCategoriasActivity.class);
                 startActivity(i);
                 break;
             case R.id.image_card_cover:
-                Intent i2 = new Intent(getActivity(), EventosEspecificos.class);
+                Intent i2 = new Intent(getActivity(), EventosEspecificosActivity.class);
                 startActivity(i2);
                 break;
         }
@@ -224,7 +224,7 @@ GridView gridView;
 
         CardViewModelEventos item4 = new CardViewModelEventos();
         item4.setCardName("Dhawal");
-        item4.setImageResourceId(R.drawable.conference_ctg);
+        item4.setImageResourceId(R.drawable.ctg_conference);
         item4.setIsfav(0);
         item4.setIsturned(0);
         listitems.add(item4);

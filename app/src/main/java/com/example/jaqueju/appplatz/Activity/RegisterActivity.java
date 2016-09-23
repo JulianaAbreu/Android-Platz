@@ -1,7 +1,9 @@
-package com.example.jaqueju.appplatz;
+package com.example.jaqueju.appplatz.Activity;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.example.jaqueju.appplatz.R;
 
 public class RegisterActivity extends AppCompatActivity {
 
