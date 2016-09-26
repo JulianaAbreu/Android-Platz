@@ -6,7 +6,7 @@
     <View
         android:id="@+id/title"
         android:layout_width="wrap_content"
-        android:layout_height="280dp"
+        android:layout_height="265dp"
         android:background="@drawable/style_shadow_rectangle"
         android:layout_marginTop="5dp"
         android:layout_marginLeft="10dp"
@@ -33,7 +33,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Call Of Duty Black Ops III"
         android:textColor="#000000"
         android:id="@+id/txt_game_name"
         android:layout_below="@+id/game_image"
@@ -51,14 +50,13 @@
         android:layout_alignLeft="@+id/txt_game_name"
         android:layout_alignStart="@+id/txt_game_name" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="PS4, XONE, PC, X360, PS3"
-        android:id="@+id/txt_plateform"
-        android:layout_below="@+id/txt_relase_date"
-        android:layout_alignLeft="@+id/txt_relase_date"
-        android:layout_alignStart="@+id/txt_relase_date" />
+<ImageButton
+    android:layout_width="40dp"
+    android:layout_height="40dp"
+    android:layout_marginLeft="290dp"
+    android:background="@drawable/style_button_liked"
+    android:layout_marginTop="212dp"
+    android:src="@drawable/ic_favorite_white_curt"
+    />
 
 </RelativeLayout>

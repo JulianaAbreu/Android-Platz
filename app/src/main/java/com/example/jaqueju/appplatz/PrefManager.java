@@ -4,8 +4,9 @@ import android.content.Context;
 import android.content.SharedPreferences;
 
 /**
- * Created by 15153818 on 04/08/2016.
+ *
  */
+//Essa classe é referente à introdução do Aplicativo
 public class PrefManager {
     SharedPreferences pref;
     SharedPreferences.Editor editor;

@@ -19,6 +19,7 @@ public class EventosCategoriasActivity extends AppCompatActivity {
 
 
             ListView gameList;
+        //Array contendo o nome dos Eventos
             String games_arr[] = {
                     "Festival das Luzes",
                     "Festival das Luzes",
@@ -31,9 +32,9 @@ public class EventosCategoriasActivity extends AppCompatActivity {
             };
 
             gameList = (ListView) findViewById(R.id.listView);
+        //Cria uma instância de CategoriaAdapter
             EventosCategoriaAdapter adapter = new EventosCategoriaAdapter(EventosCategoriasActivity.this,R.layout.list_item_template,games_arr);
             gameList.setAdapter(adapter);
-
 
 
     }

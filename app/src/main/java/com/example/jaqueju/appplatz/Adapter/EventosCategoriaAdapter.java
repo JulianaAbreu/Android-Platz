@@ -24,6 +24,7 @@ public class EventosCategoriaAdapter  extends ArrayAdapter<String>{
     TextView dataEvento;
     TextView tv_gameplateform;
 
+    //Array contendo o nome do Evento
     String games_arr[] = {
 
             "Evento",
@@ -37,6 +38,7 @@ public class EventosCategoriaAdapter  extends ArrayAdapter<String>{
 
     };
 
+    //Array contendo a imagem de determinado Evento
     int images_arr[] = {
 
             R.drawable.evento,
@@ -49,6 +51,7 @@ public class EventosCategoriaAdapter  extends ArrayAdapter<String>{
             R.drawable.newyork
     };
 
+    //Array cintendo as datas dos Eventos
     String releaseDate_arr[] = {
 
             "Coming Nov 6, 2015",
@@ -62,17 +65,7 @@ public class EventosCategoriaAdapter  extends ArrayAdapter<String>{
     };
 
 
-    String plateform_arr[] = {
-
-            "Dia 02 de Dezembro de 2016",
-            "Dia 02 de Dezembro de 2016",
-            "Dia 02 de Dezembro de 2016",
-            "Dia 02 de Dezembro de 2016",
-            "Dia 02 de Dezembro de 2016",
-            "Dia 02 de Dezembro de 2016",
-            "Dia 02 de Dezembro de 2016",
-            "Dia 02 de Dezembro de 2016"
-    };
+//Contrutor da classe
     public EventosCategoriaAdapter(Context context, int resource, String[] objects) {
         super(context, resource, objects);
         this.con = context;
@@ -80,7 +73,7 @@ public class EventosCategoriaAdapter  extends ArrayAdapter<String>{
     }
 
     @Override
-
+//Pega a visão dos dados a partir de uma posição especificada
     public View getView(int position, View convertView, ViewGroup parent) {
 
         LayoutInflater inflater = (LayoutInflater) con.getSystemService(Activity.LAYOUT_INFLATER_SERVICE);
@@ -94,10 +87,6 @@ public class EventosCategoriaAdapter  extends ArrayAdapter<String>{
 
         dataEvento = (TextView) row.findViewById(R.id.txt_relase_date);
         dataEvento.setText(releaseDate_arr[position]);
-
-
-        tv_gameplateform = (TextView) row.findViewById(R.id.txt_plateform);
-        tv_gameplateform.setText(plateform_arr[position]);
 
         Animation animation = AnimationUtils.loadAnimation(getContext(), (position > lastPosition) ?     R.anim.up_from_bottom : R.anim.down_from_top);
         row.startAnimation(animation);

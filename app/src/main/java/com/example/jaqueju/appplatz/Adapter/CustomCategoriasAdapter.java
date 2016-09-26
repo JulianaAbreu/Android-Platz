@@ -18,6 +18,7 @@ public class CustomCategoriasAdapter extends ArrayAdapter<String> {
     private final String[] descricaoEvento;
     private final Integer[] imageId;
 
+    //Construtor da Classe, onde é instanciado as variáveis.
     public CustomCategoriasAdapter(Activity context,
                                    String[] web, Integer[] imageId) {
         super(context, R.layout.list_single_ctg, web);
@@ -27,6 +28,7 @@ public class CustomCategoriasAdapter extends ArrayAdapter<String> {
 
     }
     @Override
+    //Método que obtem a visão que exibe os dados na posição especificada
     public View getView(int position, View view, ViewGroup parent) {
         LayoutInflater inflater = context.getLayoutInflater();
         View rowView= inflater.inflate(R.layout.list_single_ctg, null, true);

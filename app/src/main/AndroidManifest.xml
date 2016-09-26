@@ -30,6 +30,8 @@
         <activity android:name=".Activity.LoginActivity" />
         <activity android:name=".Activity.RegistroContaActivity" />
         <activity android:name=".TabLoginRegister" />
+        <activity android:name=".SingleItemViewCtgHome" />
+
         <activity android:name=".Activity.EventosEspecificosActivity" />
         <activity
             android:name=".Activity.EventosCategoriasActivity"

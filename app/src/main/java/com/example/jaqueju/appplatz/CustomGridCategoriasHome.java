@@ -26,7 +26,7 @@ public class CustomGridCategoriasHome extends BaseAdapter {
     public Object getItem(int position){
     return null;
     }
-    public long getItemId(int podition){
+    public long getItemId(int position){
         return 0;
     }
     public View getView(int position, View convertView, ViewGroup parent){

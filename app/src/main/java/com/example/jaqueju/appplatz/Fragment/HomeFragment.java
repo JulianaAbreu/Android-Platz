@@ -24,6 +24,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.jaqueju.appplatz.Activity.ListaCategoriasActivity;
+import com.example.jaqueju.appplatz.ImageAdapterCategoriasHome;
 import com.example.jaqueju.appplatz.Model.CardViewModelEventos;
 import com.example.jaqueju.appplatz.Activity.EventosEspecificosActivity;
 import com.example.jaqueju.appplatz.R;
@@ -59,6 +60,8 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_cardrecycler, container, false);
 
+        GridView gridView = (GridView) rootView.findViewById(R.id.gridview);
+        gridView.setAdapter(new ImageAdapterCategoriasHome(getActivity()));
 
         RecyclerView recList = (RecyclerView) rootView.findViewById(R.id.cardList);
         recList.setHasFixedSize(true);
@@ -115,6 +118,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         }
     }
 
+    //A ViewHolder descreve uma tela de item e metadados sobre seu lugar dentro da RecyclerView.
     public class MyAdapter extends RecyclerView.Adapter<ViewHolder> {
         private ArrayList<CardViewModelEventos> list;
 
@@ -145,7 +149,6 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
             Drawable dr = getResources().getDrawable(list.get(position).getImageResourceId());
 
 
-
         }
 
         // Return the size of your dataset (invoked by the layout manager)
@@ -163,18 +166,19 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         }
     }
 
+    //Lista de Eventos abaixo
     public void setupListItems() {
         listitems.clear();
 
         CardViewModelEventos item1 = new CardViewModelEventos();
-        item1.setCardName("Dhawal Sodha Parmar");
+        item1.setCardName("Festival das Luzes");
         item1.setImageResourceId(R.drawable.evento);
         item1.setIsfav(0);
         item1.setIsturned(0);
         listitems.add(item1);
 
         CardViewModelEventos item2 = new CardViewModelEventos();
-        item2.setCardName("Cart Item");
+        item2.setCardName("Festival das Luzes");
         item2.setImageResourceId(R.drawable.evento);
         item2.setIsfav(0);
         item2.setIsturned(0);
@@ -188,7 +192,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         listitems.add(item3);*/
 
         CardViewModelEventos item4 = new CardViewModelEventos();
-        item4.setCardName("Dhawal");
+        item4.setCardName("Festival das Luzes");
         item4.setImageResourceId(R.drawable.ctg_conference);
         item4.setIsfav(0);
         item4.setIsturned(0);

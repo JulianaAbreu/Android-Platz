@@ -24,6 +24,7 @@ public class ListaCategoriasActivity extends AppCompatActivity {
     ListView listView;
     private TextView descricaoEvento;
 
+    //Array Categorias, contendo seus respectivos nomes
     String[] categorias = {
             "Esporte",
             "Música",
@@ -35,6 +36,7 @@ public class ListaCategoriasActivity extends AppCompatActivity {
             "Gastronomia",
             "Conferencia"
     };
+    //Array contendo as imagens dos eventos
     Integer[] imagesId = {
             R.drawable.teste_sporte,
             R.drawable.music_ctg,
@@ -60,6 +62,7 @@ public class ListaCategoriasActivity extends AppCompatActivity {
         getSupportActionBar().setHomeButtonEnabled(false);
 
 
+        //Instancia-se Ctegorias Adapter
         CustomCategoriasAdapter adapter = new CustomCategoriasAdapter(ListaCategoriasActivity.this, categorias, imagesId);
         listView = (ListView) findViewById(R.id.list);
         listView.setAdapter(adapter);

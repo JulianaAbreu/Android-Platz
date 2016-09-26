@@ -10,6 +10,7 @@ import java.util.List;
 /**
  * Created by 15153818 on 24/08/2016.
  */
+//A ViewHolder descreve uma tela de item e metadados sobre seu lugar dentro da RecyclerView.
 public class ViewPagerAdapter extends FragmentPagerAdapter {
     private final List<Fragment> mFragmentList = new ArrayList<>();
 
