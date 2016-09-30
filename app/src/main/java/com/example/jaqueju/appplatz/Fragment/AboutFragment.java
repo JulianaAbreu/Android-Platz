@@ -11,7 +11,12 @@ import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
 
+import com.example.jaqueju.appplatz.Adapter.CustomAdapter;
+import com.example.jaqueju.appplatz.Model.ItemObjectModel;
 import com.example.jaqueju.appplatz.R;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -27,58 +32,35 @@ public class AboutFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
+
         View root_View = inflater.inflate(R.layout.fragment_list2, container, false);
+       // gridview.setAdapter(new ImageAdapter(getActivity()));
         GridView gridview = (GridView) root_View.findViewById(R.id.gridview);
-        gridview.setAdapter(new ImageAdapter(getActivity()));
 
-        return inflater.inflate(R.layout.fragment_about, container, false);
+        List<ItemObjectModel> allItems = getAllItemObject();
+        CustomAdapter customAdapter = new CustomAdapter(getContext(), allItems);
+        gridview.setAdapter(customAdapter);
+
+        return root_View;
+    }
+    private List<ItemObjectModel> getAllItemObject() {
+        List<ItemObjectModel> items = new ArrayList<>();
+        items.add(new ItemObjectModel(R.drawable.ctg_cultura, "Cultura"));
+        items.add(new ItemObjectModel(R.drawable.ctg_conference, "Conferência"));
+        items.add(new ItemObjectModel(R.drawable.ctg_gastronomia, "Gastronomia"));
+        items.add(new ItemObjectModel(R.drawable.ctg_religiao, "Religião"));
+        items.add(new ItemObjectModel(R.drawable.ctg_workshop, "Workshop"));
+        items.add(new ItemObjectModel(R.drawable.ctg_conference, "Conferência"));
+        items.add(new ItemObjectModel(R.drawable.ctg_cultura, "Cultura"));
+        items.add(new ItemObjectModel(R.drawable.ctg_gastronomia, "Gastronomia"));
+        items.add(new ItemObjectModel(R.drawable.ctg_cultura, "Cultura"));
+        items.add(new ItemObjectModel(R.drawable.ctg_conference, "Conferência"));
+        items.add(new ItemObjectModel(R.drawable.ctg_workshop, "Workshop"));
+        items.add(new ItemObjectModel(R.drawable.ctg_cultura, "Cultura"));
+        return items;
     }
 
-    public class ImageAdapter extends BaseAdapter {
-        private Context mContext;
-        private Integer[] mThumbIds = {
-                R.drawable.ctg_festival, R.drawable.ctg_festival,
-                R.drawable.ctg_festival, R.drawable.ctg_festival,
-                R.drawable.ctg_festival, R.drawable.ctg_festival,
-                R.drawable.ctg_festival, R.drawable.ctg_festival,
-                R.drawable.ctg_festival, R.drawable.ctg_festival,
-                R.drawable.ctg_festival, R.drawable.ctg_festival,
-                R.drawable.ctg_festival, R.drawable.ctg_festival,
-                R.drawable.ctg_festival, R.drawable.ctg_festival,
-                R.drawable.ctg_festival, R.drawable.ctg_festival,
-                R.drawable.ctg_festival, R.drawable.ctg_festival,
-                R.drawable.ctg_festival, R.drawable.ctg_festival
-        };
-
-        public ImageAdapter(Context c) {
-            mContext = c;
-        }
-
-        public int getCount() {
-            return mThumbIds.length;
-        }
-
-        public Object getItem(int position) {
-            return mThumbIds[position];
-        }
-
-        public long getItemId(int position) {
-            return 0;
-        }
-
-        public View getView(int position, View convertView, ViewGroup parent) {
-            ImageView imageView;
-            if (convertView == null) {
-                imageView = new ImageView(mContext);
-                imageView.setLayoutParams(new GridView.LayoutParams(85, 85));
-                imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
-                imageView.setPadding(8, 8, 8, 8);
-            } else {
-                imageView = (ImageView) convertView;
-            }
-            imageView.setImageResource(mThumbIds[position]);
-            return imageView;
-        }
-    }
 
 }
+

@@ -13,10 +13,11 @@ import android.widget.ImageButton;
 
 import com.example.jaqueju.appplatz.Activity.LoginActivity;
 import com.example.jaqueju.appplatz.Adapter.ViewPagerAdapter;
+import com.example.jaqueju.appplatz.Fragment.AboutFragment;
 import com.example.jaqueju.appplatz.Fragment.CurtidosFragment;
 import com.example.jaqueju.appplatz.Fragment.HomeFragment;
-import com.example.jaqueju.appplatz.Fragment.ListFragment;
 import com.example.jaqueju.appplatz.Fragment.PerfilFragment;
+import com.example.jaqueju.appplatz.Fragment.RankingCategoriasFragment;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -44,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
         tabLayout = (TabLayout) findViewById(R.id.tabs);
 
         tabLayout.setupWithViewPager(viewPager);
-        setSupportActionBar(toolbar);
+       setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("Home");
         tabLayout.setupWithViewPager(viewPager);
         setupViewPager(viewPager);
@@ -54,8 +55,9 @@ public class MainActivity extends AppCompatActivity {
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
         adapter.addFrag(new HomeFragment());
-        adapter.addFrag(new ListFragment());
+        adapter.addFrag(new AboutFragment());
         adapter.addFrag(new CurtidosFragment());
+        adapter.addFrag(new RankingCategoriasFragment());
         adapter.addFrag(new PerfilFragment());
 
 
@@ -74,14 +76,16 @@ public class MainActivity extends AppCompatActivity {
                         getSupportActionBar().setTitle("Home");
                         break;
                     case 1:
-                        getSupportActionBar().setTitle("About");
+                        getSupportActionBar().setTitle("Categorias");
                         break;
                     case 2:
-                        getSupportActionBar().setTitle("List");
+                        getSupportActionBar().setTitle("Curtidos");
                         break;
                     case 3:
                         getSupportActionBar().setTitle("Troféis");
                         break;
+                    case 4:
+                        getSupportActionBar().setTitle("Perfil");
                 }
             }
 
@@ -96,6 +100,7 @@ public class MainActivity extends AppCompatActivity {
     private void setIconForTabs() {
 
         int[] tabIcons = {
+                R.mipmap.ic_home_white__,
                 R.mipmap.ic_list_white_,
                 R.mipmap.ic_favorite_border,
                 R.mipmap.ic_trofeu,
@@ -108,6 +113,8 @@ public class MainActivity extends AppCompatActivity {
         tabLayout.getTabAt(1).setIcon(tabIcons[1]);
         tabLayout.getTabAt(3).setIcon(tabIcons[3]);
         tabLayout.getTabAt(2).setIcon(tabIcons[2]);
+        tabLayout.getTabAt(4).setIcon(tabIcons[4]);
+
 
 
     }

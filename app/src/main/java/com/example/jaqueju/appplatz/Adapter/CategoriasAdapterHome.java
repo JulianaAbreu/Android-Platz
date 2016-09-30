@@ -11,27 +11,30 @@ import android.widget.TextView;
  */
 public class CategoriasAdapterHome {
     private Context context;
-    private String [] categorias = {"Esporte", "Festivais", "Educação", "Lazer", "Culinária", "Cultura", "Diversão", "Gratuitos", "Exposição"};
+    private String[] categorias = {"Esporte", "Festivais", "Educação", "Lazer", "Culinária", "Cultura", "Diversão", "Gratuitos", "Exposição"};
 
-    public CategoriasAdapterHome(Context context){
+    public CategoriasAdapterHome(Context context) {
         this.context = context;
     }
-    public int getCount(){
+
+    public int getCount() {
         return 9;
     }
-    public Object getItem(int position){
+
+    public Object getItem(int position) {
         return null;
     }
-    public long getItemId(int position){
+
+    public long getItemId(int position) {
         return 0;
     }
+
     public View getView(int position, View convertView, ViewGroup parent) {
         TextView tv;
         if (convertView == null) {
             tv = new TextView(context);
             tv.setLayoutParams(new GridView.LayoutParams(85, 85));
-        }
-        else {
+        } else {
             tv = (TextView) convertView;
         }
 

@@ -92,10 +92,8 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 
 
 
-
-
         // Getting a reference to gridview of MainActivity
-        GridView gridView = (GridView) rootView.findViewById(R.id.gridview);
+       //esse GridView gridView = (GridView) rootView.findViewById(R.id.gridview);
 
 
 

@@ -16,7 +16,7 @@ import com.example.jaqueju.appplatz.R;
 /**
  * Created by 15153818 on 20/09/2016.
  */
-public class EventosCategoriaAdapter  extends ArrayAdapter<String>{
+public class EventosCategoriaAdapter extends ArrayAdapter<String> {
     private Context con;
     private int lastPosition = -1;
     ImageView imagemEvento;
@@ -65,7 +65,7 @@ public class EventosCategoriaAdapter  extends ArrayAdapter<String>{
     };
 
 
-//Contrutor da classe
+    //Contrutor da classe
     public EventosCategoriaAdapter(Context context, int resource, String[] objects) {
         super(context, resource, objects);
         this.con = context;
@@ -77,7 +77,7 @@ public class EventosCategoriaAdapter  extends ArrayAdapter<String>{
     public View getView(int position, View convertView, ViewGroup parent) {
 
         LayoutInflater inflater = (LayoutInflater) con.getSystemService(Activity.LAYOUT_INFLATER_SERVICE);
-        View row = inflater.inflate(R.layout.list_item_template,parent,false);
+        View row = inflater.inflate(R.layout.list_item_template, parent, false);
 
         imagemEvento = (ImageView) row.findViewById(R.id.game_image);
         imagemEvento.setImageResource(images_arr[position]);
@@ -88,7 +88,7 @@ public class EventosCategoriaAdapter  extends ArrayAdapter<String>{
         dataEvento = (TextView) row.findViewById(R.id.txt_relase_date);
         dataEvento.setText(releaseDate_arr[position]);
 
-        Animation animation = AnimationUtils.loadAnimation(getContext(), (position > lastPosition) ?     R.anim.up_from_bottom : R.anim.down_from_top);
+        Animation animation = AnimationUtils.loadAnimation(getContext(), (position > lastPosition) ? R.anim.up_from_bottom : R.anim.down_from_top);
         row.startAnimation(animation);
         lastPosition = position;
 

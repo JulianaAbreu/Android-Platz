@@ -25,40 +25,34 @@ public class PerfilFragment extends Fragment {
     private FragmentTabHost mTabHost;
 
 
-
     public PerfilFragment() {
         // Required empty public constructor
     }
 
 
-
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View rootView =  inflater.inflate(R.layout.fragment_perfil, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_perfil, container, false);
 
         //mTabHost = (FragmentTabHost)rootView.findViewById(android.R.id.tabhost);
-     //   mTabHost.setup(getActivity(), getChildFragmentManager(),R.id.realtabcontent);
+        //   mTabHost.setup(getActivity(), getChildFragmentManager(),R.id.realtabcontent);
 
 
-       // mTabHost.addTab(mTabHost.newTabSpec("Curtidos").setIndicator("Curtidos"), CurtidosFragment.class, null);
-       // mTabHost.addTab(mTabHost.newTabSpec("EventosMarcados").setIndicator("EU vou!"), EventosMarcadosFragment.class, null);
+        // mTabHost.addTab(mTabHost.newTabSpec("Curtidos").setIndicator("Curtidos"), CurtidosFragment.class, null);
+        // mTabHost.addTab(mTabHost.newTabSpec("EventosMarcados").setIndicator("EU vou!"), EventosMarcadosFragment.class, null);
 
         return rootView;
     }
+
     @Override
-    public void onActivityResult(int requestCode, int resultCode, Intent data){
-        if(requestCode == CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE && resultCode == resultCode){
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE && resultCode == resultCode) {
             Bitmap photo = (Bitmap) data.getExtras().get("data");
             imageView.setImageBitmap(photo);
 
         }
     }
-
-
-
-
 
 
 }
