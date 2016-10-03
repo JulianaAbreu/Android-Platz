@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#EAEAEA"
+
+    tools:context=".Activity.EventosEspecificosActivity">
+
+    <ImageView
+        android:layout_width="500dp"
+        android:layout_height="480dp"
+        android:layout_marginTop="-200dp"
+        android:src="@drawable/evento"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginTop="160dp"
+        android:background="#FFFFFF"
+
+        >
+
+        <TextView
+            
+            android:textSize="18dp"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="5dp"
+            android:layout_width="190dp"
+            android:layout_height="20dp"
+            android:text="Festival das Cores"
+            android:textColor="#000000"
+            />
+        <ImageView
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:src="@drawable/ic_time"
+            android:layout_marginTop="35dp"
+            android:layout_marginLeft="-190dp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="13:00 - 23:00"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="4dp"
+            />
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/ic_face_black"
+            android:layout_marginTop="32dp"
+            android:layout_marginLeft="8dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="180 Confirmadas "
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="2dp" />
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/ic_date_black_"
+            android:layout_marginTop="32dp"
+            android:layout_marginLeft="5dp"
+
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="12/09/2016"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="2dp"
+            />
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="235dp"
+        android:background="#FFFFFF"
+    android:orientation="vertical"
+        >
+        <TextView
+            android:layout_width="match_parent"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            android:textSize="16dp"
+            android:gravity="center"
+            android:background="@color/bg_screen2"
+            android:layout_height="30dp" 
+            android:text="Descrição"
+            />
+        <TextView
+            android:layout_width="350dp"
+            android:layout_height="wrap_content" 
+            android:text="@string/descricao_evento"
+            android:layout_marginTop="25dp"
+            android:layout_marginLeft="18dp"
+            />
+        <ImageView
+
+            android:layout_width="23dp"
+            android:layout_height="23dp"
+            android:src="@drawable/ic_location"
+            android:layout_marginLeft="18dp"
+            android:layout_marginTop="15dp"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="45dp"
+            android:layout_marginTop="-20dp"
+            android:text="Avenida Santo Amaro 3800, São Paulo - SP"
+
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ver no mapa"
+            android:layout_marginLeft="50dp"
+            android:textColor="@color/bg_screen3"
+            />
+        <ImageView
+            android:layout_width="23dp"
+            android:layout_height="23dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="18dp"
+            android:src="@drawable/ic_phone_black_"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="(11) 5897-1963"
+            android:layout_marginLeft="45dp"
+            android:layout_marginTop="-20dp"
+            />
+        <ImageView
+            android:layout_width="23dp"
+            android:layout_height="23dp"
+            android:src="@drawable/ic_money"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="18dp"
+
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="65,00"
+            android:layout_marginLeft="45dp"
+            android:layout_marginTop="-20dp"
+            />
+
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:text="QUERO IR!"
+            android:background="#4CAF50"
+            android:textColor="#FFFFFF"
+            android:textSize="16dp"
+            android:layout_marginTop="30dp"
+            />
+    </LinearLayout>
+
+
+</RelativeLayout>
