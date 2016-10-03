@@ -46,6 +46,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+       <!--
         <ImageButton
             android:layout_width="45dp"
             android:layout_height="45dp"
@@ -57,9 +59,10 @@
             android:layout_marginBottom="10dp"
             android:layout_marginTop="520dp"
             android:layout_marginRight="25dp"
-            android:src="@mipmap/map_icon"
+            android:src="@drawable/logo"
 
             />
+            -->
     </android.support.design.widget.CoordinatorLayout>
 
 

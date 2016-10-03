@@ -30,7 +30,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ImageButton imageButton = (ImageButton) findViewById(R.id.imageButton);
+       // ImageButton imageButton = (ImageButton) findViewById(R.id.imageButton);
+
+        /*
         imageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -40,12 +42,13 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+        */
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         viewPager = (ViewPager) findViewById(R.id.viewpager);
         tabLayout = (TabLayout) findViewById(R.id.tabs);
 
         tabLayout.setupWithViewPager(viewPager);
-       setSupportActionBar(toolbar);
+        setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("Home");
         tabLayout.setupWithViewPager(viewPager);
         setupViewPager(viewPager);
