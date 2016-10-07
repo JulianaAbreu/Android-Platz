@@ -2,16 +2,30 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.jaqueju.appplatz">
 
+
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="22" />
+    <uses-permission
+        android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="22" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyCLLdfIxfom9_z6KR9O-2V8kVcTLG6FMLU" />
+
         <uses-feature
             android:name="android.hardware.camera"
             android:required="true" />
-
 
         <activity
             android:name=".Activity.WelcomeActivity"
@@ -25,17 +39,17 @@
         <activity
             android:name=".Activity.ListaCategoriasActivity"
             android:launchMode="singleTop"
-            android:parentActivityName=".MainActivity"></activity>
+            android:parentActivityName=".MainActivity" />
         <activity android:name=".MainActivity" />
         <activity android:name=".Activity.LoginActivity" />
         <activity android:name=".Activity.RegistroContaActivity" />
         <activity android:name=".TabLoginRegister" />
-
         <activity android:name=".Activity.EventosEspecificosActivity" />
         <activity
             android:name=".Activity.EventosCategoriasActivity"
             android:label="@string/title_activity_eventos_categorias"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".Activity.MapaActivity"></activity>
     </application>
 
 </manifest>

@@ -2,18 +2,20 @@ package com.example.jaqueju.appplatz;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.TabLayout;
-
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 
 import com.example.jaqueju.appplatz.Activity.LoginActivity;
+import com.example.jaqueju.appplatz.Activity.MapaActivity;
 import com.example.jaqueju.appplatz.Adapter.ViewPagerAdapter;
-import com.example.jaqueju.appplatz.Fragment.AboutFragment;
+import com.example.jaqueju.appplatz.Fragment.CategoriasFragment;
 import com.example.jaqueju.appplatz.Fragment.CurtidosFragment;
 import com.example.jaqueju.appplatz.Fragment.HomeFragment;
 import com.example.jaqueju.appplatz.Fragment.PerfilFragment;
@@ -30,9 +32,21 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-       // ImageButton imageButton = (ImageButton) findViewById(R.id.imageButton);
 
+
+/*
+        FloatingActionButton floatingActionButton = (FloatingActionButton) findViewById(R.id.fab);
+        floatingActionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), MapaActivity.class);
+                startActivity(intent);
+            }
+        });
         /*
+        ImageButton imageButton = (ImageButton) findViewById(R.id.imageButton);
+
+
         imageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -42,7 +56,8 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-        */
+*/
+
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         viewPager = (ViewPager) findViewById(R.id.viewpager);
         tabLayout = (TabLayout) findViewById(R.id.tabs);
@@ -58,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
         adapter.addFrag(new HomeFragment());
-        adapter.addFrag(new AboutFragment());
+        adapter.addFrag(new CategoriasFragment());
         adapter.addFrag(new CurtidosFragment());
         adapter.addFrag(new RankingCategoriasFragment());
         adapter.addFrag(new PerfilFragment());
@@ -117,7 +132,6 @@ public class MainActivity extends AppCompatActivity {
         tabLayout.getTabAt(3).setIcon(tabIcons[3]);
         tabLayout.getTabAt(2).setIcon(tabIcons[2]);
         tabLayout.getTabAt(4).setIcon(tabIcons[4]);
-
 
 
     }

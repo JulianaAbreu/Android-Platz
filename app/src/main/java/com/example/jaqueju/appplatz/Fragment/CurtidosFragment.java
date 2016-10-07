@@ -48,8 +48,6 @@ public class CurtidosFragment extends android.support.v4.app.ListFragment {
         // Ids of views in listview_layout
         int[] to = {R.id.brand_image, R.id.brand_name};
 
-        // Instantiating an adapter to store each items
-        // R.layout.listview_layout defines the layout of each item
         SimpleAdapter adapter = new SimpleAdapter(getActivity()
                 .getBaseContext(), aList, R.layout.list_single_item, from, to);
 

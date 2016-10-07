@@ -45,4 +45,6 @@ dependencies {
     compile 'jp.wasabeef:glide-transformations:2.0.1'
     compile 'com.shamanland:fab:0.0.6'
     compile 'com.android.support:recyclerview-v7:24.2.1'
+    compile 'com.google.android.gms:play-services-maps:8.4.0'
+
 }
