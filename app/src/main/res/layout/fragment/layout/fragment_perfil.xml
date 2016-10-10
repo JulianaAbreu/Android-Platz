@@ -15,10 +15,10 @@
             android:id="@+id/header_cover_image"
             android:layout_width="match_parent"
             android:layout_height="100dp"
-            android:scaleType="centerCrop"
             android:background="#F8CF8F"
+            android:orientation="horizontal"
 
-            android:orientation="horizontal">
+            android:scaleType="centerCrop">
 
 
         </LinearLayout>
@@ -28,100 +28,122 @@
             android:layout_height="30dp"
             android:layout_marginLeft="30dp"
             android:layout_marginTop="80dp"
-            android:textAllCaps="false"
+            android:background="@drawable/style_button_trofeis"
             android:text="10 Pontos"
-            android:textColor="#FFFFFF"
-            android:background="@drawable/style_button_trofeis"/>
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF" />
 
         <Button
-            android:textAllCaps="false"
-            android:textColor="#FFFFFF"
             android:layout_width="110dp"
             android:layout_height="30dp"
-            android:text="5 Confirmados"
             android:layout_marginLeft="245dp"
             android:layout_marginTop="80dp"
-            android:background="@drawable/style_button_trofeis"/>
+            android:background="@drawable/style_button_trofeis"
+            android:text="5 Confirmados"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF" />
 
 
         <ImageView
-            android:id="@+id/user_profile_photo"
+            android:id="@+id/capturedImage"
             android:layout_width="110dp"
             android:layout_height="110dp"
             android:layout_below="@+id/header_cover_image"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="-70dp"
-            android:background="@drawable/style_profile_circular_border_imageview"
+            android:clickable="true"
+            android:cropToPadding="false"
             android:elevation="100dp"
             android:padding="20dp"
             android:scaleType="centerCrop"
-            android:src="@drawable/ic_avatar"
-            android:cropToPadding="false"
-            android:clickable="true" />
+         />
+
 
         <Button
+            android:id="@+id/btnCamera"
             android:layout_width="170dp"
             android:layout_height="30dp"
-            android:textAllCaps="false"
             android:layout_marginLeft="100dp"
-            android:text="Trocar foto do Perfil"
             android:layout_marginTop="150dp"
             android:background="@drawable/style_button_take_photo"
-            />
+            android:text="Trocar foto do Perfil"
+            android:textAllCaps="false" />
+
+
+        <!--
+                <ImageView
+                    android:id="@+id/user_profile_photo"
+                    android:layout_width="110dp"
+                    android:layout_height="110dp"
+                    android:layout_below="@+id/header_cover_image"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="-70dp"
+                    android:background="@drawable/style_profile_circular_border_imageview"
+                    android:elevation="100dp"
+                    android:padding="20dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_avatar"
+                    android:cropToPadding="false"
+                    android:clickable="true" />
+
+                <Button
+                    android:layout_width="170dp"
+                    android:layout_height="30dp"
+                    android:textAllCaps="false"
+                    android:layout_marginLeft="100dp"
+                    android:text="Trocar foto do Perfil"
+                    android:layout_marginTop="150dp"
+                    android:background="@drawable/style_button_take_photo"
+                    />
+-->
 
         <TextView
-            android:layout_marginTop="190dp"
             android:layout_width="200dp"
-            android:layout_marginLeft="100dp"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="100dp"
+            android:layout_marginTop="190dp"
             android:text="Juliana Cerqueira de Abreu"
-            android:textSize="15dp"
             android:textColor="#000000"
+            android:textSize="15dp" />
+
+
+        <ImageButton
+            android:layout_width="45dp"
+            android:layout_height="44dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="250dp"
+            android:background="@drawable/style_button_perfil_likes"
+            android:src="@drawable/ic_favorite_white_testee"
+
+
             />
 
+        <ImageButton
+            android:layout_width="45dp"
+            android:layout_height="44dp"
 
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="305dp"
+            android:background="@drawable/style_button_perfil_euvou"
+            android:src="@drawable/ic_check_white_perfil" />
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="85dp"
+            android:layout_marginTop="262dp"
+            android:text="Eventos Curtidos"
+            android:textColor="#000000"
+            android:textSize="15dp" />
 
-<ImageButton
-    android:layout_width="45dp"
-    android:layout_height="44dp"
-    android:layout_marginTop="250dp"
-    android:background="@drawable/style_button_perfil_likes"
-    android:layout_marginLeft="30dp"
-android:src="@drawable/ic_favorite_white_testee"
-
-
-    />
-
-    <ImageButton
-        android:layout_width="45dp"
-        android:layout_height="44dp"
-
-        android:background="@drawable/style_button_perfil_euvou"
-        android:layout_marginTop="305dp"
-        android:layout_marginLeft="30dp"
-        android:src="@drawable/ic_check_white_perfil"
-        />
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Eventos Curtidos"
-        android:layout_marginTop="262dp"
-        android:layout_marginLeft="85dp"
-        android:textSize="15dp"
-        android:textColor="#000000"
-        />
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Marcados Presença"
-        android:layout_marginTop="318dp"
-        android:layout_marginLeft="85dp"
-        android:textSize="15dp"
-        android:textColor="#000000"
-        />
-
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="85dp"
+            android:layout_marginTop="318dp"
+            android:text="Marcados Presença"
+            android:textColor="#000000"
+            android:textSize="15dp" />
 
 
     </RelativeLayout>

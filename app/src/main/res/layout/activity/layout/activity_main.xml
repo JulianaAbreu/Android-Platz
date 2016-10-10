@@ -64,14 +64,7 @@
             android:src="@drawable/logo"
 
             />
---><Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#c2c2c2"
-        android:id="@+id/testemapa"
-        android:text="BOTAO"
-        android:layout_marginTop="300dp"
-        />
+-->
         <android.support.design.widget.FloatingActionButton
             android:id="@+id/fab"
             android:layout_width="wrap_content"
@@ -79,6 +72,7 @@
             android:layout_gravity="bottom|end"
             android:src="@android:drawable/ic_menu_more"
             app:elevation="6dp"
+            android:background="@color/green"
             app:pressedTranslationZ="12dp" />
 
     </android.support.design.widget.CoordinatorLayout>

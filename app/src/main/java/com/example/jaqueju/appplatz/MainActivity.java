@@ -32,7 +32,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
+        FloatingActionButton myFab = (FloatingActionButton) findViewById(R.id.fab);
+        myFab.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent i = new Intent(getApplicationContext(), MapaActivity.class);
+                startActivity(i);
+            }
+        });
 
 /*
         FloatingActionButton floatingActionButton = (FloatingActionButton) findViewById(R.id.fab);
