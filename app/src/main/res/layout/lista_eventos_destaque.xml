@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/categoria_evento"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginLeft="@dimen/activity_horizontal_margin"
+    android:background="#FFFFFF"
+    android:orientation="horizontal"
+    android:paddingTop="5dp">
+
+    <ImageView
+        android:id="@+id/imagemEventoDestaque"
+        android:layout_width="195dp"
+        android:layout_height="160dp"
+        android:layout_marginBottom="-10dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="-4dp"
+        android:src="@drawable/evento" />
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="#1"
+    android:textStyle="bold"
+    android:textSize="20dp"
+    android:layout_marginTop="10dp"
+    android:layout_marginLeft="10dp"
+    android:id="@+id/posicao"
+    />
+    <TextView
+        android:id="@+id/nomeEventoDestaque"
+        android:layout_width="150dp"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="15dp"
+
+        android:text="dhgdfhfdh"
+        android:textStyle="bold" />
+
+    <!--
+    <CheckBox
+        android:layout_marginTop="15dp"
+        android:layout_width="35dp"
+        android:layout_height="wrap_content"
+
+        android:button="@drawable/style_favorite_button"
+        android:checked="false" />
+-->
+    <!--
+    <ImageView
+        android:layout_width="35dp"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/ic_favorite_heart"
+        android:layout_marginTop="15dp"
+
+        />
+        -->
+
+</LinearLayout>
