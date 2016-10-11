@@ -1,5 +1,6 @@
 package com.example.jaqueju.appplatz.Activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -36,6 +37,13 @@ public class EventosCategoriasActivity extends AppCompatActivity {
             EventosCategoriaAdapter adapter = new EventosCategoriaAdapter(EventosCategoriasActivity.this,R.layout.list_item_template,games_arr);
             gameList.setAdapter(adapter);
 
+Intent intent = getIntent();
+
+        Bundle b = intent.getExtras();
+
+        if (b != null){
+            System.out.println(b.get("id"));
+        }
 
     }
 

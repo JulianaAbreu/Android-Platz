@@ -2,6 +2,7 @@ package com.example.jaqueju.appplatz.Adapter;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +12,8 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.jaqueju.appplatz.Activity.EventosEspecificosActivity;
+import com.example.jaqueju.appplatz.MainActivity;
 import com.example.jaqueju.appplatz.R;
 
 /**
@@ -74,7 +77,7 @@ public class EventosCategoriaAdapter extends ArrayAdapter<String> {
 
     @Override
 //Pega a visão dos dados a partir de uma posição especificada
-    public View getView(int position, View convertView, ViewGroup parent) {
+    public View getView(int position, final View convertView, ViewGroup parent) {
 
         LayoutInflater inflater = (LayoutInflater) con.getSystemService(Activity.LAYOUT_INFLATER_SERVICE);
         View row = inflater.inflate(R.layout.list_item_template, parent, false);
@@ -92,7 +95,17 @@ public class EventosCategoriaAdapter extends ArrayAdapter<String> {
         row.startAnimation(animation);
         lastPosition = position;
 
+
+        imagemEvento.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent( con, EventosEspecificosActivity.class);
+                con.startActivity(intent);
+            }
+        });
         return row;
+
+
     }
 }
 

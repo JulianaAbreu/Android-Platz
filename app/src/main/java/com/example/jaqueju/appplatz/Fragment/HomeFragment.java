@@ -107,14 +107,9 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         }
         recList.setLayoutManager(llm);
 
-
-
         /*
         final Button btnCategorias = (Button)rootView.findViewById(R.id.btnCategorias);
         btnCategorias.setOnClickListener(this);
-
-
-
 
         btnCategorias.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -1,15 +1,18 @@
 package com.example.jaqueju.appplatz.Fragment;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.ListView;
 
+import com.example.jaqueju.appplatz.Activity.EventosCategoriasActivity;
 import com.example.jaqueju.appplatz.Adapter.CategoriasCustomAdapter;
 import com.example.jaqueju.appplatz.Model.Categorias;
 import com.example.jaqueju.appplatz.R;
@@ -59,7 +62,7 @@ public class CategoriasFragment extends Fragment {
 
     public ArrayList<Categorias> listarTodos() {
 
-        Request request = new Request.Builder().get().url(WebClientUtil.WEBSERVICE + "/categorias").build();
+        Request request = new Request.Builder().get().url(WebClientUtil.WEBSERVICE + "/categorias/naoExcluidas").build();
         final ArrayList<Categorias> listaCategorias = new ArrayList<>();
 
         client.newCall(request).enqueue(new Callback() {
