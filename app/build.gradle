@@ -46,5 +46,8 @@ dependencies {
     compile 'com.shamanland:fab:0.0.6'
     compile 'com.android.support:recyclerview-v7:24.2.1'
     compile 'com.google.android.gms:play-services-maps:8.4.0'
+    compile 'com.squareup.okhttp3:okhttp:3.4.1'
+    compile group: 'com.google.code.gson', name: 'gson', version: '2.7'
+
 
 }

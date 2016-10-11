@@ -24,7 +24,7 @@ public class ListaCategoriasActivity extends AppCompatActivity {
     ListView listView;
     private TextView descricaoEvento;
 
-    //Array Categorias, contendo seus respectivos nomes
+    //Array, contendo seus respectivos nomes
     String[] categorias = {
             "Esporte",
             "Música",

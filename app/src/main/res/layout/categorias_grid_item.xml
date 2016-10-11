@@ -4,9 +4,9 @@
     android:id="@+id/card_view"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    card_view:cardUseCompatPadding="true"
     card_view:cardCornerRadius="2dp"
-    card_view:cardElevation="2dp">
+    card_view:cardElevation="2dp"
+    card_view:cardUseCompatPadding="true">
 
     <RelativeLayout
         android:layout_width="105dp"
@@ -14,29 +14,29 @@
         android:padding="10dp">
 
         <ImageView
-            android:id="@+id/screen_shot"
+            android:id="@+id/imagem_categoria"
             android:layout_width="40dp"
-            android:alpha="0.9"
             android:layout_height="40dp"
-            android:contentDescription="@string/app_name"
             android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:alpha="0.9"
+            android:contentDescription="@string/app_name"
             android:scaleType="centerCrop"
-            android:src="@drawable/categorias"
-            android:layout_centerHorizontal="true"/>
+            android:src="@drawable/categorias" />
 
         <TextView
-            android:id="@+id/music_name"
+            android:id="@+id/nome_categoria"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/screen_shot"
-            android:layout_alignLeft="@+id/screen_shot"
-            android:text="@string/action_home"
+            android:layout_alignLeft="@+id/imagem_categoria"
+            android:layout_below="@+id/imagem_categoria"
             android:layout_marginLeft="-20dp"
-            android:inputType="text"
-            android:textColor="#AAAAAA"
             android:layout_marginTop="8dp"
-            android:textStyle="bold"
-            android:textSize="14sp"/>
+            android:inputType="text"
+            android:text="@string/action_home"
+            android:textColor="#AAAAAA"
+            android:textSize="14sp"
+            android:textStyle="bold" />
 
 
     </RelativeLayout>
