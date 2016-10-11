@@ -1,33 +1,68 @@
 package com.example.jaqueju.appplatz.Model;
 
-import android.graphics.Bitmap;
-
 /**
- * Created by 15153818 on 27/09/2016.
+ * Created by 15153818 on 29/09/2016.
  */
 public class Categorias {
-    private Bitmap image;
-    private String title;
 
+    private String id;
+    private String nome;
+    private String dataCadastro;
+    private String caminhoIcone;
+    private String deletado;
 
-    public Categorias(Bitmap image, String title){
-        super();
-        this.image = image;
-        this.title = title;
-    }
-    public Bitmap getImage() {
-        return image;
-    }
+    //Construtores
+    public Categorias() {
 
-    public void setImage(Bitmap image) {
-        this.image = image;
     }
 
-    public String getTitle() {
-        return title;
+    public Categorias(String id, String nome, String dataCadastro, String caminhoIcone, String deletado) {
+        setId(id);
+        setNome(nome);
+        setDataCadastro(dataCadastro);
+        setCaminhoIcone(caminhoIcone);
+        setDeletado(deletado);
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    //Getters and Setters
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getDataCadastro() {
+        return dataCadastro;
+    }
+
+    public void setDataCadastro(String dataCadastro) {
+        this.dataCadastro = dataCadastro;
+    }
+
+    public String getCaminhoIcone() {
+        return caminhoIcone;
+    }
+
+    public void setCaminhoIcone(String caminhoIcone) {
+        this.caminhoIcone = caminhoIcone;
+    }
+
+    public String getDeletado() {
+        return deletado;
+    }
+
+    public void setDeletado(String deletado) {
+        this.deletado = deletado;
     }
 }
+
