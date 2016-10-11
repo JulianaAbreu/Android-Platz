@@ -2,6 +2,7 @@ package com.example.jaqueju.appplatz.Adapter;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,6 +10,7 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.jaqueju.appplatz.Activity.EventosCategoriasActivity;
 import com.example.jaqueju.appplatz.Model.Categorias;
 import com.example.jaqueju.appplatz.R;
 
@@ -56,10 +58,21 @@ public class CategoriasCustomAdapter extends BaseAdapter {
         ImageView imgCategoria = (ImageView) convertView.findViewById(R.id.imagem_categoria);
         TextView txtNome = (TextView) convertView.findViewById(R.id.nome_categoria);
 
-        Categorias categoria = categorias.get(position);
+        final Categorias categoria = categorias.get(position);
         //Fazendo os sets nos text views
         txtNome.setText(categoria.getNome());
         imgCategoria.setImageResource(R.drawable.ctg_esporte_teste);
+
+        imgCategoria.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                System.out.println("Clicou na Imagem");
+                Intent intent = new Intent(context, EventosCategoriasActivity.class);
+                intent.putExtra("id", categoria.getId());
+                context.startActivity(intent);
+            }
+        });
+
 
         return convertView;
     }
