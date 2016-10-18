@@ -38,6 +38,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:tabMode="fixed"
+                style="@style/AppTheme.TabStyle"
                 app:tabGravity="fill"/>
         </android.support.design.widget.AppBarLayout>
 
@@ -49,31 +50,31 @@
 
 
 
-<!--
-        <ImageButton
-            android:layout_width="45dp"
-            android:layout_height="45dp"
-            android:id="@+id/imageButton"
-            android:background="@drawable/style_oval"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginLeft="300dp"
-            android:layout_marginBottom="10dp"
-            android:layout_marginTop="520dp"
-            android:layout_marginRight="25dp"
-            android:src="@drawable/logo"
+        <!--
+                <ImageButton
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:id="@+id/imageButton"
+                    android:background="@drawable/style_oval"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginLeft="300dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="520dp"
+                    android:layout_marginRight="25dp"
+                    android:src="@drawable/logo"
 
-            />
--->
+                    />
+        -->
         <android.support.design.widget.FloatingActionButton
             android:id="@+id/fab"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|end"
-            android:src="@android:drawable/ic_menu_more"
+            android:src="@drawable/icon_map"
             app:elevation="6dp"
-            android:background="@color/green"
-            app:pressedTranslationZ="12dp" />
+            android:backgroundTint="@color/color_green"
+            app:pressedTranslationZ="11dp" />
 
     </android.support.design.widget.CoordinatorLayout>
 

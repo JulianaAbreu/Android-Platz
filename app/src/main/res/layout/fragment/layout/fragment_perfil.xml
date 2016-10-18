@@ -10,12 +10,11 @@
         android:layout_height="match_parent"
         tools:context="com.example.jaqueju.appplatz.Fragment.PerfilFragment">
 
-
         <LinearLayout
             android:id="@+id/header_cover_image"
             android:layout_width="match_parent"
             android:layout_height="100dp"
-            android:background="#F8CF8F"
+            android:background="@color/colorPrimary"
             android:orientation="horizontal"
 
             android:scaleType="centerCrop">
@@ -23,6 +22,62 @@
 
         </LinearLayout>
 
+        <LinearLayout
+            android:layout_marginTop="420dp"
+            android:background="#FFFFFF"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:text="Email:"
+                android:layout_marginLeft="30dp"
+                android:textStyle="bold"
+                android:textAlignment="center"
+                android:layout_marginTop="20dp"
+                />
+            <TextView
+                android:layout_marginLeft="2dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="juliana.c@gmail.com"
+                android:layout_marginTop="20dp"
+                /> <TextView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:text="Cidade:"
+            android:layout_marginLeft="-350dp"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            android:layout_marginTop="45dp"
+            />
+            <TextView
+                android:layout_marginLeft="2dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="São Paulo, SP"
+                android:layout_marginTop="45dp"
+                />
+            <TextView
+                android:layout_width="80dp"
+                android:layout_height="50dp"
+                android:text="Nascimento:"
+                android:layout_marginLeft="-350dp"
+                android:textStyle="bold"
+                android:textAlignment="center"
+                android:layout_marginTop="65dp"
+                />
+            <TextView
+                android:layout_marginLeft="2dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="22/07/1999"
+                android:layout_marginTop="65dp"
+                />
+
+        </LinearLayout>
         <Button
             android:layout_width="85dp"
             android:layout_height="30dp"
@@ -56,7 +111,7 @@
             android:elevation="100dp"
             android:padding="20dp"
             android:scaleType="centerCrop"
-         />
+            />
 
 
         <Button
@@ -111,7 +166,7 @@
             android:layout_width="45dp"
             android:layout_height="44dp"
             android:layout_marginLeft="30dp"
-            android:layout_marginTop="250dp"
+            android:layout_marginTop="220dp"
             android:background="@drawable/style_button_perfil_likes"
             android:src="@drawable/ic_favorite_white_testee"
 
@@ -123,15 +178,24 @@
             android:layout_height="44dp"
 
             android:layout_marginLeft="30dp"
-            android:layout_marginTop="305dp"
+            android:layout_marginTop="295dp"
             android:background="@drawable/style_button_perfil_euvou"
             android:src="@drawable/ic_check_white_perfil" />
+
+        <ImageButton
+            android:layout_width="45dp"
+            android:layout_height="44dp"
+
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="360dp"
+            android:background="@drawable/style_button_talvez"
+            />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="85dp"
-            android:layout_marginTop="262dp"
+            android:layout_marginTop="232dp"
             android:text="Eventos Curtidos"
             android:textColor="#000000"
             android:textSize="15dp" />
@@ -144,6 +208,15 @@
             android:text="Marcados Presença"
             android:textColor="#000000"
             android:textSize="15dp" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="85dp"
+            android:layout_marginTop="370dp"
+            android:text="0 Talvez"
+            android:textColor="#000000"
+            android:textSize="15dp" />
+
 
 
     </RelativeLayout>

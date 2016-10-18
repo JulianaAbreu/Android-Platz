@@ -2,40 +2,108 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/categoria_evento"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="160dp"
     android:layout_marginLeft="@dimen/activity_horizontal_margin"
     android:background="#FFFFFF"
     android:orientation="horizontal"
-    android:paddingTop="5dp">
+    android:paddingTop="2dp">
 
     <ImageView
         android:id="@+id/imagemEventoDestaque"
-        android:layout_width="195dp"
-        android:layout_height="160dp"
-        android:layout_marginBottom="-10dp"
+        android:layout_width="180dp"
+        android:layout_height="180dp"
+        android:layout_marginBottom="5dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="-4dp"
+        android:layout_marginTop="-10dp"
         android:src="@drawable/evento" />
-<TextView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="#1"
-    android:textStyle="bold"
-    android:textSize="20dp"
-    android:layout_marginTop="10dp"
-    android:layout_marginLeft="10dp"
-    android:id="@+id/posicao"
-    />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="#1"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:layout_marginTop="23dp"
+        android:layout_marginLeft="10dp"
+        android:id="@+id/posicao"
+        />
     <TextView
         android:id="@+id/nomeEventoDestaque"
         android:layout_width="150dp"
         android:layout_height="match_parent"
         android:layout_marginLeft="5dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="28dp"
 
         android:text="dhgdfhfdh"
         android:textStyle="bold" />
+    <RatingBar
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="-170dp"
+        android:id="@+id/detail_rating"
+        style="?android:attr/ratingBarStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
 
+        android:isIndicator="true"
+        android:paddingTop="11dp"
+        android:rating="3"
+        />
+
+
+    <ImageButton
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginLeft="-84dp"
+
+        android:layout_marginTop="85dp"
+        android:background="@drawable/style_buttons_ranking"
+        android:src="@drawable/ic_favorite_white_testee"
+        />
+    <TextView
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:text="500"
+        android:layout_marginTop="115dp"
+        android:layout_marginLeft="-46dp"
+        android:textAlignment="center"
+        />
+    <ImageButton
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginLeft="2dp"
+
+        android:layout_marginTop="85dp"
+        android:background="@drawable/style_buttons_ranking"
+        android:src="@drawable/ic_check_evento"
+
+
+        />
+    <TextView
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:text="500"
+        android:layout_marginTop="115dp"
+        android:layout_marginLeft="-30dp"
+        android:textAlignment="inherit"
+        />
+    <ImageButton
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginLeft="-18dp"
+        android:layout_marginTop="85dp"
+        android:background="@drawable/style_buttons_ranking"
+        android:src="@drawable/ic_favorite_white_testee"
+
+
+        />
+    <TextView
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:text="500"
+        android:layout_marginTop="115dp"
+        android:layout_marginLeft="-25dp"
+        android:textAlignment="inherit"
+        />
     <!--
     <CheckBox
         android:layout_marginTop="15dp"
@@ -44,9 +112,9 @@
 
         android:button="@drawable/style_favorite_button"
         android:checked="false" />
--->
+    -->
     <!--
-    <ImageView
+     <ImageView
         android:layout_width="35dp"
         android:layout_height="wrap_content"
         android:src="@mipmap/ic_favorite_heart"

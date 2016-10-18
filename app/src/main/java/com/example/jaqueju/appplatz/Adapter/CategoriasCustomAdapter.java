@@ -13,6 +13,7 @@ import android.widget.TextView;
 import com.example.jaqueju.appplatz.Activity.EventosCategoriasActivity;
 import com.example.jaqueju.appplatz.Model.Categorias;
 import com.example.jaqueju.appplatz.R;
+import com.example.jaqueju.appplatz.Util.DownloadImageBitmapAsyncTask;
 
 import java.util.ArrayList;
 
@@ -61,7 +62,8 @@ public class CategoriasCustomAdapter extends BaseAdapter {
         final Categorias categoria = categorias.get(position);
         //Fazendo os sets nos text views
         txtNome.setText(categoria.getNome());
-        imgCategoria.setImageResource(R.drawable.ctg_esporte_teste);
+        new DownloadImageBitmapAsyncTask(imgCategoria).execute(categoria.getId());
+        //imgCategoria.setImageResource(R.drawable.ctg_jogos);
 
         imgCategoria.setOnClickListener(new View.OnClickListener() {
             @Override

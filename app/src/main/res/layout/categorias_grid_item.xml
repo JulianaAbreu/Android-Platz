@@ -21,8 +21,7 @@
             android:layout_centerHorizontal="true"
             android:alpha="0.9"
             android:contentDescription="@string/app_name"
-            android:scaleType="centerCrop"
-            android:src="@drawable/categorias" />
+            android:scaleType="centerCrop"/>
 
         <TextView
             android:id="@+id/nome_categoria"

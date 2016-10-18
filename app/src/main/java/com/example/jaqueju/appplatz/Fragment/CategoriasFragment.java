@@ -21,6 +21,7 @@ import com.google.gson.Gson;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
 
 import okhttp3.Call;
 import okhttp3.Callback;
@@ -35,7 +36,7 @@ public class CategoriasFragment extends Fragment {
 
     final Gson gson = new Gson();
     final OkHttpClient client = new OkHttpClient();
-    ArrayList<Categorias> listaCategorias;
+    ArrayList<Categorias> listaCategorias = new ArrayList<>();
 
     public CategoriasFragment() {
         // Required empty public constructor
@@ -54,7 +55,10 @@ public class CategoriasFragment extends Fragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
+        //listaCategorias = this.listarTodos();
+
         listaCategorias = listarTodos();
+
         GridView categoriasGridView = (GridView) this.getActivity().findViewById(R.id.gridview);
         categoriasGridView.setAdapter(new CategoriasCustomAdapter(getContext(), listaCategorias));
 
@@ -69,27 +73,33 @@ public class CategoriasFragment extends Fragment {
             //Caso de erro
             @Override
             public void onFailure(Call call, IOException e) {
-                e.getMessage();
-                e.getCause();
+                System.out.println("================================>Erro ao Fazer Request");
+                e.printStackTrace();
             }
 
             //Se retornar algo
             @Override
             public void onResponse(Call call, Response response) throws IOException {
+
                 //Se a resposta for válida
                 if (response.isSuccessful()) {
+
+                    System.out.println("==================Retornou uma Response Válida");
+
                     //Fazer algo se a resposta for válida
                     String json = response.body().string();
 
-
                     Categorias[] matrizCategorias = gson.fromJson(json, Categorias[].class);
-                    for (Categorias c : matrizCategorias) {
-                        listaCategorias.add(c);
-                    }
+                    Collections.addAll(listaCategorias, matrizCategorias);
 
+                    for (Categorias c : listaCategorias) {
+                        System.out.println("============================");
+                        System.out.println(c.getNome());
+                    }
 
                 } else {
                     //Fazer algo se a resposta for inválida
+                    System.out.println("======================================>A response foi inválida");
                     throw new IOException("Erro");
                 }
             }

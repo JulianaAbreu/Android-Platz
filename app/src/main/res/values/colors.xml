@@ -2,7 +2,9 @@
 <resources>
     <color name="photo_tint">#88101010</color>
 
-    <color name="colorPrimary">#FF9801</color>
+
+    <!--<color name="colorPrimary">#FF9801</color>-->
+    <color name="colorPrimary">#2A313B</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FCD108</color>
     <color name="cardview_initial_background">#71C3DE</color>

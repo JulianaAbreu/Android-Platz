@@ -18,7 +18,6 @@ public class EventosCategoriasActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-
             ListView gameList;
         //Array contendo o nome dos Eventos
             String games_arr[] = {

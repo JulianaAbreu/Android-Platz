@@ -6,7 +6,7 @@ package com.example.jaqueju.appplatz.Util;
 
 public class WebClientUtil {
 
-    public static final String WEBSERVICE = "http://10.0.4.224:8096/PlatzWebService/platz" ;
+    public static final String WEBSERVICE = "http://10.0.3.46:8084/PlatzWebService/platz" ;
 
 
 }
