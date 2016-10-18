@@ -6,106 +6,164 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
-import android.widget.ArrayAdapter;
+import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.jaqueju.appplatz.Activity.EventosEspecificosActivity;
-import com.example.jaqueju.appplatz.MainActivity;
+import com.example.jaqueju.appplatz.Model.Evento;
 import com.example.jaqueju.appplatz.R;
+import com.example.jaqueju.appplatz.Util.DownloadImageBitmapAsyncTask;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by 15153818 on 20/09/2016.
  */
-public class EventosCategoriaAdapter extends ArrayAdapter<String> {
-    private Context con;
-    private int lastPosition = -1;
-    ImageView imagemEvento;
-    TextView nomeEvento;
-    TextView dataEvento;
-    TextView tv_gameplateform;
+public class EventosCategoriaAdapter extends BaseAdapter {
+    private ArrayList<Evento> eventos;
+    private Context context;
 
-    //Array contendo o nome do Evento
-    String games_arr[] = {
-
-            "Evento",
-            "Evento",
-            "Evento",
-            "Evento",
-            "Evento",
-            "Evento",
-            "Evento",
-            "Evento"
-
-    };
-
-    //Array contendo a imagem de determinado Evento
-    int images_arr[] = {
-
-            R.drawable.evento,
-            R.drawable.newyork,
-            R.drawable.newyork,
-            R.drawable.newyork,
-            R.drawable.newyork,
-            R.drawable.newyork,
-            R.drawable.newyork,
-            R.drawable.newyork
-    };
-
-    //Array cintendo as datas dos Eventos
-    String releaseDate_arr[] = {
-
-            "Coming Nov 6, 2015",
-            "Coming Oct 23, 2015",
-            "Coming Nov 10, 2015",
-            "Coming Nov 3, 2015",
-            "Coming Nov 10, 2015",
-            "Coming Dec 31, 2016",
-            "Coming Mar 8, 2016",
-            "Coming Dec 1, 2015"
-    };
-
-
-    //Contrutor da classe
-    public EventosCategoriaAdapter(Context context, int resource, String[] objects) {
-        super(context, resource, objects);
-        this.con = context;
-        this.games_arr = objects;
+    public EventosCategoriaAdapter(Context context, ArrayList<Evento> results) {
+        this.eventos = results;
+        this.context = context;
     }
 
     @Override
-//Pega a visão dos dados a partir de uma posição especificada
-    public View getView(int position, final View convertView, ViewGroup parent) {
+    public int getCount() {
+        return eventos.size();
+    }
 
-        LayoutInflater inflater = (LayoutInflater) con.getSystemService(Activity.LAYOUT_INFLATER_SERVICE);
-        View row = inflater.inflate(R.layout.list_item_template, parent, false);
+    @Override
+    public Object getItem(int position) {
+        return eventos.get(position);
+    }
 
-        imagemEvento = (ImageView) row.findViewById(R.id.game_image);
-        imagemEvento.setImageResource(images_arr[position]);
+    @Override
+    public long getItemId(int position) {
+        return position;
+    }
 
-        nomeEvento = (TextView) row.findViewById(R.id.txt_game_name);
-        nomeEvento.setText(games_arr[position]);
+    @Override
+    public View getView(int position, View convertView, ViewGroup parent) {
+        System.out.println("View do Adapter");
 
-        dataEvento = (TextView) row.findViewById(R.id.txt_relase_date);
-        dataEvento.setText(releaseDate_arr[position]);
+        if (convertView == null) {
+            LayoutInflater inflater = (LayoutInflater) context.getSystemService(Activity.LAYOUT_INFLATER_SERVICE);
+            convertView = inflater.inflate(R.layout.list_item_template, null);
+        }
 
-        Animation animation = AnimationUtils.loadAnimation(getContext(), (position > lastPosition) ? R.anim.up_from_bottom : R.anim.down_from_top);
-        row.startAnimation(animation);
-        lastPosition = position;
+        final Evento evento = eventos.get(position);
 
+        ImageView imagemEvento = (ImageView) convertView.findViewById(R.id.imagem_evento);
+        new DownloadImageBitmapAsyncTask(imagemEvento).execute(evento.getImagemCapa());
+
+        TextView nomeEvento = (TextView) convertView.findViewById(R.id.txt_game_name);
+        nomeEvento.setText(evento.getNome());
+
+        TextView dataEvento = (TextView) convertView.findViewById(R.id.txt_relase_date);
+        dataEvento.setText(evento.getDataInicio());
 
         imagemEvento.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent( con, EventosEspecificosActivity.class);
-                con.startActivity(intent);
+                Intent intent = new Intent(context, EventosEspecificosActivity.class);
+                intent.putExtra("id", evento.getId());
+                context.startActivity(intent);
             }
         });
-        return row;
 
-
+        return convertView;
     }
+
+
+//    private Context con;
+//    private int lastPosition = -1;
+//    ImageView imagemEvento;
+//    TextView nomeEvento;
+//    TextView dataEvento;
+//    TextView tv_gameplateform;
+//
+//    //Array contendo o nome do Evento
+//    String games_arr[] = {
+//
+//            "Evento",
+//            "Evento",
+//            "Evento",
+//            "Evento",
+//            "Evento",
+//            "Evento",
+//            "Evento",
+//            "Evento"
+//
+//    };
+//
+//    //Array contendo a imagem de determinado Evento
+//    int images_arr[] = {
+//
+//            R.drawable.evento,
+//            R.drawable.newyork,
+//            R.drawable.newyork,
+//            R.drawable.newyork,
+//            R.drawable.newyork,
+//            R.drawable.newyork,
+//            R.drawable.newyork,
+//            R.drawable.newyork
+//    };
+//
+//    //Array cintendo as datas dos Eventos
+//    String releaseDate_arr[] = {
+//
+//            "Coming Nov 6, 2015",
+//            "Coming Oct 23, 2015",
+//            "Coming Nov 10, 2015",
+//            "Coming Nov 3, 2015",
+//            "Coming Nov 10, 2015",
+//            "Coming Dec 31, 2016",
+//            "Coming Mar 8, 2016",
+//            "Coming Dec 1, 2015"
+//    };
+//
+//
+//    //Contrutor da classe
+//    public EventosCategoriaAdapter(Context context, int resource, String[] objects) {
+//        super(context, resource, objects);
+//        this.con = context;
+//        this.games_arr = objects;
+//    }
+//
+//    @Override
+////Pega a visão dos dados a partir de uma posição especificada
+//    public View getView(int position, final View convertView, ViewGroup parent) {
+//
+//        LayoutInflater inflater = (LayoutInflater) con.getSystemService(Activity.LAYOUT_INFLATER_SERVICE);
+//        View row = inflater.inflate(R.layout.list_item_template, parent, false);
+//
+//        imagemEvento = (ImageView) row.findViewById(R.id.game_image);
+//        imagemEvento.setImageResource(images_arr[position]);
+//
+//        nomeEvento = (TextView) row.findViewById(R.id.txt_game_name);
+//        nomeEvento.setText(games_arr[position]);
+//
+//        dataEvento = (TextView) row.findViewById(R.id.txt_relase_date);
+//        dataEvento.setText(releaseDate_arr[position]);
+//
+//        Animation animation = AnimationUtils.loadAnimation(getContext(), (position > lastPosition) ? R.anim.up_from_bottom : R.anim.down_from_top);
+//        row.startAnimation(animation);
+//        lastPosition = position;
+//
+//
+//        imagemEvento.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent( con, EventosEspecificosActivity.class);
+//                con.startActivity(intent);
+//            }
+//        });
+//        return row;
+//
+//
+//    }
 }
 

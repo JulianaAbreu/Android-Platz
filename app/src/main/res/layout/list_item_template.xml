@@ -1,62 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
     <View
         android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="265dp"
-        android:background="@drawable/style_shadow_rectangle"
-        android:layout_marginTop="5dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="5dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
-        android:layout_marginBottom="5dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_marginTop="5dp"
+        android:background="@drawable/style_shadow_rectangle" />
 
     <ImageView
+        android:id="@+id/imagem_evento"
         android:layout_width="wrap_content"
         android:layout_height="190dp"
-        android:id="@+id/game_image"
-        android:src="@drawable/evento"
-        android:layout_marginTop="10dp"
+        android:layout_alignEnd="@+id/title"
+        android:layout_alignLeft="@+id/title"
+        android:layout_alignRight="@+id/title"
+        android:layout_alignStart="@+id/title"
+        android:layout_alignTop="@+id/title"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
-        android:layout_alignTop="@+id/title"
-        android:layout_alignLeft="@+id/title"
-        android:layout_alignStart="@+id/title"
-        android:layout_alignRight="@+id/title"
-        android:layout_alignEnd="@+id/title" />
+        android:layout_marginTop="10dp"
+        android:src="@drawable/evento" />
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textColor="#000000"
         android:id="@+id/txt_game_name"
-        android:layout_below="@+id/game_image"
-        android:layout_alignLeft="@+id/game_image"
-        android:layout_alignStart="@+id/game_image"
-        android:layout_marginTop="6dp" />
-
-    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="Coming Nov 6, 2015"
-        android:id="@+id/txt_relase_date"
-        android:layout_below="@+id/txt_game_name"
-        android:layout_alignLeft="@+id/txt_game_name"
-        android:layout_alignStart="@+id/txt_game_name" />
+        android:layout_alignLeft="@+id/imagem_evento"
+        android:layout_alignStart="@+id/imagem_evento"
+        android:layout_below="@+id/imagem_evento"
+        android:layout_marginTop="6dp"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="#000000" />
 
-<ImageButton
-    android:layout_width="40dp"
-    android:layout_height="40dp"
-    android:layout_marginLeft="290dp"
-    android:background="@drawable/style_button_liked"
-    android:layout_marginTop="212dp"
-    android:src="@drawable/ic_favorite_white_curt"
-    />
+    <TextView
+        android:id="@+id/txt_relase_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/txt_game_name"
+        android:layout_alignStart="@+id/txt_game_name"
+        android:layout_below="@+id/txt_game_name"
+        android:text="Coming Nov 6, 2015"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <ImageButton
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="290dp"
+        android:layout_marginTop="212dp"
+        android:background="@drawable/style_button_liked"
+        android:src="@drawable/ic_favorite_white_curt" />
 
 </RelativeLayout>

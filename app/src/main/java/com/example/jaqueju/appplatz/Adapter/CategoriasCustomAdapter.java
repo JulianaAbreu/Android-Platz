@@ -11,7 +11,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.jaqueju.appplatz.Activity.EventosCategoriasActivity;
-import com.example.jaqueju.appplatz.Model.Categorias;
+import com.example.jaqueju.appplatz.Model.Categoria;
 import com.example.jaqueju.appplatz.R;
 import com.example.jaqueju.appplatz.Util.DownloadImageBitmapAsyncTask;
 
@@ -22,14 +22,13 @@ import java.util.ArrayList;
  */
 public class CategoriasCustomAdapter extends BaseAdapter {
 
-    private ArrayList<Categorias> categorias;
+    private ArrayList<Categoria> categorias;
     private Context context;
 
-    public CategoriasCustomAdapter(Context context, ArrayList<Categorias> results) {
+    public CategoriasCustomAdapter(Context context, ArrayList<Categoria> results) {
         this.categorias = results;
         this.context = context;
     }
-
 
     @Override
     public int getCount() {
@@ -51,19 +50,16 @@ public class CategoriasCustomAdapter extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
 
         if (convertView == null) {
-            LayoutInflater mInflater = (LayoutInflater) context
-                    .getSystemService(Activity.LAYOUT_INFLATER_SERVICE);
+            LayoutInflater mInflater = (LayoutInflater) context.getSystemService(Activity.LAYOUT_INFLATER_SERVICE);
             convertView = mInflater.inflate(R.layout.categorias_grid_item, null);
         }
+        final Categoria categoria = categorias.get(position);
+
+        TextView txtNome = (TextView) convertView.findViewById(R.id.nome_categoria);
+        txtNome.setText(categoria.getNome());
 
         ImageView imgCategoria = (ImageView) convertView.findViewById(R.id.imagem_categoria);
-        TextView txtNome = (TextView) convertView.findViewById(R.id.nome_categoria);
-
-        final Categorias categoria = categorias.get(position);
-        //Fazendo os sets nos text views
-        txtNome.setText(categoria.getNome());
         new DownloadImageBitmapAsyncTask(imgCategoria).execute(categoria.getId());
-        //imgCategoria.setImageResource(R.drawable.ctg_jogos);
 
         imgCategoria.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -74,7 +70,6 @@ public class CategoriasCustomAdapter extends BaseAdapter {
                 context.startActivity(intent);
             }
         });
-
 
         return convertView;
     }

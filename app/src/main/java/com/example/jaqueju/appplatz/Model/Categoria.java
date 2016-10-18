@@ -3,7 +3,7 @@ package com.example.jaqueju.appplatz.Model;
 /**
  * Created by 15153818 on 29/09/2016.
  */
-public class Categorias {
+public class Categoria {
 
     private String id;
     private String nome;
@@ -12,11 +12,11 @@ public class Categorias {
     private String deletado;
 
     //Construtores
-    public Categorias() {
+    public Categoria() {
 
     }
 
-    public Categorias(String id, String nome, String dataCadastro, String caminhoIcone, String deletado) {
+    public Categoria(String id, String nome, String dataCadastro, String caminhoIcone, String deletado) {
         setId(id);
         setNome(nome);
         setDataCadastro(dataCadastro);

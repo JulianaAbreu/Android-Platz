@@ -39,12 +39,6 @@ public class DownloadImageBitmapAsyncTask extends AsyncTask<String, Void, Bitmap
             connection.setDoInput(true);
             connection.connect();
             input = connection.getInputStream();
-
-            if (input == null){
-                System.out.println("Input Null");
-            }
-
-            System.out.println("Passou pelo input");
             Bitmap myBitmap = BitmapFactory.decodeStream(input);
             return myBitmap;
 
