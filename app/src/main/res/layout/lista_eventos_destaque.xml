@@ -16,6 +16,16 @@
         android:layout_marginLeft="8dp"
         android:layout_marginTop="-10dp"
         android:src="@drawable/evento" />
+
+    <ImageButton
+        android:layout_width="28dp"
+        android:layout_height="28dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="85dp"
+        android:background="@drawable/style_buttons_ranking"
+        android:src="@drawable/favorite_ic"
+        android:id="@+id/imageButton" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -23,87 +33,84 @@
         android:textStyle="bold"
         android:textSize="20dp"
         android:layout_marginTop="23dp"
-        android:layout_marginLeft="10dp"
+        android:layout_marginLeft="-35dp"
         android:id="@+id/posicao"
         />
+
     <TextView
         android:id="@+id/nomeEventoDestaque"
         android:layout_width="150dp"
         android:layout_height="match_parent"
-        android:layout_marginLeft="5dp"
+        android:layout_marginLeft="2dp"
         android:layout_marginTop="28dp"
 
         android:text="dhgdfhfdh"
         android:textStyle="bold" />
+
     <RatingBar
         android:layout_marginTop="50dp"
-        android:layout_marginLeft="-170dp"
+android:layout_marginLeft="-160dp"
         android:id="@+id/detail_rating"
         style="?android:attr/ratingBarStyleSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:clickable="true"
-
         android:isIndicator="true"
         android:paddingTop="11dp"
         android:rating="3"
         />
 
-
-    <ImageButton
-        android:layout_width="32dp"
-        android:layout_height="32dp"
-        android:layout_marginLeft="-84dp"
-
-        android:layout_marginTop="85dp"
-        android:background="@drawable/style_buttons_ranking"
-        android:src="@drawable/ic_favorite_white_testee"
-        />
     <TextView
         android:layout_width="60dp"
         android:layout_height="wrap_content"
         android:text="500"
-        android:layout_marginTop="115dp"
-        android:layout_marginLeft="-46dp"
+        android:layout_marginTop="110dp"
+        android:layout_marginLeft="-105dp"
         android:textAlignment="center"
-        />
-    <ImageButton
-        android:layout_width="32dp"
-        android:layout_height="32dp"
-        android:layout_marginLeft="2dp"
+        android:id="@+id/textView2" />
 
+    <ImageButton
+        android:layout_width="28dp"
+        android:layout_height="28dp"
+        android:layout_marginLeft="-10dp"
         android:layout_marginTop="85dp"
         android:background="@drawable/style_buttons_ranking"
-        android:src="@drawable/ic_check_evento"
+        android:src="@drawable/sharethis_ic"
 
 
-        />
+        android:id="@+id/imageButton5" />
+
     <TextView
         android:layout_width="60dp"
         android:layout_height="wrap_content"
         android:text="500"
-        android:layout_marginTop="115dp"
-        android:layout_marginLeft="-30dp"
-        android:textAlignment="inherit"
-        />
-    <ImageButton
-        android:layout_width="32dp"
-        android:layout_height="32dp"
-        android:layout_marginLeft="-18dp"
-        android:layout_marginTop="85dp"
-        android:background="@drawable/style_buttons_ranking"
-        android:src="@drawable/ic_favorite_white_testee"
-
-
-        />
-    <TextView
-        android:layout_width="60dp"
-        android:layout_height="wrap_content"
-        android:text="500"
-        android:layout_marginTop="115dp"
+        android:layout_marginTop="110dp"
         android:layout_marginLeft="-25dp"
         android:textAlignment="inherit"
+        android:id="@+id/textView7" />
+
+    <ImageButton
+        android:layout_width="28dp"
+        android:layout_height="28dp"
+        android:layout_marginLeft="-30dp"
+
+        android:layout_marginTop="85dp"
+        android:background="@drawable/style_buttons_ranking"
+        android:src="@drawable/ic_check_white_dp"
+
+
+        android:id="@+id/imageButton2" />
+
+    <TextView
+        android:layout_width="33dp"
+        android:layout_height="wrap_content"
+        android:text="500"
+        android:layout_marginLeft="-25dp"
+        android:layout_marginTop="110dp"
+        android:textAlignment="inherit"
+
         />
+
     <!--
     <CheckBox
         android:layout_marginTop="15dp"

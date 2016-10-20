@@ -4,6 +4,7 @@
 
 
     <!--<color name="colorPrimary">#FF9801</color>-->
+    <color name="detalhes">#f3b532</color>
     <color name="colorPrimary">#2A313B</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FCD108</color>

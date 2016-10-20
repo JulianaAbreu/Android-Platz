@@ -1,172 +1,212 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#EAEAEA"
+    android:layout_height="wrap_content"
+    android:fillViewport="true">
 
-    tools:context=".Activity.EventosEspecificosActivity">
-
-    <ImageView
-        android:layout_width="500dp"
-        android:layout_height="480dp"
-        android:layout_marginTop="-200dp"
-        android:src="@drawable/evento"
-        />
-
-    <LinearLayout
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:layout_marginTop="160dp"
-        android:background="#FFFFFF"
+        android:layout_height="match_parent"
+        android:background="#EAEAEA"
 
-        >
-
-        <TextView
-            
-            android:textSize="18dp"
-            android:layout_marginLeft="12dp"
-            android:layout_marginTop="5dp"
-            android:layout_width="190dp"
-            android:layout_height="20dp"
-            android:text="Festival das Cores"
-            android:textColor="#000000"
-            />
-        <ImageView
-            android:layout_width="16dp"
-            android:layout_height="16dp"
-            android:src="@drawable/ic_time"
-            android:layout_marginTop="35dp"
-            android:layout_marginLeft="-190dp"
-            />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="13:00 - 23:00"
-            android:layout_marginTop="30dp"
-            android:layout_marginLeft="4dp"
-            />
-        <ImageView
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:src="@drawable/ic_face_black"
-            android:layout_marginTop="32dp"
-            android:layout_marginLeft="8dp" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="180 Confirmadas "
-            android:layout_marginTop="30dp"
-            android:layout_marginLeft="2dp" />
+        tools:context=".Activity.EventosEspecificosActivity">
 
         <ImageView
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:src="@drawable/ic_date_black_"
-            android:layout_marginTop="32dp"
-            android:layout_marginLeft="5dp"
+            android:id="@+id/imagemEventoEspecifico"
+            android:layout_width="500dp"
+            android:layout_height="480dp"
+            android:layout_marginTop="-200dp"
+            android:src="@drawable/evento" />
 
-            />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="12/09/2016"
-            android:layout_marginTop="30dp"
-            android:layout_marginLeft="2dp"
-            />
-
-
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="235dp"
-        android:background="#FFFFFF"
-    android:orientation="vertical"
-        >
-        <TextView
+        <LinearLayout
             android:layout_width="match_parent"
-            android:textColor="#FFFFFF"
-            android:textStyle="bold"
-            android:textSize="16dp"
-            android:gravity="center"
-            android:background="@color/bg_screen2"
-            android:layout_height="30dp" 
-            android:text="Descrição"
-            />
-        <TextView
-            android:layout_width="350dp"
-            android:layout_height="wrap_content" 
-            android:text="@string/descricao_evento"
-            android:layout_marginTop="25dp"
-            android:layout_marginLeft="18dp"
-            />
-        <ImageView
-
-            android:layout_width="23dp"
-            android:layout_height="23dp"
-            android:src="@drawable/ic_location"
-            android:layout_marginLeft="18dp"
-            android:layout_marginTop="15dp"
-            />
-        <TextView
-            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="45dp"
-            android:layout_marginTop="-20dp"
-            android:text="Avenida Santo Amaro 3800, São Paulo - SP"
+            android:layout_marginTop="170dp"
+            android:background="#FFFFFF"            >
 
-            />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Ver no mapa"
-            android:layout_marginLeft="50dp"
-            android:textColor="@color/bg_screen3"
-            />
-        <ImageView
-            android:layout_width="23dp"
-            android:layout_height="23dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginLeft="18dp"
-            android:src="@drawable/ic_phone_black_"
-            />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="(11) 5897-1963"
-            android:layout_marginLeft="45dp"
-            android:layout_marginTop="-20dp"
-            />
-        <ImageView
-            android:layout_width="23dp"
-            android:layout_height="23dp"
-            android:src="@drawable/ic_money"
-            android:layout_marginTop="8dp"
-            android:layout_marginLeft="18dp"
+            <TextView
+                android:id="@+id/nomeEventoEspecifico"
+                android:layout_width="190dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="5dp"
+                android:text="Festival das Cores"
+                android:textColor="#000000"
+                android:textSize="18dp" />
 
-            />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="65,00"
-            android:layout_marginLeft="45dp"
-            android:layout_marginTop="-20dp"
-            />
+            <ImageView
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:layout_marginLeft="-190dp"
+                android:layout_marginTop="35dp"
+                android:src="@drawable/ic_time" />
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:layout_marginTop="30dp"
+                android:text="13:00 - 23:00" />
 
-        <Button
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="-105dp"
+                android:layout_marginTop="60dp"
+                android:src="@drawable/ic_face_black" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="2dp"
+                android:layout_marginTop="60dp"
+                android:text="180 Confirmadas " />
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="-133dp"
+                android:layout_marginTop="86dp"
+                android:src="@drawable/ic_date_black_"
+
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="2dp"
+                android:layout_marginTop="85dp"
+                android:text="12/09/2016" />
+
+            <RatingBar
+                android:id="@+id/detail_rating"
+                style="?android:attr/ratingBarStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="170dp"
+                android:layout_marginTop="0dp"
+                android:clickable="true"
+                android:isIndicator="true"
+                android:paddingTop="11dp"
+                android:rating="3" />
+
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:text="QUERO IR!"
-            android:background="#4CAF50"
-            android:textColor="#FFFFFF"
-            android:textSize="16dp"
-            android:layout_marginTop="69dp"
-            />
-    </LinearLayout>
+            android:layout_height="wrap_content"
+            android:layout_marginTop="285dp"
+            android:background="#FFFFFF"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:background="@color/detalhes"
+                android:gravity="center"
+                android:text="Detalhes"
+                android:textColor="#FFFFFF"
+                android:textSize="16dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/descricaoEventoEspecifico"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="18dp"
+                android:layout_marginTop="25dp"
+                android:text="@string/descricao_evento" />
+
+            <ImageView
+
+                android:layout_width="23dp"
+                android:layout_height="23dp"
+                android:layout_marginLeft="18dp"
+                android:layout_marginTop="15dp"
+                android:src="@drawable/ic_location" />
+
+            <TextView
+                android:id="@+id/enderecoEventoEspecico"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="45dp"
+                android:layout_marginTop="-20dp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:text="Ver no mapa"
+                android:textColor="@color/bg_screen3" />
+
+            <ImageView
+                android:layout_width="23dp"
+                android:layout_height="23dp"
+                android:layout_marginLeft="18dp"
+                android:layout_marginTop="8dp"
+                android:src="@drawable/ic_phone_black_" />
+
+            <TextView
+                android:id="@+id/telefoneEventoEspecifico"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="45dp"
+                android:layout_marginTop="-20dp"
+                android:text="(11) 5897-1963" />
+
+            <ImageView
+                android:layout_width="23dp"
+                android:layout_height="23dp"
+                android:layout_marginLeft="190dp"
+                android:layout_marginTop="-22dp"
+                android:src="@drawable/ic_money"
+
+                />
+
+            <TextView
+                android:id="@+id/precoEventoEspecifico"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="215dp"
+                android:layout_marginTop="-22dp"
+                android:text="65,00" />
 
 
-</RelativeLayout>
+            <Button
+                android:layout_width="130dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="47dp"
+                android:background="#01BFA5"
+                android:text="Vou!"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:textSize="16dp" />
+
+            <Button
+                android:layout_width="125dp"
+                android:layout_height="39.5dp"
+                android:layout_marginLeft="130dp"
+                android:layout_marginTop="-40dp"
+                android:background="#FF7E5F"
+                android:text="Talvez"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:textSize="16dp" />
+
+            <Button
+                android:layout_width="130dp"
+                android:layout_height="39.5dp"
+                android:layout_marginLeft="255dp"
+                android:layout_marginTop="-40dp"
+                android:background="#FF6060"
+                android:text="Não vou"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:textSize="16dp" />
+        </LinearLayout>
+
+
+    </RelativeLayout>
+</ScrollView>

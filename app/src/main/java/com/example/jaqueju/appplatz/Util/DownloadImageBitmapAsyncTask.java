@@ -43,10 +43,7 @@ public class DownloadImageBitmapAsyncTask extends AsyncTask<String, Void, Bitmap
             return myBitmap;
 
         } catch (Exception e) {
-            System.out.println("======================== Erro ao Baixar Icone =========================");
-            System.out.println(e.getCause());
-            System.out.println(e.getMessage());
-            e.printStackTrace();
+            //e.printStackTrace();
             return null;
         }
     }
@@ -57,7 +54,7 @@ public class DownloadImageBitmapAsyncTask extends AsyncTask<String, Void, Bitmap
         if (bitmap != null) {
             imageView.setImageBitmap(bitmap);
         } else {
-            imageView.setImageResource(R.drawable.ctg_festival);
+            imageView.setImageResource(R.drawable.ctg_music);
         }
 
     }

@@ -16,20 +16,6 @@
         android:layout_marginTop="5dp"
         android:background="@drawable/style_shadow_rectangle" />
 
-    <ImageView
-        android:id="@+id/imagem_evento"
-        android:layout_width="wrap_content"
-        android:layout_height="190dp"
-        android:layout_alignEnd="@+id/title"
-        android:layout_alignLeft="@+id/title"
-        android:layout_alignRight="@+id/title"
-        android:layout_alignStart="@+id/title"
-        android:layout_alignTop="@+id/title"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginTop="10dp"
-        android:src="@drawable/evento" />
-
     <TextView
         android:id="@+id/txt_game_name"
         android:layout_width="wrap_content"
@@ -58,5 +44,16 @@
         android:layout_marginTop="212dp"
         android:background="@drawable/style_button_liked"
         android:src="@drawable/ic_favorite_white_curt" />
+
+    <ImageView
+        android:id="@+id/imagem_evento"
+        android:layout_width="wrap_content"
+        android:layout_height="190dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:src="@drawable/evento"
+        android:layout_alignTop="@+id/title"
+        android:layout_centerHorizontal="true"
+        android:scaleType="centerCrop"/>
 
 </RelativeLayout>

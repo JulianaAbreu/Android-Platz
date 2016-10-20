@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- *
  * @author 15153770
  */
 public class Evento {
@@ -26,6 +25,7 @@ public class Evento {
     private String censurado;
     private boolean destaque;
     private String dataCadastro;
+    private Endereco endereco;
 
     public Evento() {
     }
@@ -157,7 +157,6 @@ public class Evento {
 
     public void setLotacaoMax(int lotacaoMax) {
         this.lotacaoMax = lotacaoMax;
-
     }
 
     public String getImagemCapa() {
@@ -168,4 +167,11 @@ public class Evento {
         this.imagemCapa = imagemCapa;
     }
 
+    public Endereco getEndereco() {
+        return endereco;
+    }
+
+    public void setEndereco(Endereco endereco) {
+        this.endereco = endereco;
+    }
 }

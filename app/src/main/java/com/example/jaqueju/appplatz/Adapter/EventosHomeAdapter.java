@@ -16,16 +16,17 @@ import com.example.jaqueju.appplatz.R;
 import com.example.jaqueju.appplatz.Util.DownloadImageBitmapAsyncTask;
 
 import java.util.ArrayList;
-import java.util.List;
 
 /**
- * Created by 15153818 on 20/09/2016.
+ * Created by 15153766 on 19/10/2016.
  */
-public class EventosCategoriaAdapter extends BaseAdapter {
-    private ArrayList<Evento> eventos;
-    private Context context;
 
-    public EventosCategoriaAdapter(Context context, ArrayList<Evento> results) {
+public class EventosHomeAdapter extends BaseAdapter {
+
+    ArrayList<Evento> eventos = new ArrayList<>();
+    Context context;
+
+    public EventosHomeAdapter(Context context, ArrayList<Evento> results){
         this.eventos = results;
         this.context = context;
     }
@@ -47,7 +48,6 @@ public class EventosCategoriaAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        System.out.println("View do Adapter");
 
         if (convertView == null) {
             LayoutInflater inflater = (LayoutInflater) context.getSystemService(Activity.LAYOUT_INFLATER_SERVICE);
@@ -77,4 +77,3 @@ public class EventosCategoriaAdapter extends BaseAdapter {
         return convertView;
     }
 }
-
