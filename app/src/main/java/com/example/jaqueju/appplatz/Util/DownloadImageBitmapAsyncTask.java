@@ -50,11 +50,10 @@ public class DownloadImageBitmapAsyncTask extends AsyncTask<String, Void, Bitmap
 
     @Override
     protected void onPostExecute(Bitmap bitmap) {
-
         if (bitmap != null) {
             imageView.setImageBitmap(bitmap);
         } else {
-            imageView.setImageResource(R.drawable.ctg_music);
+            imageView.setImageResource(R.drawable.image_placeholder);
         }
 
     }

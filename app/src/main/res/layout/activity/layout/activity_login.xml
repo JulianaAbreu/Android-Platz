@@ -3,63 +3,61 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activity.LoginActivity"
     android:background="@drawable/fundo_login"
-    >
+    tools:context=".Activity.LoginActivity">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="145dp"
-        android:textSize="25dp"
-        android:textStyle="bold"
-        android:textColor="#FBFFF8"
         android:layout_marginLeft="75dp"
+        android:layout_marginTop="145dp"
         android:text="Acesse a sua conta!"
-        />
-    <EditText
-        android:hint="Email"
-        android:layout_width="280dp"
-        android:layout_marginTop="198dp"
-        android:layout_height="wrap_content"
-        android:inputType="textEmailAddress"
-        android:layout_marginLeft="50dp"
-        android:ems="10"
-        android:padding="11dp"
-        android:background="@drawable/style_edittext"
-        android:id="@+id/editText"
-        android:layout_gravity="center_vertical"
-        android:layout_weight="1"
-        android:drawableLeft="@mipmap/user"
-        android:drawablePadding="15dp"
-        />
+        android:textColor="#FBFFF8"
+        android:textSize="25dp"
+        android:textStyle="bold" />
 
     <EditText
-        android:hint="Senha"
+        android:id="@+id/loginEmail"
         android:layout_width="280dp"
-        android:layout_marginTop="250dp"
         android:layout_height="wrap_content"
-        android:inputType="textPassword"
-        android:layout_marginLeft="50dp"
-        android:ems="10"
-        android:background="@drawable/style_edittext"
-        android:padding="10dp"
-        android:id="@+id/editSenha"
         android:layout_gravity="center_vertical"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="198dp"
         android:layout_weight="1"
+        android:background="@drawable/style_edittext"
+        android:drawableLeft="@mipmap/user"
+        android:drawablePadding="15dp"
+        android:ems="10"
+        android:hint="Email"
+        android:inputType="textEmailAddress"
+        android:padding="11dp" />
+
+    <EditText
+        android:id="@+id/loginSenha"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="250dp"
+        android:layout_weight="1"
+        android:background="@drawable/style_edittext"
         android:drawableLeft="@mipmap/pass"
         android:drawablePadding="15dp"
-        />
+        android:ems="10"
+        android:hint="Senha"
+        android:inputType="textPassword"
+        android:padding="10dp" />
+
     <Button
+        android:id="@+id/btnLogin"
         android:layout_width="280dp"
         android:layout_height="50dp"
-        android:background="@drawable/style_button"
-        android:layout_marginTop="328dp"
-        android:text="ENTRAR"
-        android:textSize="20dp"
-        android:textColor="#FFFFFF"
-        android:textStyle="bold"
         android:layout_marginLeft="50dp"
-        />
+        android:layout_marginTop="328dp"
+        android:background="@drawable/style_button"
+        android:text="ENTRAR"
+        android:textColor="#FFFFFF"
+        android:textSize="20dp"
+        android:textStyle="bold" />
 
 </RelativeLayout>

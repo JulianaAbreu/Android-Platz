@@ -42,7 +42,12 @@
         <activity android:name=".Activity.LoginActivity" />
         <activity android:name=".Activity.RegistroContaActivity" />
         <activity android:name=".TabLoginRegister" />
-        <activity android:name=".Activity.EventosEspecificosActivity" />
+        <activity android:name=".Activity.EventosEspecificosActivity">
+            <meta-data android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Activity.EventosEspecificosActivity"
+                ></meta-data>
+        </activity>
+
         <activity
             android:name=".Activity.EventosCategoriasActivity"
             android:label="@string/title_activity_eventos_categorias"
