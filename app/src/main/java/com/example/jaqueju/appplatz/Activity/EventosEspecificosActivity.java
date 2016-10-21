@@ -37,8 +37,6 @@ public class EventosEspecificosActivity extends AppCompatActivity {
         Intent intent = getIntent();
         Bundle bundle = intent.getExtras();
         String id = (String) bundle.get("id");
-        System.out.println(id);
-
         buscarPeloId(id, new ResponseCallback<Evento>() {
             @Override
             public void onSuccess(Evento e) {

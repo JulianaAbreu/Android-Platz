@@ -3,6 +3,7 @@ package com.example.jaqueju.appplatz.Fragment;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,7 +20,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 
+import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import okhttp3.Call;
 import okhttp3.Callback;
@@ -34,7 +37,6 @@ public class HomeFragment extends Fragment {
 
     final Gson gson = new Gson();
     final OkHttpClient client = new OkHttpClient();
-    ArrayList<Evento> listaDeEventos = listarTodos();
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -45,17 +47,61 @@ public class HomeFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         return inflater.inflate(R.layout.fragment_eventos_home, container, false);
+
     }
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         System.out.println("Criou a Actitvy");
-        ListView listView = (ListView) getActivity().findViewById(R.id.listaEventosHome);
-        listView.setAdapter(new EventosHomeAdapter(getContext(), listaDeEventos));
+
+        EditText editText = (EditText) getActivity().findViewById(R.id.editTextNomeEvento);
+
+        editText.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+
+                buscarPeloNome(v.getText().toString(), new ResponseCallback<ArrayList<Evento>>() {
+
+                    @Override
+                    public void onSuccess(ArrayList<Evento> eventos) {
+
+                        final ArrayList<Evento> listaDeEventos = eventos;
+
+                        getActivity().runOnUiThread(new Runnable() {
+
+                            @Override
+                            public void run() {
+                                ListView listView = (ListView) getActivity().findViewById(R.id.listaEventosHome);
+                                listView.setAdapter(new EventosHomeAdapter(getContext(), listaDeEventos));
+                            }
+                        });
+                    }
+                });
+                return false;
+            }
+        });
+
+        listarTodos(new ResponseCallback<ArrayList<Evento>>() {
+            @Override
+            public void onSuccess(ArrayList<Evento> eventos) {
+
+                final ArrayList<Evento> listaDeEventos = eventos;
+
+                getActivity().runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        ListView listView = (ListView) getActivity().findViewById(R.id.listaEventosHome);
+                        listView.setAdapter(new EventosHomeAdapter(getContext(), listaDeEventos));
+                    }
+                });
+            }
+        });
+
+        //ListView listView = (ListView) getActivity().findViewById(R.id.listaEventosHome);
     }
 
-    public ArrayList<Evento> listarTodos() {
+    public void listarTodos(final ResponseCallback<ArrayList<Evento>> callback) {
 
         Request request = new Request.Builder().get().url(WebClientUtil.WEBSERVICE + "/eventos/").build();
         final ArrayList<Evento> listaDeEventos = new ArrayList<>();
@@ -88,6 +134,8 @@ public class HomeFragment extends Fragment {
                         System.out.println(e.getEmpresa().getCnpj());
                     }
 
+                    callback.onSuccess(listaDeEventos);
+
                 } else {
                     //Fazer algo se a resposta for inválida
                     System.out.println("==============================> A response foi inválida na Consulta de Eventos Home");
@@ -98,10 +146,10 @@ public class HomeFragment extends Fragment {
 
         //System.out.println("Perto do Return" + Arrays.toString(listaDeEventos.toArray()));
 
-        return listaDeEventos;
+//        return listaDeEventos;
     }
 
-    public ArrayList<Evento> buscarPeloNome(String nome) {
+    public void buscarPeloNome(String nome, final ResponseCallback<ArrayList<Evento>> callback) {
 
         Request request = new Request.Builder().get().url(WebClientUtil.WEBSERVICE + "/eventos/" + nome).build();
         final ArrayList<Evento> listaDeEventos = new ArrayList<>();
@@ -133,6 +181,8 @@ public class HomeFragment extends Fragment {
                         System.out.println(e.getEmpresa().getCnpj());
                     }
 
+                    callback.onSuccess(listaDeEventos);
+
                 } else {
                     //Fazer algo se a resposta for inválida
                     System.out.println("==============================> A response foi inválida na Consulta de Eventos Home");
@@ -141,9 +191,7 @@ public class HomeFragment extends Fragment {
             }
         });
 
-        System.out.println("Perto do Return" + Arrays.toString(listaDeEventos.toArray()));
-
-        return listaDeEventos;
+        //return listaDeEventos;
     }
 
 

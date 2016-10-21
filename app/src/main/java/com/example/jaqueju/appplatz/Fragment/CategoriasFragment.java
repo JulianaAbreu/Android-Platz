@@ -4,14 +4,18 @@ package com.example.jaqueju.appplatz.Fragment;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.GridView;
+import android.widget.TextView;
 
 import com.example.jaqueju.appplatz.Adapter.CategoriasCustomAdapter;
 import com.example.jaqueju.appplatz.Model.Categoria;
 import com.example.jaqueju.appplatz.R;
+import com.example.jaqueju.appplatz.Util.ResponseCallback;
 import com.example.jaqueju.appplatz.Util.WebClientUtil;
 import com.google.gson.Gson;
 
@@ -33,10 +37,9 @@ public class CategoriasFragment extends Fragment {
 
     final Gson gson = new Gson();
     final OkHttpClient client = new OkHttpClient();
-    ArrayList<Categoria> listaCategorias = listarTodos();
+    ArrayList<Categoria> listaCategorias;
 
     public CategoriasFragment() {
-        // Required empty public constructor
     }
 
     @Override
@@ -63,13 +66,25 @@ public class CategoriasFragment extends Fragment {
         System.out.println("A Activity foi criada");
 
         //listaCategorias = listarTodos();
+        listarTodos(new ResponseCallback<ArrayList<Categoria>>() {
+            @Override
+            public void onSuccess(ArrayList<Categoria> categorias) {
+                final ArrayList<Categoria> listaDeCategorias = categorias;
 
-        GridView categoriasGridView = (GridView) this.getActivity().findViewById(R.id.gridview);
-        categoriasGridView.setAdapter(new CategoriasCustomAdapter(getContext(), listaCategorias));
+                getActivity().runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        GridView categoriasGridView = (GridView) getActivity().findViewById(R.id.gridview);
+                        categoriasGridView.setAdapter(new CategoriasCustomAdapter(getContext(), listaDeCategorias));
+                    }
+                });
+
+            }
+        });
 
     }
 
-    public ArrayList<Categoria> listarTodos() {
+    public void listarTodos(final ResponseCallback<ArrayList<Categoria>> callback) {
 
         Request request = new Request.Builder().get().url(WebClientUtil.WEBSERVICE + "/categorias/naoExcluidas").build();
         final ArrayList<Categoria> listaCategorias = new ArrayList<>();
@@ -98,6 +113,7 @@ public class CategoriasFragment extends Fragment {
 
                     System.out.println("Na Response " + Arrays.toString(listaCategorias.toArray()));
 
+                    callback.onSuccess(listaCategorias);
 
                 } else {
                     //Fazer algo se a resposta for inválida
@@ -109,7 +125,7 @@ public class CategoriasFragment extends Fragment {
 
         System.out.println("Perto do Return" + Arrays.toString(listaCategorias.toArray()));
 
-        return listaCategorias;
+        //return listaCategorias;
     }
 }
 
