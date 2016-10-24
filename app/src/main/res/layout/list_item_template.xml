@@ -51,7 +51,6 @@
         android:layout_height="190dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
-        android:src="@drawable/evento"
         android:layout_alignTop="@+id/title"
         android:layout_centerHorizontal="true"
         android:scaleType="centerCrop"/>

@@ -43,7 +43,7 @@ public class LoginActivity extends AppCompatActivity {
         final EditText txtSenha = (EditText) findViewById(R.id.loginSenha);
         final Button button = (Button) findViewById(R.id.btnLogin);
 
-        final SharedPreferences sharedPreferences = getPreferences(Context.MODE_PRIVATE);
+        final SharedPreferences sharedPreferences = getSharedPreferences("Conta", 0);
         final Editor editor = sharedPreferences.edit();
 
         button.setOnClickListener(new View.OnClickListener() {
@@ -61,6 +61,9 @@ public class LoginActivity extends AppCompatActivity {
                         editor.putString("perfilConta", conta.getPerfil());
                         editor.putString("tokenConta", conta.getToken());
                         editor.apply();
+
+                        Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                        startActivity(intent);
                     }
                 });
             }
@@ -84,7 +87,6 @@ public class LoginActivity extends AppCompatActivity {
             public void onResponse(Call call, Response response) throws IOException {
 
                 String json = response.body().string();
-                String authorizationToken = response.header("Authorization");
 
                 Conta conta = gson.fromJson(json, Conta.class);
 

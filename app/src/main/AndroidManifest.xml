@@ -3,7 +3,7 @@
     package="com.example.jaqueju.appplatz">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission
         android:name="android.permission.WRITE_EXTERNAL_STORAGE"
         android:maxSdkVersion="22" />
@@ -39,13 +39,15 @@
             android:launchMode="singleTop"
             android:parentActivityName=".MainActivity" />
         <activity android:name=".MainActivity" />
+
         <activity android:name=".Activity.LoginActivity" />
+
         <activity android:name=".Activity.RegistroContaActivity" />
         <activity android:name=".TabLoginRegister" />
         <activity android:name=".Activity.EventosEspecificosActivity">
-            <meta-data android:name="android.support.PARENT_ACTIVITY"
-                android:value=".Activity.EventosEspecificosActivity"
-                ></meta-data>
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Activity.EventosEspecificosActivity"></meta-data>
         </activity>
 
         <activity

@@ -1,5 +1,7 @@
 package com.example.jaqueju.appplatz;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.os.Bundle;
@@ -9,6 +11,7 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.AttributeSet;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -49,16 +52,27 @@ public class MainActivity extends AppCompatActivity {
         viewPager = (ViewPager) findViewById(R.id.viewpager);
         tabLayout = (TabLayout) findViewById(R.id.tabs);
 
-
-
         tabLayout.setupWithViewPager(viewPager);
-
         setSupportActionBar(toolbar);
-
         getSupportActionBar().setTitle("Home");
         tabLayout.setupWithViewPager(viewPager);
         setupViewPager(viewPager);
         setIconForTabs();
+
+    }
+
+    @Override
+    public View onCreateView(String name, Context context, AttributeSet attrs) {
+
+        SharedPreferences sharedPreferences = getSharedPreferences("Conta", 0);
+
+        if (sharedPreferences.contains("idConta")) {
+            System.out.println(sharedPreferences.getString("tokenConta", null));
+        }else{
+            System.out.println("Id inexistente");
+        }
+
+        return super.onCreateView(name, context, attrs);
     }
 
     private void setupViewPager(ViewPager viewPager) {
@@ -68,7 +82,6 @@ public class MainActivity extends AppCompatActivity {
         adapter.addFrag(new CurtidosFragment());
         adapter.addFrag(new RankingCategoriasFragment());
         adapter.addFrag(new PerfilFragment());
-
 
         viewPager.setAdapter(adapter);
 

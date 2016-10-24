@@ -5,6 +5,8 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -44,11 +46,6 @@ public class HomeFragment extends Fragment {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        SharedPreferences sharedPreferences = getActivity().getPreferences(Context.MODE_PRIVATE);
-
-        if (sharedPreferences.contains("tokenConta"))
-            System.out.println(sharedPreferences.getString("tokenConta", null));
-
 //        listaDeEventos = listarTodos();
     }
 
@@ -61,11 +58,44 @@ public class HomeFragment extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        System.out.println("Criou a Actitvy");
+        System.out.println("Criou a Activity para o Home Fragment");
 
         EditText editText = (EditText) getActivity().findViewById(R.id.editTextNomeEvento);
 
-        editText.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+        editText.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                buscarPeloNome(s.toString(), new ResponseCallback<ArrayList<Evento>>() {
+
+                    @Override
+                    public void onSuccess(ArrayList<Evento> eventos) {
+
+                        final ArrayList<Evento> listaDeEventos = eventos;
+
+                        getActivity().runOnUiThread(new Runnable() {
+
+                            @Override
+                            public void run() {
+                                ListView listView = (ListView) getActivity().findViewById(R.id.listaEventosHome);
+                                listView.setAdapter(new EventosHomeAdapter(getContext(), listaDeEventos));
+                            }
+                        });
+                    }
+                });
+            }
+        });
+
+        /*editText.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
 
@@ -88,7 +118,7 @@ public class HomeFragment extends Fragment {
                 });
                 return false;
             }
-        });
+        });*/
 
         listarTodos(new ResponseCallback<ArrayList<Evento>>() {
             @Override
@@ -136,11 +166,6 @@ public class HomeFragment extends Fragment {
 
                     Evento[] matrizEventos = gson.fromJson(json, Evento[].class);
                     Collections.addAll(listaDeEventos, matrizEventos);
-
-                    for (Evento e : listaDeEventos) {
-                        System.out.println(e.getNome());
-                        System.out.println(e.getEmpresa().getCnpj());
-                    }
 
                     callback.onSuccess(listaDeEventos);
 
