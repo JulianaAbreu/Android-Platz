@@ -14,6 +14,7 @@ import com.example.jaqueju.appplatz.Activity.EventosEspecificosActivity;
 import com.example.jaqueju.appplatz.Model.Evento;
 import com.example.jaqueju.appplatz.R;
 import com.example.jaqueju.appplatz.Util.DownloadImageBitmapAsyncTask;
+import com.example.jaqueju.appplatz.Util.WebClientUtil;
 
 import java.util.ArrayList;
 
@@ -26,7 +27,7 @@ public class EventosHomeAdapter extends BaseAdapter {
     ArrayList<Evento> eventos = new ArrayList<>();
     Context context;
 
-    public EventosHomeAdapter(Context context, ArrayList<Evento> results){
+    public EventosHomeAdapter(Context context, ArrayList<Evento> results) {
         this.eventos = results;
         this.context = context;
     }
@@ -57,7 +58,7 @@ public class EventosHomeAdapter extends BaseAdapter {
         final Evento evento = eventos.get(position);
 
         ImageView imagemEvento = (ImageView) convertView.findViewById(R.id.imagem_evento);
-        new DownloadImageBitmapAsyncTask(imagemEvento).execute(evento.getImagemCapa());
+        new DownloadImageBitmapAsyncTask(imagemEvento).execute(WebClientUtil.WEBSERVICE + "/evento/imagem/" + evento.getId());
 
         TextView nomeEvento = (TextView) convertView.findViewById(R.id.txt_game_name);
         nomeEvento.setText(evento.getNome());

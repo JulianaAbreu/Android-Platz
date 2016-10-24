@@ -57,13 +57,15 @@ public class LoginActivity extends AppCompatActivity {
                 login(email, senha, new ResponseCallback<Conta>() {
                     @Override
                     public void onSuccess(Conta conta) {
-                        editor.putString("idConta", conta.getId());
-                        editor.putString("perfilConta", conta.getPerfil());
-                        editor.putString("tokenConta", conta.getToken());
-                        editor.apply();
 
-                        Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-                        startActivity(intent);
+                        if (conta != null) {
+                            editor.putString("idConta", conta.getId());
+                            editor.putString("token", conta.getToken());
+                            editor.apply();
+
+                            Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                            startActivity(intent);
+                        }
                     }
                 });
             }
@@ -90,9 +92,13 @@ public class LoginActivity extends AppCompatActivity {
 
                 Conta conta = gson.fromJson(json, Conta.class);
 
-                callback.onSuccess(conta);
-
-                System.out.println("Logou!!!");
+                if (conta.getPerfil().equals("Usuario")) {
+                    callback.onSuccess(conta);
+                    System.out.println("Logou!!!");
+                } else {
+                    System.out.println("Perfil Inválido");
+                    callback.onSuccess(null);
+                }
 
             }
         });

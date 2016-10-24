@@ -64,14 +64,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public View onCreateView(String name, Context context, AttributeSet attrs) {
 
-        SharedPreferences sharedPreferences = getSharedPreferences("Conta", 0);
-
-        if (sharedPreferences.contains("idConta")) {
-            System.out.println(sharedPreferences.getString("tokenConta", null));
-        }else{
-            System.out.println("Id inexistente");
-        }
-
         return super.onCreateView(name, context, attrs);
     }
 

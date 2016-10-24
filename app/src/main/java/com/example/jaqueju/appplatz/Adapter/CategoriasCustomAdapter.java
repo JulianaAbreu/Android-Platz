@@ -14,6 +14,7 @@ import com.example.jaqueju.appplatz.Activity.EventosCategoriasActivity;
 import com.example.jaqueju.appplatz.Model.Categoria;
 import com.example.jaqueju.appplatz.R;
 import com.example.jaqueju.appplatz.Util.DownloadImageBitmapAsyncTask;
+import com.example.jaqueju.appplatz.Util.WebClientUtil;
 
 import java.util.ArrayList;
 
@@ -59,7 +60,7 @@ public class CategoriasCustomAdapter extends BaseAdapter {
         txtNome.setText(categoria.getNome());
 
         ImageView imgCategoria = (ImageView) convertView.findViewById(R.id.imagem_categoria);
-        new DownloadImageBitmapAsyncTask(imgCategoria).execute(categoria.getId());
+        new DownloadImageBitmapAsyncTask(imgCategoria).execute(WebClientUtil.WEBSERVICE + "/categoria/imagem/" + categoria.getId());
 
         imgCategoria.setOnClickListener(new View.OnClickListener() {
             @Override

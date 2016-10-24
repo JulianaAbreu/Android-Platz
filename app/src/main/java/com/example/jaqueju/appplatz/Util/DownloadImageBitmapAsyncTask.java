@@ -34,7 +34,7 @@ public class DownloadImageBitmapAsyncTask extends AsyncTask<String, Void, Bitmap
         InputStream input;
 
         try {
-            URL url = new URL(WebClientUtil.WEBSERVICE + "/categoria/imagem/" + params[0]);
+            URL url = new URL(params[0]);
             URLConnection connection = url.openConnection();
             connection.setDoInput(true);
             connection.connect();

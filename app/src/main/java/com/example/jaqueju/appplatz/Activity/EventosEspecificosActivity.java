@@ -44,9 +44,7 @@ public class EventosEspecificosActivity extends AppCompatActivity {
         String id = (String) bundle.get("id");
         buscarPeloId(id, new ResponseCallback<Evento>() {
             @Override
-            public void onSuccess(Evento e) {
-
-                final Evento evento = e;
+            public void onSuccess(final Evento evento) {
 
                 EventosEspecificosActivity.this.runOnUiThread(new Runnable() {
                     @Override
