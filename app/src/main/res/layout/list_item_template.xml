@@ -20,7 +20,6 @@
         android:id="@+id/txt_game_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/imagem_evento"
         android:layout_alignStart="@+id/imagem_evento"
         android:layout_below="@+id/imagem_evento"
         android:layout_marginTop="6dp"
@@ -45,9 +44,22 @@
         android:background="@drawable/style_button_liked"
         android:src="@drawable/ic_favorite_white_curt" />
 
+    <!--<WebView-->
+        <!--android:id="@+id/webViewImgEvento"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:src="@drawable/placeholder"-->
+        <!--android:layout_height="190dp"-->
+        <!--android:layout_marginLeft="10dp"-->
+        <!--android:layout_marginRight="10dp"-->
+        <!--android:layout_alignTop="@+id/title"-->
+        <!--android:layout_centerHorizontal="true"-->
+        <!--android:scaleType="centerCrop" />-->
+
+
     <ImageView
         android:id="@+id/imagem_evento"
         android:layout_width="wrap_content"
+        android:src="@drawable/placeholder"
         android:layout_height="190dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"

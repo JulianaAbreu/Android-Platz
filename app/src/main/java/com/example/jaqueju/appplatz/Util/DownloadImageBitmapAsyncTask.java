@@ -5,6 +5,7 @@ import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
 import android.widget.ImageView;
 
+import com.bumptech.glide.load.resource.gifbitmap.GifBitmapWrapper;
 import com.example.jaqueju.appplatz.R;
 
 import java.io.InputStream;
@@ -39,7 +40,14 @@ public class DownloadImageBitmapAsyncTask extends AsyncTask<String, Void, Bitmap
             connection.setDoInput(true);
             connection.connect();
             input = connection.getInputStream();
-            Bitmap myBitmap = BitmapFactory.decodeStream(input);
+            BitmapFactory.Options options = new BitmapFactory.Options();
+
+            options.inJustDecodeBounds = false;
+            options.inSampleSize = 1;
+            options.inScaled = true;
+            options.outMimeType = "image/png";
+
+            Bitmap myBitmap = BitmapFactory.decodeStream(input, null, options);
             return myBitmap;
 
         } catch (Exception e) {

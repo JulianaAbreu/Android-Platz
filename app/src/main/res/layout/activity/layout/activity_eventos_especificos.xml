@@ -1,212 +1,309 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:fillViewport="true">
+    android:layout_height="match_parent"
+    android:background="#fff">
 
-    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appbar"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#EAEAEA"
+        android:layout_height="300dp"
+        android:fitsSystemWindows="true">
 
-        tools:context=".Activity.EventosEspecificosActivity">
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:id="@+id/collapsing_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:contentScrim="#FFFFFF"
+            app:expandedTitleMarginEnd="68dp"
+            app:expandedTitleMarginStart="48dp"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
 
-        <ImageView
-            android:id="@+id/imagemEventoEspecifico"
-            android:layout_width="500dp"
-            android:layout_height="480dp"
-            android:layout_marginTop="-200dp"
-            android:src="@drawable/evento" />
+            <ImageView
+                android:id="@+id/imgCapaEvento"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/newyork"
+                android:transitionName="element1"
+                app:layout_collapseMode="parallax" />
 
-        <LinearLayout
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/tb_main"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:elevation="0dp"
+                android:minHeight="?attr/actionBarSize"
+                app:layout_collapseMode="pin"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Dark" />
+
+        </android.support.design.widget.CollapsingToolbarLayout>
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fillViewport="true"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:paddingTop="0dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="170dp"
-            android:background="#FFFFFF"            >
-
-            <TextView
-                android:id="@+id/nomeEventoEspecifico"
-                android:layout_width="190dp"
-                android:layout_height="20dp"
-                android:layout_marginLeft="12dp"
-                android:layout_marginTop="5dp"
-                android:text="Festival das Cores"
-                android:textColor="#000000"
-                android:textSize="18dp" />
+            android:orientation="vertical">
 
             <ImageView
-                android:layout_width="16dp"
-                android:layout_height="16dp"
-                android:layout_marginLeft="-190dp"
-                android:layout_marginTop="35dp"
-                android:src="@drawable/ic_time" />
-
-            <TextView
-                android:layout_width="wrap_content"
+                android:layout_marginTop="-10dp"
+                android:layout_width="25dp"
+                android:layout_marginLeft="38dp"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="4dp"
-                android:layout_marginTop="30dp"
-                android:text="13:00 - 23:00" />
-
+                android:src="@drawable/event_time"
+                />
             <ImageView
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_marginLeft="-105dp"
-                android:layout_marginTop="60dp"
-                android:src="@drawable/ic_face_black" />
+                android:layout_marginTop="-10dp"
+                android:layout_width="25dp"
+                android:layout_marginLeft="154dp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/local_navigation"
+                />
+            <ImageView
+                android:layout_marginTop="-10dp"
+                android:layout_width="25dp"
+                android:layout_marginLeft="254dp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/confirm_person_event"
+                />
+
 
             <TextView
-                android:layout_width="wrap_content"
+                android:id="@+id/dataInicioEvento"
+                android:layout_width="150dp"
                 android:layout_height="wrap_content"
+                android:textColor="#2A4067"
                 android:layout_marginLeft="2dp"
-                android:layout_marginTop="60dp"
-                android:text="180 Confirmadas " />
-
-            <ImageView
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_marginLeft="-133dp"
-                android:layout_marginTop="86dp"
-                android:src="@drawable/ic_date_black_"
-
+                android:layout_marginTop="30dp"
+                />
+            <TextView
+                android:textColor="#2A4067"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="Map"
+                android:layout_marginLeft="152dp"
+                android:layout_marginTop="30dp"
                 />
 
             <TextView
-                android:layout_width="wrap_content"
+                android:textColor="#2A4067"
+                android:layout_width="170dp"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="2dp"
-                android:layout_marginTop="85dp"
-                android:text="12/09/2016" />
-
-            <RatingBar
-                android:id="@+id/detail_rating"
-                style="?android:attr/ratingBarStyleSmall"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="170dp"
-                android:layout_marginTop="0dp"
-                android:clickable="true"
-                android:isIndicator="true"
-                android:paddingTop="11dp"
-                android:rating="3" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="285dp"
-            android:background="#FFFFFF"
-            android:orientation="vertical">
-
+                android:text="180 Confirmados"
+                android:layout_marginLeft="215dp"
+                android:layout_marginTop="30dp"
+                />
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
-                android:background="@color/detalhes"
+                android:background="#4F92B3"
                 android:gravity="center"
                 android:text="Detalhes"
+                android:layout_marginTop="55dp"
                 android:textColor="#FFFFFF"
                 android:textSize="16dp"
                 android:textStyle="bold" />
-
             <TextView
+                android:textColor="#737373"
                 android:id="@+id/descricaoEventoEspecifico"
-                android:layout_width="350dp"
+                android:layout_width="340dp"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="18dp"
-                android:layout_marginTop="25dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="90dp"
                 android:text="@string/descricao_evento" />
-
-            <ImageView
-
-                android:layout_width="23dp"
-                android:layout_height="23dp"
-                android:layout_marginLeft="18dp"
-                android:layout_marginTop="15dp"
-                android:src="@drawable/ic_location" />
-
             <TextView
-                android:id="@+id/enderecoEventoEspecico"
+                android:textStyle="bold"
+                android:textColor="#4E606A"
+                android:layout_width="340dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="145dp"
+                android:text="Preço:" />
+            <TextView
+                android:id="@+id/precoEvento"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="45dp"
-                android:layout_marginTop="-20dp"
+                android:layout_marginTop="146dp"
+                android:layout_marginLeft="53dp"
+                />
+            <TextView
+                android:textStyle="bold"
+                android:textColor="#4E606A"
+                android:layout_width="340dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="166dp"
+                android:text="Data final:" />
+            <TextView
+                android:id="@+id/dataFimEvento"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="167dp"
+                android:layout_marginLeft="78dp"
+                />
+            <TextView
+                android:textStyle="bold"
+                android:textColor="#4E606A"
+                android:layout_width="340dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="185dp"
+                android:text="Lotação máxima:" />
+            <TextView
+                android:id="@+id/lotacaoMaxEvento"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="186dp"
+                android:layout_marginLeft="120dp"
+                />
+            <TextView
+                android:textStyle="bold"
+                android:textColor="#4E606A"
+                android:layout_width="340dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="205dp"
+                android:text="Localização:" />
+            <TextView
+                android:id="@+id/enderecoEvento"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="206dp"
+                android:layout_marginLeft="95dp"
+                />
+            <ImageButton
+                android:paddingBottom="10dp"
+                android:paddingTop="10dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:layout_marginTop="288dp"
+                android:background="@drawable/backg_cam"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_menu_camera"
+                />
+            <ImageButton
+                android:paddingBottom="10dp"
+                android:paddingTop="10dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:layout_marginTop="366dp"
+                android:background="@drawable/backg_cam"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_menu_camera"
+                />
+            <Button
+                android:paddingStart="20dp"
+                android:layout_width="280dp"
+                android:layout_height="65dp"
+                android:text="Adicionar Foto"
+                android:textColor="#E4B772"
+                android:layout_marginLeft="60dp"
+                android:textAllCaps="false"
+                android:textSize="18dp"
+                android:textAlignment="viewStart"
+                android:background="#F4F4F4"
+                android:layout_marginTop="280dp"
+
+                />
+            <Button
+                android:textSize="18dp"
+
+                android:textAllCaps="false"
+                android:textAlignment="viewStart"
+                android:textColor="#E4B772"
+                android:text="Comentarios"
+                android:paddingStart="25dp"
+                android:layout_width="280dp"
+                android:layout_height="65dp"
+                android:background="#F4F4F4"
+                android:layout_marginLeft="60dp"
+                android:layout_marginTop="360dp"
+
+
                 />
 
-            <TextView
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:id="@+id/ll_tv_description"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="50dp"
-                android:text="Ver no mapa"
-                android:textColor="@color/bg_screen3" />
+                android:orientation="vertical">
 
-            <ImageView
-                android:layout_width="23dp"
-                android:layout_height="23dp"
-                android:layout_marginLeft="18dp"
-                android:layout_marginTop="8dp"
-                android:src="@drawable/ic_phone_black_" />
+                <TextView
+                    android:id="@+id/tv_description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="80dp"
+                    android:textColor="#212121"
+                    android:textSize="16sp"
+                    android:visibility="invisible" />
 
-            <TextView
-                android:id="@+id/telefoneEventoEspecifico"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="45dp"
-                android:layout_marginTop="-20dp"
-                android:text="(11) 5897-1963" />
 
-            <ImageView
-                android:layout_width="23dp"
-                android:layout_height="23dp"
-                android:layout_marginLeft="190dp"
-                android:layout_marginTop="-22dp"
-                android:src="@drawable/ic_money"
-
-                />
-
-            <TextView
-                android:id="@+id/precoEventoEspecifico"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="215dp"
-                android:layout_marginTop="-22dp"
-                android:text="65,00" />
-
+            </LinearLayout>
 
             <Button
+
+                android:layout_marginTop="475dp"
                 android:layout_width="130dp"
-                android:layout_height="40dp"
-                android:layout_marginTop="47dp"
+                android:layout_height="35dp"
                 android:background="#01BFA5"
-                android:text="Vou!"
-                android:textAllCaps="false"
-                android:textColor="#FFFFFF"
-                android:textSize="16dp" />
-
+                android:text="Vou"
+                android:textColor="#ffffff"
+                />
             <Button
-                android:layout_width="125dp"
-                android:layout_height="39.5dp"
-                android:layout_marginLeft="130dp"
-                android:layout_marginTop="-40dp"
-                android:background="#FF7E5F"
-                android:text="Talvez"
-                android:textAllCaps="false"
-                android:textColor="#FFFFFF"
-                android:textSize="16dp" />
+                android:layout_marginTop="475dp"
 
-            <Button
                 android:layout_width="130dp"
-                android:layout_height="39.5dp"
+                android:layout_height="35dp"
+                android:layout_marginLeft="128dp"
+                android:background="#FF8D60"
+                android:text="Talvez"
+                android:textColor="#ffffff"
+                />
+            <Button
+                android:layout_marginTop="475dp"
+
+                android:layout_width="130dp"
+                android:layout_height="35dp"
                 android:layout_marginLeft="255dp"
-                android:layout_marginTop="-40dp"
                 android:background="#FF6060"
                 android:text="Não vou"
-                android:textAllCaps="false"
-                android:textColor="#FFFFFF"
-                android:textSize="16dp" />
-        </LinearLayout>
+                android:textColor="#ffffff"
+                />
+        </RelativeLayout>
+    </android.support.v4.widget.NestedScrollView>
 
 
-    </RelativeLayout>
-</ScrollView>
+
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/fab_margin_bottom"
+        android:layout_marginEnd="@dimen/fab_margin_right"
+        android:layout_marginRight="@dimen/fab_margin_right"
+        android:clickable="true"
+        android:src="@drawable/ic_favorite_white_cut"
+        app:backgroundTint="#FF605F"
+        app:borderWidth="0dp"
+        app:fabSize="mini"
+        app:layout_anchor="@id/appbar"
+        app:layout_anchorGravity="bottom|right|end" />
+
+
+</android.support.design.widget.CoordinatorLayout>
+
+

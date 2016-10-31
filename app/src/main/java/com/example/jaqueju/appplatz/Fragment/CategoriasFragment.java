@@ -37,24 +37,12 @@ public class CategoriasFragment extends Fragment {
 
     final Gson gson = new Gson();
     final OkHttpClient client = new OkHttpClient();
-    ArrayList<Categoria> listaCategorias;
 
     public CategoriasFragment() {
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-
-        //View rootView = inflater.inflate(R.layout.fragment_grid_categorias, container, false);
-
-        //listaCategorias = listarTodos();
-
-      /*  GridView categoriasGridView = (GridView) rootView.findViewById(R.id.gridview);
-        categoriasGridView.setAdapter(new CategoriasCustomAdapter(getContext(), listaCategorias));
-
-        System.out.println("A view foi Criada");
-
-        return rootView;*/
 
         return inflater.inflate(R.layout.fragment_grid_categorias, container, false);
 
@@ -65,7 +53,6 @@ public class CategoriasFragment extends Fragment {
         super.onActivityCreated(savedInstanceState);
         System.out.println("A Activity foi criada");
 
-        //listaCategorias = listarTodos();
         listarTodos(new ResponseCallback<ArrayList<Categoria>>() {
             @Override
             public void onSuccess(ArrayList<Categoria> categorias) {
@@ -122,10 +109,6 @@ public class CategoriasFragment extends Fragment {
                 }
             }
         });
-
-        System.out.println("Perto do Return" + Arrays.toString(listaCategorias.toArray()));
-
-        //return listaCategorias;
     }
 }
 

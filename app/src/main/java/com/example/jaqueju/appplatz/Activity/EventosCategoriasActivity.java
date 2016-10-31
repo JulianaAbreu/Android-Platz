@@ -29,7 +29,7 @@ public class EventosCategoriasActivity extends AppCompatActivity {
 
     final Gson gson = new Gson();
     final OkHttpClient client = new OkHttpClient();
-
+    ListView eventosListView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,7 +39,7 @@ public class EventosCategoriasActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        ListView eventosListView = (ListView) findViewById(R.id.listaEventosCategoria);
+        eventosListView = (ListView) findViewById(R.id.listaEventosCategoria);
 
         Intent intent = getIntent();
         Bundle bundle = intent.getExtras();

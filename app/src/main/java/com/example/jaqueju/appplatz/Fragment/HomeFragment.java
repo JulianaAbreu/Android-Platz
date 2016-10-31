@@ -45,8 +45,6 @@ public class HomeFragment extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-//        listaDeEventos = listarTodos();
     }
 
     @Override
@@ -95,31 +93,6 @@ public class HomeFragment extends Fragment {
             }
         });
 
-        /*editText.setOnEditorActionListener(new TextView.OnEditorActionListener() {
-            @Override
-            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
-
-                buscarPeloNome(v.getText().toString(), new ResponseCallback<ArrayList<Evento>>() {
-
-                    @Override
-                    public void onSuccess(ArrayList<Evento> eventos) {
-
-                        final ArrayList<Evento> listaDeEventos = eventos;
-
-                        getActivity().runOnUiThread(new Runnable() {
-
-                            @Override
-                            public void run() {
-                                ListView listView = (ListView) getActivity().findViewById(R.id.listaEventosHome);
-                                listView.setAdapter(new EventosHomeAdapter(getContext(), listaDeEventos));
-                            }
-                        });
-                    }
-                });
-                return false;
-            }
-        });*/
-
         listarTodos(new ResponseCallback<ArrayList<Evento>>() {
             @Override
             public void onSuccess(ArrayList<Evento> eventos) {
@@ -136,7 +109,6 @@ public class HomeFragment extends Fragment {
             }
         });
 
-        //ListView listView = (ListView) getActivity().findViewById(R.id.listaEventosHome);
     }
 
     public void listarTodos(final ResponseCallback<ArrayList<Evento>> callback) {
@@ -176,10 +148,6 @@ public class HomeFragment extends Fragment {
                 }
             }
         });
-
-        //System.out.println("Perto do Return" + Arrays.toString(listaDeEventos.toArray()));
-
-//        return listaDeEventos;
     }
 
     public void buscarPeloNome(String nome, final ResponseCallback<ArrayList<Evento>> callback) {
@@ -223,140 +191,5 @@ public class HomeFragment extends Fragment {
                 }
             }
         });
-
-        //return listaDeEventos;
     }
-
-
 }
-
-//    ArrayList<CardViewModelEventos> listitems = new ArrayList<>();
-//
-//    @Override
-//    public void onCreate(@Nullable Bundle savedInstanceState) {
-//        super.onCreate(savedInstanceState);
-//        setupListItems();
-//    }
-//
-//    @Override
-//    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-//
-//        View rootView = inflater.inflate(R.layout.fragment_eventos_home, container, false);
-//
-//        RecyclerView recList = (RecyclerView) rootView.findViewById(R.id.cardList);
-//        recList.setHasFixedSize(true);
-//
-//        LinearLayoutManager llm = new LinearLayoutManager(getActivity());
-//        llm.setOrientation(LinearLayoutManager.VERTICAL);
-//        if (listitems.size() > 0 & recList != null) {
-//            recList.setAdapter(new MyAdapter(listitems));
-//        }
-//        recList.setLayoutManager(llm);
-//
-//        /*
-//        final Button btnCategorias = (Button)rootView.findViewById(R.id.btnCategorias);
-//        btnCategorias.setOnClickListener(this);
-//
-//        btnCategorias.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                btnCategorias.setBackgroundResource(R.drawable.style_clicked_all_categories);
-//                Intent i = new Intent(getActivity(), ListaCategoriasActivity.class);
-//                startActivity(i);
-//
-//                // Log.d("Test","Testando");
-//                //Toast.makeText(getActivity().getApplicationContext(), "Test",        Toast.LENGTH_LONG).show();
-//
-//            }});
-//*/
-//        return rootView;
-//    }
-//
-//    @Override
-//    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-//        super.onActivityCreated(savedInstanceState);
-//
-//    }
-//
-//    //Lista de Eventos abaixo
-//    public void setupListItems() {
-//        listitems.clear();
-//
-//        CardViewModelEventos item1 = new CardViewModelEventos();
-//        item1.setCardName("Festival das Luzes");
-//        item1.setImageResourceId(R.drawable.evento);
-//        item1.setIsfav(0);
-//        item1.setIsturned(0);
-//        listitems.add(item1);
-//
-//        CardViewModelEventos item2 = new CardViewModelEventos();
-//        item2.setCardName("Festival das Luzes");
-//        item2.setImageResourceId(R.drawable.evento);
-//        item2.setIsfav(0);
-//        item2.setIsturned(0);
-//        listitems.add(item2);
-//
-//        /*CardViewModel item3 = new CardViewModel();
-//        item3.setCardName("Cart Item");
-//        item3.setImageResourceId(R.drawable.fc_tab_bg_new);
-//        item3.setIsfav(0);
-//        item3.setIsturned(0);
-//        listitems.add(item3);*/
-//
-//        CardViewModelEventos item4 = new CardViewModelEventos();
-//        item4.setCardName("Festival das Luzes");
-//        item4.setImageResourceId(R.drawable.ctg_conference);
-//        item4.setIsfav(0);
-//        item4.setIsturned(0);
-//        listitems.add(item4);
-//    }
-//
-//    public static class ViewHolder extends RecyclerView.ViewHolder {
-//
-//        public ViewHolder(View v) {
-//            super(v);
-//        }
-//    }
-//
-//    //A ViewHolder descreve uma tela de item e metadados sobre seu lugar dentro da RecyclerView.
-//    public class MyAdapter extends RecyclerView.Adapter<ViewHolder> {
-//        private ArrayList<CardViewModelEventos> list;
-//
-//        // Provide a suitable constructor (depends on the kind of dataset)
-//        public MyAdapter(ArrayList<CardViewModelEventos> myDataset) {
-//            list = myDataset;
-//        }
-//
-//
-//        // Create new views (invoked by the layout manager)
-//        @Override
-//        public ViewHolder onCreateViewHolder(ViewGroup parent,
-//                                             int viewType) {
-//            // create a new view
-//            View v = LayoutInflater.from(parent.getContext())
-//                    .inflate(R.layout.recycle_items, parent, false);
-//            // set the view's size, margins, paddings and layout parameters
-//
-//            ViewHolder vh = new ViewHolder(v);
-//            return vh;
-//        }
-//
-//        // Replace the contents of a view (invoked by the layout manager)
-//        @Override
-//        public void onBindViewHolder(final ViewHolder holder, int position) {
-//            // - get element from your dataset at this position
-//            // - replace the contents of the view with that element
-//            Drawable dr = getResources().getDrawable(list.get(position).getImageResourceId());
-//
-//
-//        }
-//
-//        // Return the size of your dataset (invoked by the layout manager)
-//        @Override
-//        public int getItemCount() {
-//            return list.size();
-//        }
-//    }
-
-
-//}

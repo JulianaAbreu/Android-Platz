@@ -17,7 +17,7 @@ public class Evento {
     private String dataFim;
     private int lotacaoMin;
     private int lotacaoMax;
-    private Double preco;
+    private double preco;
     private Empresa empresa;
     private ArrayList<Categoria> categorias;
     private ArrayList<Imagem> imagens;

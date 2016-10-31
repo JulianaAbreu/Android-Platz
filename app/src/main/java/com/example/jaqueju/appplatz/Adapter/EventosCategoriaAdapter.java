@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebView;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -14,6 +15,7 @@ import com.example.jaqueju.appplatz.Activity.EventosEspecificosActivity;
 import com.example.jaqueju.appplatz.Model.Evento;
 import com.example.jaqueju.appplatz.R;
 import com.example.jaqueju.appplatz.Util.DownloadImageBitmapAsyncTask;
+import com.example.jaqueju.appplatz.Util.WebClientUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -47,7 +49,8 @@ public class EventosCategoriaAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        System.out.println("View do Adapter");
+
+        System.out.println("Adapter da view: " + position);
 
         if (convertView == null) {
             LayoutInflater inflater = (LayoutInflater) context.getSystemService(Activity.LAYOUT_INFLATER_SERVICE);
@@ -57,7 +60,10 @@ public class EventosCategoriaAdapter extends BaseAdapter {
         final Evento evento = eventos.get(position);
 
         ImageView imagemEvento = (ImageView) convertView.findViewById(R.id.imagem_evento);
-        new DownloadImageBitmapAsyncTask(imagemEvento).execute(evento.getImagemCapa());
+        new DownloadImageBitmapAsyncTask(imagemEvento).execute(WebClientUtil.WEBSERVICE + "/evento/imagemCapa/" + evento.getId());
+
+//        WebView webView = (WebView) convertView.findViewById(R.id.webViewImgEvento);
+//        webView.loadUrl(WebClientUtil.WEBSERVICE + "/evento/imagemCapa/" + evento.getId());
 
         TextView nomeEvento = (TextView) convertView.findViewById(R.id.txt_game_name);
         nomeEvento.setText(evento.getNome());

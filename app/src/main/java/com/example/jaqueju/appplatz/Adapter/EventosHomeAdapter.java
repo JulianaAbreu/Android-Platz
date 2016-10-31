@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebView;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -58,7 +59,10 @@ public class EventosHomeAdapter extends BaseAdapter {
         final Evento evento = eventos.get(position);
 
         ImageView imagemEvento = (ImageView) convertView.findViewById(R.id.imagem_evento);
-        new DownloadImageBitmapAsyncTask(imagemEvento).execute(WebClientUtil.WEBSERVICE + "/evento/imagem/" + evento.getId());
+        new DownloadImageBitmapAsyncTask(imagemEvento).execute(WebClientUtil.WEBSERVICE + "/evento/imagemCapa/" + evento.getId());
+
+//        WebView webView = (WebView) convertView.findViewById(R.id.webViewImgEvento);
+//        webView.loadUrl(WebClientUtil.WEBSERVICE + "/evento/imagemCapa/" + evento.getId());
 
         TextView nomeEvento = (TextView) convertView.findViewById(R.id.txt_game_name);
         nomeEvento.setText(evento.getNome());

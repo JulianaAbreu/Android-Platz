@@ -1,12 +1,15 @@
 package com.example.jaqueju.appplatz.Activity;
 
 import android.content.Intent;
+import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v4.app.NavUtils;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -32,16 +35,41 @@ public class EventosEspecificosActivity extends AppCompatActivity {
 
     final Gson gson = new Gson();
     final OkHttpClient client = new OkHttpClient();
+    private Toolbar mToolbar;
+    private CollapsingToolbarLayout mCollapsingToolbarLayout;
+    private ImageView imagemCapaEvento;
+    private TextView dataInicioEvento;
+    private TextView descricaoEvento;
+    private TextView precoEvento;
+    private TextView dataFimEvento;
+    private TextView lotacaoMaxEvento;
+    private TextView enderecoEvento;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_eventos_especificos);
 
+        mToolbar = (Toolbar) findViewById(R.id.tb_main);
+        mCollapsingToolbarLayout = (CollapsingToolbarLayout) findViewById(R.id.collapsing_toolbar);
+        imagemCapaEvento = (ImageView) findViewById(R.id.imgCapaEvento);
+        dataInicioEvento = (TextView) findViewById(R.id.dataInicioEvento);
+        descricaoEvento = (TextView) findViewById(R.id.descricaoEventoEspecifico);
+        precoEvento = (TextView) findViewById(R.id.precoEvento);
+        dataFimEvento = (TextView) findViewById(R.id.dataFimEvento);
+        lotacaoMaxEvento = (TextView) findViewById(R.id.lotacaoMaxEvento);
+        enderecoEvento = (TextView) findViewById(R.id.enderecoEvento);
+
+        setSupportActionBar(mToolbar);
+        //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeButtonEnabled(false);
 
         Intent intent = getIntent();
         Bundle bundle = intent.getExtras();
-        String id = (String) bundle.get("id");
+        final String id = (String) bundle.get("id");
         buscarPeloId(id, new ResponseCallback<Evento>() {
             @Override
             public void onSuccess(final Evento evento) {
@@ -49,26 +77,20 @@ public class EventosEspecificosActivity extends AppCompatActivity {
                 EventosEspecificosActivity.this.runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        ImageView imagemCapaEvento = (ImageView) findViewById(R.id.imagemEventoEspecifico);
-                        new DownloadImageBitmapAsyncTask(imagemCapaEvento).execute(evento.getImagemCapa());
 
-                        TextView nomeEvento = (TextView) findViewById(R.id.nomeEventoEspecifico);
-                        nomeEvento.setText(evento.getNome());
-
-                        //Arrumar data e hora
-
-                        TextView detalhesEvento = (TextView) findViewById(R.id.descricaoEventoEspecifico);
-                        detalhesEvento.setText(evento.getDetalhes());
-
-                        TextView enderecoEvento = (TextView) findViewById(R.id.enderecoEventoEspecico);
-                        String endereco = evento.getEndereco().getRua() + " " + evento.getEndereco().getNumero() + ", " + evento.getEndereco().getCidade().getNome() + "/" + evento.getEndereco().getCidade().getEstado().getUf();
-                        enderecoEvento.setText(endereco);
-
-                        TextView telefoneEvento = (TextView) findViewById(R.id.telefoneEventoEspecifico);
-                        telefoneEvento.setText(evento.getEmpresa().getTelefone());
-
-                        TextView precoEvento = (TextView) findViewById(R.id.precoEventoEspecifico);
-                        precoEvento.setText(evento.getPreco().toString());
+                        mToolbar.setTitle(evento.getNome());
+                        mCollapsingToolbarLayout.setTitle(evento.getNome());
+                        new DownloadImageBitmapAsyncTask(imagemCapaEvento).execute(WebClientUtil.WEBSERVICE + "/evento/imagemCapa/" + evento.getId());
+                        dataInicioEvento.setText(evento.getDataInicio());
+                        descricaoEvento.setText(evento.getDetalhes());
+                        if (evento.getPreco() != 0.0){
+                            precoEvento.setText(String.valueOf(evento.getPreco()));
+                        }else{
+                            precoEvento.setText("Gratuito");
+                        }
+                        dataFimEvento.setText(evento.getDataFim());
+                        lotacaoMaxEvento.setText(String.valueOf(evento.getLotacaoMax()));
+                        enderecoEvento.setText(evento.getEndereco().getCep() + " - " + evento.getEndereco().getRua() + " " + evento.getEndereco().getCidade().getNome() + " / " +evento.getEndereco().getCidade().getEstado().getUf());
                     }
                 });
             }
