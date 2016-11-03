@@ -2,30 +2,36 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/categoria_evento"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="115dp"
     android:layout_marginLeft="@dimen/activity_horizontal_margin"
     android:background="#FFFFFF"
-    android:orientation="horizontal"
-    android:paddingTop="5dp">
+    android:orientation="horizontal">
 
     <ImageView
-        android:id="@+id/brand_image"
-        android:layout_width="195dp"
+        android:id="@+id/imgEventoCurtido"
+        android:layout_width="180dp"
         android:layout_height="160dp"
-        android:layout_marginBottom="-10dp"
+        android:layout_marginBottom="10dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="-4dp"
+        android:layout_marginTop="-15dp"
         android:src="@drawable/evento" />
 
     <TextView
-        android:id="@+id/brand_name"
+        android:id="@+id/nomeEventoCurtido"
         android:layout_width="150dp"
         android:layout_height="match_parent"
         android:layout_marginLeft="5dp"
-        android:layout_marginTop="25dp"
-
-        android:text="dhgdfhfdh"
+        android:layout_marginTop="9dp"
+        android:text="Festival das Luzes"
         android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/categoriaEventoCurtidos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="-150dp"
+        android:layout_marginTop="20dp"
+        android:text="Festivais" />
 
     <!--
     <CheckBox
@@ -37,19 +43,18 @@
         android:checked="false" />
 -->
     <CheckBox
-
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="-135dp"
+        android:layout_marginLeft="-55dp"
         android:layout_marginTop="60dp"
         android:button="@drawable/style_favorite_button" />
+
     <CheckBox
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
         android:layout_marginLeft="5dp"
-        android:button="@drawable/style_button_share"
-        />
+        android:layout_marginTop="60dp"
+        android:button="@drawable/style_button_share" />
     <!--
     <ImageView
         android:layout_width="35dp"

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="400dp"
+    android:background="#F0F5F9"
+    android:layout_height="match_parent"
+   >
+
+    <!--<ImageView-->
+        <!--android:layout_width="230dp"-->
+        <!--android:layout_marginTop="20dp"-->
+        <!--android:layout_marginLeft="60dp"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:src="@drawable/placeholder"-->
+        <!--/>-->
+    <Button
+        android:layout_width="170dp"
+        android:layout_height="30dp"
+        android:textSize="16dp"
+        android:text="Alterar imagem"
+        android:textAllCaps="false"
+        android:textColor="#fff"
+        android:background="@color/dark_grey"
+        android:layout_marginTop="190dp"
+        android:layout_marginLeft="90dp"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nome de Usuário"
+        android:layout_marginTop="250dp"
+        android:layout_marginLeft="15dp"
+        android:textColor="@color/dark_grey"
+
+        android:id="@+id/textView9" />
+    <EditText
+        android:layout_width="335dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="266dp"
+        android:layout_marginLeft="12dp"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Trocar senha"
+        android:layout_marginTop="320dp"
+        android:layout_marginLeft="15dp"
+        android:textColor="@color/dark_grey"
+
+        />
+    <EditText
+        android:layout_width="335dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="335dp"
+        android:layout_marginLeft="12dp"
+        android:inputType="textPassword"
+        android:id="@+id/editText2" />
+
+    <Switch
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Notificações"
+        android:id="@+id/switch1"
+        android:layout_marginLeft="6dp"
+        android:layout_below="@+id/editText2"
+        android:layout_alignStart="@+id/editText2"
+        android:layout_marginTop="5dp"
+        android:checked="false" />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_marginTop="520dp"
+        android:background="@color/green"
+        android:layout_marginLeft="-25dp"
+        android:text="Salvar"
+        android:textColor="#fff"
+        android:textSize="19dp"
+        />
+</RelativeLayout>

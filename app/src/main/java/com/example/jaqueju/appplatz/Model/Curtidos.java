@@ -1,43 +1,55 @@
 package com.example.jaqueju.appplatz.Model;
 
 /**
- * Created by JaqueJu on 07/09/2016.
+ *
+ * @author Anderson
  */
-public class Curtidos {
-    private String mName;
-    private String mBirthYear;
-    private String mDeathYear;
-    private int mImageId;
+public class Curtidos  {
 
-    public String getmName() {
-        return mName;
+    private String id;
+    private boolean curtido;
+    private Usuario usuario;
+    private Evento evento;
+    private String dataCadastro;
+
+
+    public String getId() {
+        return id;
     }
 
-    public void setmName(String mName) {
-        this.mName = mName;
+    public void setId(String id) {
+        this.id = id;
     }
 
-    public String getmBirthYear() {
-        return mBirthYear;
+    public boolean isCurtido() {
+        return curtido;
     }
 
-    public void setmBirthYear(String mBirthYear) {
-        this.mBirthYear = mBirthYear;
+    public void setCurtido(boolean curtido) {
+        this.curtido = curtido;
     }
 
-    public String getmDeathYear() {
-        return mDeathYear;
+    public Usuario getUsuario() {
+        return usuario;
     }
 
-    public void setmDeathYear(String mDeathYear) {
-        this.mDeathYear = mDeathYear;
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
     }
 
-    public int getmImageId() {
-        return mImageId;
+    public Evento getEvento() {
+        return evento;
     }
 
-    public void setmImageId(int mImageId) {
-        this.mImageId = mImageId;
+    public void setEvento(Evento evento) {
+        this.evento = evento;
+    }
+
+    public String getDataCadastro() {
+        return dataCadastro;
+    }
+
+    public void setDataCadastro(String dataCadastro) {
+        this.dataCadastro = dataCadastro;
     }
 }

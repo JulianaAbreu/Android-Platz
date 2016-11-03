@@ -4,12 +4,14 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
+import android.graphics.Color;
 import android.support.v4.app.FragmentTabHost;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.example.jaqueju.appplatz.MainActivity;
 import com.example.jaqueju.appplatz.Model.Conta;
@@ -65,6 +67,17 @@ public class LoginActivity extends AppCompatActivity {
 
                             Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                             startActivity(intent);
+                        } else {
+                            runOnUiThread(new Runnable() {
+                                @Override
+                                public void run() {
+                                    txtEmail.setError("Email ou senha estão incorretos, tente novamente");
+                                    txtEmail.setText("");
+                                    txtSenha.setError("Email ou senha estão incorretos, tente novamente");
+                                    txtSenha.setText("");
+                                    Toast.makeText(getBaseContext(), "Email ou senha estão incorretos, tente novamente", Toast.LENGTH_SHORT).show();
+                                }
+                            });
                         }
                     }
                 });
@@ -90,13 +103,17 @@ public class LoginActivity extends AppCompatActivity {
 
                 String json = response.body().string();
 
-                Conta conta = gson.fromJson(json, Conta.class);
+                try {
+                    Conta conta = gson.fromJson(json, Conta.class);
 
-                if (conta.getPerfil().equals("Usuario")) {
-                    callback.onSuccess(conta);
-                    System.out.println("Logou!!!");
-                } else {
-                    System.out.println("Perfil Inválido");
+                    if (conta.getPerfil().equals("Usuario")) {
+                        callback.onSuccess(conta);
+                        System.out.println("Logou!!!");
+                    } else {
+                        System.out.println("Perfil Inválido");
+                        callback.onSuccess(null);
+                    }
+                } catch (Exception e) {
                     callback.onSuccess(null);
                 }
 

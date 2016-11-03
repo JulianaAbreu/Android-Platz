@@ -3,61 +3,116 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/fundo_login"
+    android:background="@drawable/tester"
+
+
     tools:context=".Activity.LoginActivity">
-
-    <TextView
-        android:layout_width="match_parent"
+    <ImageView
+        android:layout_width="130dp"
+        android:layout_marginLeft="120dp"
+        android:layout_marginTop="-250dp"
+        android:alpha="0.8"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="75dp"
-        android:layout_marginTop="145dp"
-        android:text="Acesse a sua conta!"
-        android:textColor="#FBFFF8"
-        android:textSize="25dp"
-        android:textStyle="bold" />
+        android:src="@drawable/platz_logo"
+        />
+    <!--
 
+<TextView
+   android:layout_width="wrap_content"
+   android:layout_height="wrap_content"
+   android:text="Email:"
+   android:textColor="@color/dark_grey"
+   android:textSize="20dp"
+   android:layout_marginTop="200dp"
+   android:layout_marginLeft="15dp"
+   />
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Senha:"
+    android:textSize="20dp"
+    android:layout_marginTop="285dp"
+    android:layout_marginLeft="15dp"
+    />
+    -->
     <EditText
         android:id="@+id/loginEmail"
-        android:layout_width="280dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_vertical"
-        android:layout_marginLeft="50dp"
-        android:layout_marginTop="198dp"
-        android:layout_weight="1"
-        android:background="@drawable/style_edittext"
-        android:drawableLeft="@mipmap/user"
-        android:drawablePadding="15dp"
-        android:ems="10"
+        android:layout_width="330dp"
         android:hint="Email"
         android:inputType="textEmailAddress"
-        android:padding="11dp" />
-
-    <EditText
-        android:id="@+id/loginSenha"
-        android:layout_width="280dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_vertical"
-        android:layout_marginLeft="50dp"
-        android:layout_marginTop="250dp"
-        android:layout_weight="1"
         android:background="@drawable/style_edittext"
-        android:drawableLeft="@mipmap/pass"
-        android:drawablePadding="15dp"
-        android:ems="10"
-        android:hint="Senha"
+        android:layout_height="45dp"
+        android:layout_marginTop="240dp"
+        android:layout_marginLeft="15dp"
+        />
+    <EditText
         android:inputType="textPassword"
-        android:padding="10dp" />
-
+        android:id="@+id/loginSenha"
+        android:hint="Senha"
+        android:layout_width="330dp"
+        android:background="@drawable/style_edittext"
+        android:layout_height="45dp"
+        android:layout_marginTop="300dp"
+        android:layout_marginLeft="15dp"
+        />
     <Button
         android:id="@+id/btnLogin"
-        android:layout_width="280dp"
+        android:layout_width="328dp"
         android:layout_height="50dp"
-        android:layout_marginLeft="50dp"
-        android:layout_marginTop="328dp"
-        android:background="@drawable/style_button"
+        android:layout_marginLeft="18dp"
+        android:layout_marginTop="360dp"
+        android:background="@drawable/style_button_login"
         android:text="ENTRAR"
         android:textColor="#FFFFFF"
         android:textSize="20dp"
         android:textStyle="bold" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CADASTRE-SE"
+        android:textColor="#fff"
+        android:textSize="17dp"
+        android:textStyle="bold"
+        android:layout_marginLeft="130dp"
+        android:layout_marginTop="420dp"
+        />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="#EBEAEA"
+        android:layout_marginTop="520dp"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ou acesse com redes sociais"
+            android:layout_marginTop="5dp"
+            android:textSize="18dp"
+            android:textColor="#958C8D"
+            android:layout_marginLeft="75dp"
+            />
+        <ImageView
+            android:layout_width="35dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icc_fb"
+            android:layout_marginTop="25dp"
+            android:layout_marginLeft="100dp"
+            />
+        <ImageView
+            android:layout_width="35dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_gmail"
+            android:layout_marginTop="25dp"
+            android:layout_marginLeft="165dp"
+            />
+        <ImageView
+            android:layout_width="35dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icc_twitter"
+            android:layout_marginTop="25dp"
+            android:layout_marginLeft="230dp"
+            />
 
+
+    </RelativeLayout>
 </RelativeLayout>
