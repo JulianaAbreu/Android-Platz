@@ -1,31 +1,29 @@
 package com.example.jaqueju.appplatz;
+
 import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
+
 import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
-import android.support.v7.app.ActionBar;
+
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.AttributeSet;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
-import android.widget.ImageButton;
 
 import com.example.jaqueju.appplatz.Activity.LoginActivity;
 import com.example.jaqueju.appplatz.Activity.MapaActivity;
 import com.example.jaqueju.appplatz.Adapter.ViewPagerAdapter;
 import com.example.jaqueju.appplatz.Fragment.CategoriasFragment;
-import com.example.jaqueju.appplatz.Fragment.CurtidosFragment;
 import com.example.jaqueju.appplatz.Fragment.HomeFragment;
 import com.example.jaqueju.appplatz.Fragment.PerfilFragment;
-import com.example.jaqueju.appplatz.Fragment.RankingCategoriasFragment;
+import com.example.jaqueju.appplatz.Fragment.RankingFragment;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -71,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
         adapter.addFrag(new HomeFragment());
         adapter.addFrag(new CategoriasFragment());
-        adapter.addFrag(new RankingCategoriasFragment());
+        adapter.addFrag(new RankingFragment());
         adapter.addFrag(new PerfilFragment());
 
         viewPager.setAdapter(adapter);
@@ -167,7 +165,7 @@ public class MainActivity extends AppCompatActivity {
         switch (item.getItemId()) {
             case R.id.action_sair:
                 //Limpar Shared Preferences
-                getSharedPreferences("Conta",0).edit().clear().apply();
+                getSharedPreferences("Conta", 0).edit().clear().apply();
                 Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
@@ -179,7 +177,6 @@ public class MainActivity extends AppCompatActivity {
 
         }
     }
-
 
 
 }

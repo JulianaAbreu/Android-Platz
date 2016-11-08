@@ -26,6 +26,8 @@ public class Evento {
     private boolean destaque;
     private String dataCadastro;
     private Endereco endereco;
+    private float media;
+    private int mediaArredondada;
 
     public Evento() {
     }
@@ -173,5 +175,25 @@ public class Evento {
 
     public void setEndereco(Endereco endereco) {
         this.endereco = endereco;
+    }
+
+    public void setPreco(double preco) {
+        this.preco = preco;
+    }
+
+    public float getMedia() {
+        return media;
+    }
+
+    public void setMedia(float media) {
+        this.media = media;
+    }
+
+    public int getMediaArredondada() {
+        return mediaArredondada;
+    }
+
+    public void setMediaArredondada(int mediaArredondada) {
+        this.mediaArredondada = mediaArredondada;
     }
 }
