@@ -8,6 +8,7 @@ import okhttp3.MediaType;
 
 public class WebClientUtil {
 
-    public static final String WEBSERVICE = "http://10.0.3.138:8096/platz";
+//    public static final String WEBSERVICE = "http://10.0.3.138:8096/platz";
+public static final String WEBSERVICE = "http://10.0.3.206:8080/platz";
     public static final MediaType JSON_MEDIA_TYPE = MediaType.parse("application/json; charset=utf-8");
 }

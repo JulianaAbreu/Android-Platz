@@ -93,7 +93,7 @@ public class HomeFragment extends Fragment {
             }
         });
 
-        listarTodos(new ResponseCallback<ArrayList<Evento>>() {
+        listarEventos(new ResponseCallback<ArrayList<Evento>>() {
             @Override
             public void onSuccess(ArrayList<Evento> eventos) {
 
@@ -111,9 +111,9 @@ public class HomeFragment extends Fragment {
 
     }
 
-    public void listarTodos(final ResponseCallback<ArrayList<Evento>> callback) {
+    public void listarEventos(final ResponseCallback<ArrayList<Evento>> callback) {
 
-        Request request = new Request.Builder().get().url(WebClientUtil.WEBSERVICE + "/eventos/").build();
+        Request request = new Request.Builder().get().url(WebClientUtil.WEBSERVICE + "/eventos/semana/").build();
         final ArrayList<Evento> listaDeEventos = new ArrayList<>();
 
         client.newCall(request).enqueue(new Callback() {

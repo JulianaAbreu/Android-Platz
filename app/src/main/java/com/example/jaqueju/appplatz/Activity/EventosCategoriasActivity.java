@@ -2,8 +2,12 @@ package com.example.jaqueju.appplatz.Activity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.CollapsingToolbarLayout;
+import android.support.v4.app.NavUtils;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.ListView;
 
 import com.example.jaqueju.appplatz.Adapter.EventosCategoriaAdapter;
@@ -29,6 +33,8 @@ public class EventosCategoriasActivity extends AppCompatActivity {
 
     final Gson gson = new Gson();
     final OkHttpClient client = new OkHttpClient();
+    private Toolbar mToolbar;
+    private CollapsingToolbarLayout mCollapsingToolbarLayout;
     ListView eventosListView;
 
     @Override
@@ -36,9 +42,11 @@ public class EventosCategoriasActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_eventos_categorias);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-
+        mToolbar = (Toolbar) findViewById(R.id.tb_main);
+        mCollapsingToolbarLayout = (CollapsingToolbarLayout) findViewById(R.id.collapsing_toolbar);
+        setSupportActionBar(mToolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeButtonEnabled(false);
         eventosListView = (ListView) findViewById(R.id.listaEventosCategoria);
 
         Intent intent = getIntent();
@@ -48,6 +56,20 @@ public class EventosCategoriasActivity extends AppCompatActivity {
 
         //Cria uma instância de CategoriaAdapter
         eventosListView.setAdapter(new EventosCategoriaAdapter(this, listaDeEventos));
+
+    }
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            // Respond to the action bar's Up/Home button
+            case android.R.id.home:
+                NavUtils.navigateUpFromSameTask(this);
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    public boolean onCreateOptionsMenu(Menu menu) {
+        return true;
 
     }
 

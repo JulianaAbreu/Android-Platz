@@ -12,6 +12,10 @@ import android.widget.ListView;
 import android.widget.SimpleAdapter;
 
 import com.example.jaqueju.appplatz.Adapter.CurtidosAdapter;
+import com.example.jaqueju.appplatz.Model.Conta;
+import com.example.jaqueju.appplatz.Model.Credenciais;
+import com.example.jaqueju.appplatz.Model.Curtida;
+import com.example.jaqueju.appplatz.Model.CurtidaCadastro;
 import com.example.jaqueju.appplatz.Model.Curtidos;
 import com.example.jaqueju.appplatz.Model.Evento;
 import com.example.jaqueju.appplatz.Model.Usuario;
@@ -30,6 +34,7 @@ import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
+import okhttp3.RequestBody;
 import okhttp3.Response;
 
 /**
@@ -74,10 +79,13 @@ public class CurtidosFragment extends Fragment {
 
                     }
                 });
-
-
             }
         });
+
+
+
+
+
 
 
     }

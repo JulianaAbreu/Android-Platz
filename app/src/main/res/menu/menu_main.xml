@@ -8,7 +8,7 @@
     <!-- Settings, should always be in the overflow -->
 
     <!-- Settings, should always be in the overflow -->
-    <item android:id="@+id/action_search_menu"
+    <item android:id="@+id/action_sair"
         android:title="Sair"
         app:showAsAction="never" />
 

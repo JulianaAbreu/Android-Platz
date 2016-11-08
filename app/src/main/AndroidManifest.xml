@@ -54,7 +54,11 @@
         <activity
             android:name=".Activity.EventosCategoriasActivity"
             android:label="@string/title_activity_eventos_categorias"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Activity.EventosCategoriasActivity"></meta-data>
+        </activity>
         <activity android:name=".Activity.MapaActivity"></activity>
     </application>
 

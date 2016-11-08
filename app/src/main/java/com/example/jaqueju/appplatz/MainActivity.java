@@ -71,7 +71,6 @@ public class MainActivity extends AppCompatActivity {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
         adapter.addFrag(new HomeFragment());
         adapter.addFrag(new CategoriasFragment());
-        adapter.addFrag(new CurtidosFragment());
         adapter.addFrag(new RankingCategoriasFragment());
         adapter.addFrag(new PerfilFragment());
 
@@ -93,13 +92,11 @@ public class MainActivity extends AppCompatActivity {
                         getSupportActionBar().setTitle("Categorias");
                         break;
                     case 2:
-                        getSupportActionBar().setTitle("Curtidos");
-                        break;
-                    case 3:
                         getSupportActionBar().setTitle("Troféis");
                         break;
-                    case 4:
+                    case 3:
                         getSupportActionBar().setTitle("Perfil");
+
                 }
             }
 
@@ -115,8 +112,7 @@ public class MainActivity extends AppCompatActivity {
 
         int[] tabIcons = {
                 R.mipmap.ic_home_white__,
-                R.mipmap.ic_list_white_,
-                R.mipmap.ic_favorite_border,
+                R.drawable.ic_view_list_white_icone,
                 R.mipmap.ic_trofeu,
                 R.mipmap.ic_profile
 
@@ -125,15 +121,13 @@ public class MainActivity extends AppCompatActivity {
 
         tabLayout.getTabAt(0).setIcon(tabIcons[0]);
         tabLayout.getTabAt(1).setIcon(tabIcons[1]);
-        tabLayout.getTabAt(3).setIcon(tabIcons[3]);
         tabLayout.getTabAt(2).setIcon(tabIcons[2]);
-        tabLayout.getTabAt(4).setIcon(tabIcons[4]);
+        tabLayout.getTabAt(3).setIcon(tabIcons[3]);
 
         tabLayout.getTabAt(0).getIcon().setColorFilter(Color.parseColor("#F8BD07"), PorterDuff.Mode.SRC_IN);
         tabLayout.getTabAt(1).getIcon().setColorFilter(Color.parseColor("#646E7B"), PorterDuff.Mode.SRC_IN);
         tabLayout.getTabAt(2).getIcon().setColorFilter(Color.parseColor("#646E7B"), PorterDuff.Mode.SRC_IN);
         tabLayout.getTabAt(3).getIcon().setColorFilter(Color.parseColor("#646E7B"), PorterDuff.Mode.SRC_IN);
-        tabLayout.getTabAt(4).getIcon().setColorFilter(Color.parseColor("#646E7B"), PorterDuff.Mode.SRC_IN);
 
         tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
@@ -171,7 +165,9 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.action_search_menu:
+            case R.id.action_sair:
+                //Limpar Shared Preferences
+                getSharedPreferences("Conta",0).edit().clear().apply();
                 Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);

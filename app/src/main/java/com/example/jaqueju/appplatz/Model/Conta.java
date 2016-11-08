@@ -13,6 +13,7 @@ public class Conta {
     private String ultimoAcesso;
     private String dataCadastro;
     private String token;
+    private String tokenAndroid;
 
     //Construtores
     public Conta() {
@@ -83,4 +84,11 @@ public class Conta {
         this.token = token;
     }
 
+    public String getTokenAndroid() {
+        return tokenAndroid;
+    }
+
+    public void setTokenAndroid(String tokenAndroid) {
+        this.tokenAndroid = tokenAndroid;
+    }
 }

@@ -62,7 +62,7 @@ public class LoginActivity extends AppCompatActivity {
 
                         if (conta != null) {
                             editor.putString("idConta", conta.getId());
-                            editor.putString("token", conta.getToken());
+                            editor.putString("token", conta.getTokenAndroid());
                             editor.apply();
 
                             Intent intent = new Intent(LoginActivity.this, MainActivity.class);
@@ -89,7 +89,7 @@ public class LoginActivity extends AppCompatActivity {
 
         RequestBody requestBody = RequestBody.create(WebClientUtil.JSON_MEDIA_TYPE, gson.toJson(new Credenciais(email, senha)));
 
-        Request request = new Request.Builder().post(requestBody).url(WebClientUtil.WEBSERVICE + "/login").build();
+        Request request = new Request.Builder().post(requestBody).url(WebClientUtil.WEBSERVICE + "/loginAndroid").build();
 
         client.newCall(request).enqueue(new Callback() {
             @Override
@@ -119,8 +119,6 @@ public class LoginActivity extends AppCompatActivity {
 
             }
         });
-
-
     }
 
 
